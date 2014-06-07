@@ -1,0 +1,10 @@
+/*
+	Notepad.java
+*/
+import java.io.*;
+import java.awt.*;
+import java.awt.event.*;
+
+class NotepadFrame extends Frame implements ActionListener
+{
+	String fname="";// no 

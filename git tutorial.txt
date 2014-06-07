@@ -1,0 +1,162 @@
+git 
+cleaner approach to file management
+
+git is written in c
+
+to install git
+	sudo apt-get install git
+
+download and compile/install
+	http://git-scm.com/downloads
+
+your name
+	git config --global user.name "LavishKothari"
+	
+your email id
+	git config --global user.email "lavishkothari004@gmail.com"
+	
+to check if your username and email is set properly
+	git config --global --list
+	
+initialize git
+	git init
+from now onwards the current directory will be version controlled.
+
+to view the status of git
+	git status
+	
+to add a file to version control it
+	git add revisit.py
+
+to track all the files within the current directory.
+	git add .
+
+to track all files ending with .txt extension	
+	git add *.txt 	
+	
+to commit
+	git commit -m "your message"
+	
+to see the commit
+	git log
+	
+change your revisit.py
+and to see the changes related to previous commit
+	git diff
+	
+to again commit/  to update already committed file 
+	git add -u
+	
+git log
+git log --oneline
+git log --graph --decorate --oneline
+
+sha1 hash they are unique for every commit 
+to track any commit you need only first 7 digits of the commit
+
+now you need to host this code 
+you have some hosting sites
+	github.com
+	git-scm.com
+	pro git book
+	bitbucket.org
+	gitlab.com
+
+to see the difference two commits	
+git diff 1513bc1 aa1f07a
+
+origin https://github.com/LavishKothari/octo.git
+origin is the short name for https://github.com/LavishKothari/octo.git
+
+
+to set your proxy setting
+export http_proxy="http://username:password@proxy.cse.iitb.ac.in:80/"
+export https_proxy="http://username:password@proxy.cse.iitb.ac.in:80/"
+
+master branch is considered as a stable branch.
+
+http://10.105.22.21/internwiki/doku.php
+
+git clone https://github.com/LavishKothari/octo.git
+
+git branch - to know which branch you are presently in 
+
+git pull - will not copy the whole project byt will only update the project
+
+git branch LavishBranch
+this will create a new branch and this newly created branch will have all the previous commits as in the parent branch.
+
+
+now git branch will give the following output
+ LavishBranch
+*master
+
+this means that you have only created a new branch but you have not entered this newly created branch
+
+to enter this newly created branch type
+	git checkout LavishBranch
+	
+now type git branch
+this will give the output
+*LavishBranch
+ master
+ 
+ the asterisk b4 the LavishBranch indicates that now you are  in the LavishBranch
+ 
+now do any changes in you file 
+add -u
+and then add commit
+
+note that you now added a commint in  your LavishBranch
+and you didnt added any commit in your master branch
+so if you switch back to your master branch
+you will not have the commit that you made in the LavishBranch.
+
+
+
+
+to merge the changes of LavishBranch to the master branch
+first switch to your master branch by command
+	git checkout master
+
+now to merge the contents of LavishBranch to the master branch
+execute the following command
+	git merge LavishBranch
+	
+	
+	
+	
+now you have only created the LavishBranch on your local machine
+to push this branch online on github 
+execute the following command to push this into github
+	git push origin LavishBranch
+	
+	
+full explanation
+ 
+	suppose your mentor added a project on github and you wish to modify that
+	you will not be working on the master branch, you will be creating a new branch and you will have all the commits in your newly created brach as in the master branch
+	now your mentor will pull and verify you work
+	if your mentor is satisfied with your work then your mentor will merge your newly created branch into the master branch.
+	
+	
+
+if you want to delete your commits then you can delete the commit
+execute the following statement
+although it is not a good idea to delete commits
+instead you can just change the state of your project
+
+so to change the present state of your commit
+execute
+	git reset --hard <commit hash>
+	by the above command your history is gone forever
+	this is not recommended
+	because all other contributors will be affected by that.
+	
+if you wish to revert to 4th commit and you also wish to save the 5th and 6th commit
+you will use the revert command
+	git revert <commit hash>
+	
+before you revert to any commit you need to  commit all your files inside the directory
+otherwise you will get the error 
+'revert' is not possible because you have unmerged files.

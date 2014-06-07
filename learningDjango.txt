@@ -1,0 +1,72 @@
+1) how to install django
+	apt-get install python-django
+
+2) how to check whether your django is correctly working or not
+	python -c "import django; print(django.get_version())"
+	
+	here python -c is used for executing the python command 
+	c stands for "command"
+	
+3) creating your first django project
+	django-admin.py startproject MyFirstProject
+	
+4) how to create your own development server
+	cd MyFirstProject
+	python manage.py runserver
+	
+	NOTE
+		by default the server will be running on 127.0.0.1:8000
+		
+		if you want to change the port and ip 
+			changing the port : python manage.py runserver 8080
+		
+			changing the ip : python manage.py runserver 127.2.2.2:8080
+			
+5) creating a new app called "polls"
+	python manage.py startapp polls
+	
+6) Edit the polls/models.py file so it looks like this:
+
+#############################
+from django.db import models
+
+# Create your models here.
+
+class Question(models.Model):
+    question_text = models.CharField(max_length=200)
+    pub_date = models.DateTimeField('date published')
+
+
+class Choice(models.Model):
+    question = models.ForeignKey(Question)
+    choice_text = models.CharField(max_length=200)
+    votes = models.IntegerField(default=0)
+#############################
+
+7) Edit the mysite/settings.py file again, and change the INSTALLED_APPS setting to include the string 'polls'. So it’ll look like this:
+	by this now Django knows to include the polls app
+INSTALLED_APPS = (
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'polls',
+)
+
+8) To create sql tables
+	python manage.py sql polls
+9) Now, run syncdb again to create those model tables in your database:
+	python manage.py syncdb
+	
+	
+	
+from polls.models import Question,Choice
+Question.objects.all()
+Question.objects.filter(id=1)
+from django.utils import timezone
+q=Question(question_text="How are you?",pub_date=timezone.now())
+q.save() 															# saving into the database
+q.question_text="What are you doing?"
+q.save()
