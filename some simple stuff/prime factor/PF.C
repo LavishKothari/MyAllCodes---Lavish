@@ -4,7 +4,6 @@
 int main()
 {
 	long num,i,a;
-	clrscr();
 	printf("ENTER THE NUMBER : ");
 	scanf("%ld",&num);
 	a=num;

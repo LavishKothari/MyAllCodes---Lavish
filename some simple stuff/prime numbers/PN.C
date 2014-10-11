@@ -7,7 +7,6 @@
 int main()
 {
 	long ll,ul,i,j;
-	clrscr();
 
 	printf("ENTER THE LOWER LIMIT : ");
 	scanf("%ld",&ll);

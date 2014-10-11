@@ -8,7 +8,6 @@ int main()
 {
 	int i,n,*arr;
 
-	clrscr();
 
 	printf("enter the maximum number of elements");
 	scanf("%d",&n);

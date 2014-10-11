@@ -8,9 +8,9 @@ class MyFrame extends JFrame implements ActionListener
  JTextField tAcn,tNam,tDob,tDoj,tBal;
  JButton bSubmit,bClear,bExit;
  java.util.Date dt;
- 
+
  int actno;
- 
+
  MyFrame()
  {
   super("My Bank - Account Opening");
@@ -19,18 +19,18 @@ class MyFrame extends JFrame implements ActionListener
 
   try
   {
-   String str="jdbc:mysql://localhost:3306/bank";
-   Connection cn=DriverManager.getConnection(str,"root","lavikothari");  
+    String str="jdbc:mysql://localhost:3306/bank";
+   Connection cn=DriverManager.getConnection(str,"root","lavikothari");
 
    Statement st=cn.createStatement();
    ResultSet rs=st.executeQuery("select max(acctno) as m from cust");
 
    rs.next();
    if(rs.getInt("m")==0)
-    actno=101;  
+    actno=101;
    else
     actno=rs.getInt("m")+1;
-   
+
    st.close();
    cn.close();
   }
@@ -52,7 +52,7 @@ class MyFrame extends JFrame implements ActionListener
 
   dt=new java.util.Date();
   String s=String.format("%d/%02d/%02d",dt.getYear()+1900,dt.getMonth()+1,dt.getDate());
- 
+
   tDoj=new JTextField(s);
   tDoj.setFont(new Font("lucida console",Font.PLAIN,18));
   tDoj.setEditable(false);
@@ -88,7 +88,7 @@ class MyFrame extends JFrame implements ActionListener
   add(mp);
 
   mp.setLayout(new GridLayout(7,1,10,10));
-  
+
   JPanel p1=new JPanel();
   p1.setLayout(new BorderLayout(5,5));
    JPanel p11=new JPanel();
@@ -103,7 +103,7 @@ class MyFrame extends JFrame implements ActionListener
   p2.setLayout(new BorderLayout(60,5));
   p2.add(l2,BorderLayout.WEST);
   p2.add(tNam,BorderLayout.CENTER);
-         
+
   JPanel p3=new JPanel();
   p3.setLayout(new BorderLayout(50,5));
    JPanel p31=new JPanel();
@@ -114,7 +114,7 @@ class MyFrame extends JFrame implements ActionListener
   p3.add(p31,BorderLayout.CENTER);
 
 
- 
+
   JPanel p4=new JPanel();
   p4.setLayout(new BorderLayout(50,5));
    JPanel p41=new JPanel();
@@ -144,7 +144,7 @@ class MyFrame extends JFrame implements ActionListener
 
 
   p6.add(bExit);
- 
+
   mp.add(p1);
   mp.add(p2);
   mp.add(p3);
@@ -180,7 +180,7 @@ class MyFrame extends JFrame implements ActionListener
    try
    {
     String str="jdbc:mysql://localhost:3306/bank";
-    Connection cn=DriverManager.getConnection(str,"root","lavikothari");  
+    Connection cn=DriverManager.getConnection(str,"root","lavikothari");
 
     /*
     Statement st=cn.createStatement();
@@ -192,16 +192,16 @@ class MyFrame extends JFrame implements ActionListener
         tBal.getText()+"')";
 
 
-    st.executeUpdate(str);    
+    st.executeUpdate(str);
     st.close();
     */
 
     PreparedStatement pst=cn.prepareStatement("insert into cust values(?,?,?,?,?)");
     pst.setInt(1,actno);
     pst.setString(2,tNam.getText());
-    
+
     java.util.Date dtu=new java.util.Date(tDob.getText());
-    java.sql.Date dts=new java.sql.Date(dtu.getTime());  
+    java.sql.Date dts=new java.sql.Date(dtu.getTime());
     pst.setDate(3,dts);
 
     dts=new java.sql.Date(dt.getTime());
@@ -218,7 +218,7 @@ class MyFrame extends JFrame implements ActionListener
      tBal.select(0,tBal.getText().length());
      tBal.requestFocus();
      return;
-    }   
+    }
 
     pst.setInt(5,bal);
 
@@ -228,7 +228,7 @@ class MyFrame extends JFrame implements ActionListener
     cn.close();
     JOptionPane.showMessageDialog(this,"Record added successfully..");
     actno++;
-    tAcn.setText(actno+"");    
+    tAcn.setText(actno+"");
     tNam.setText("");
     tDob.setText("");
     tDoj.setText("");
@@ -237,7 +237,7 @@ class MyFrame extends JFrame implements ActionListener
    catch(SQLException e)
    {
     JOptionPane.showMessageDialog(this,e.getMessage());
-   }   
+   }
   }
  }
 }
@@ -253,7 +253,7 @@ class MainPanel extends JPanel
   this.bottom=bottom;
   this.right=right;
  }
- 
+
  public void paintComponent(Graphics g)
  {
   super.paintComponent(g);
@@ -283,4 +283,4 @@ class append
   mf.setVisible(true);
   mf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
  }
-}	
+}
