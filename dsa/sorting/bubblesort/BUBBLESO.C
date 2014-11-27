@@ -15,7 +15,7 @@ printf("enter the data of array");
 
 
 for(i=0;i<n;i++)
-scanf("%d",&arr[i]);
+    scanf("%d",&arr[i]);
 
 printf("\n\n\n");
 

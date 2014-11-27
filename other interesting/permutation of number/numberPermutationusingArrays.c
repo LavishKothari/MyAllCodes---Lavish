@@ -69,7 +69,6 @@ int findMinimum(int str[],int index1,int len)
     return minIndex;
 }
 
-
 void findNextPermutation(int str[],int len)
 {
     int i,index1,index2;
