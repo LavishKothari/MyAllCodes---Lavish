@@ -59,6 +59,8 @@ int isValidExpression(char *r,char *t)
                     return 0;
                 }
             }
+            if(r[i-1]==r[i+1])
+                indexT--;
             indexR=i+1;
         }
     }
