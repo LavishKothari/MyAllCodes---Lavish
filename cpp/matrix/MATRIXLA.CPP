@@ -1,6 +1,5 @@
-#include<iostream.h>
-#include<conio.h>
-
+#include<iostream>
+using namespace std;
 class matrix
 {
 	int r,c;
@@ -134,7 +133,6 @@ matrix matrix::addmatrix(matrix&m)
 
 int main()
 {
-	clrscr();
 	matrix m1,m2,m3;
 	m1.createmat();
 	m2.createmat();
@@ -142,6 +140,5 @@ int main()
 	m3=m2.addmatrix(m1);
 	cout<<endl;
 	m3.printmat();
-	getch();
 	return 1;
 }
