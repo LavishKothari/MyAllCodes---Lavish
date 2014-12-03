@@ -1,9 +1,0 @@
-Professor's Name : LAVISH
-Department : LAVISH
-Subject : C
-Topic : D
-
-
-USERNAME            DOUBT TEXT
-
-
