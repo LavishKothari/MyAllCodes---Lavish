@@ -36,16 +36,16 @@ struct Node*add(struct Node*start,struct Node*newNode)
 }
 int calculateLength(int n)
 {
+    int answer=0;
     if(n<=0)
         return 0;
-    else
-        return (int)(log10(n)/log10(2))+1;
-}
-int isEmpty(struct Node*start)
-{
-    if(start==NULL)
-        return 1;
-    return 0;
+
+    while(n)
+    {
+        answer++;
+        n>>=1;
+    }
+    return answer;
 }
 struct Node*removeFirst(struct Node*start)
 {
@@ -103,7 +103,6 @@ int main()
 
         for(i=10;i>=1;i--)
         {
-            //System.out.println("i="+i+" x="+x);
             if(newList[i])
             {
                 element=newList[i]->data;
