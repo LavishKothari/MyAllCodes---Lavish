@@ -22,20 +22,17 @@ class Alfa implements Runnable
 		catch(InterruptedException e)
 		{
 			System.out.println("Exception : "+e);
-		}
-			
+		}			
 	}
 
 }
 
 class Beta implements Runnable
 {
-	
 	public void run()
 	{
 		try
-		{
-	
+		{	
 			for(int i=1;i<20;i+=2)	
 			{
 				System.out.println("in second thread : "+i);	
@@ -46,12 +43,10 @@ class Beta implements Runnable
 		catch(InterruptedException e)
 		{
 			System.out.println("Exception : "+e);
-		}
-			
+		}	
 	}
 
 }
-
 
 class Main
 {
@@ -62,6 +57,7 @@ class Main
 		Beta b=new Beta();
 		Thread t2=new Thread(b);
 		t2.start();
+		
 		System.out.println("your main thread is exiting...");
 	}
 }
