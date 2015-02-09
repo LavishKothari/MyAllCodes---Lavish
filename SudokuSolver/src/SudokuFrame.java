@@ -30,7 +30,7 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
-
+    
 
 public class SudokuFrame extends JFrame implements MouseListener,ActionListener
 {
@@ -213,6 +213,4 @@ public class SudokuFrame extends JFrame implements MouseListener,ActionListener
 		// TODO Auto-generated method stub
 		
 	}
-	
-
 }
