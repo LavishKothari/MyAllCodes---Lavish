@@ -8,7 +8,7 @@
 import java.awt.*;
 import java.awt.event.*;
 
-class Dlg1 extends Dialog
+class D lg1 extends Dialog
 {
 	Dlg1(Frame f)// or Dlg1(DlgFrame f)
 	{	
@@ -28,6 +28,7 @@ class Dlg2 extends Dialog
 		addWindowListener(new DlgAdapter(this));
 	}
 }
+
 class DlgAdapter extends WindowAdapter
 {
 	Dialog d;
