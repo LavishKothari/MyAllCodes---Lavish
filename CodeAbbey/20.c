@@ -2,19 +2,18 @@
 
 int main()
 {
-    int t,answer;
+    int t,answer,i;
+    char str[100001];
     char c;
-    FILE*f;
-    f=fopen("a.txt","r");
     scanf("%d",&t);
     while(t--)
     {
         answer=0;
-        while(1)
+        scanf(" %[^\n]s",str);
+        for(i=0;str[i];i++)
         {
-            if(c=='\n')
-                break;
-            if(c=='a' || c=='e' ||c=='i'|| c=='o' ||c=='u')
+        	c=str[i];
+            if(c=='a' || c=='e' ||c=='i'|| c=='o' ||c=='u' || c=='y')
                 answer++;
         }
         printf("%d ",answer);
