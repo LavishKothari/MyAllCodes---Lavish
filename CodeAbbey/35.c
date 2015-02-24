@@ -2,7 +2,7 @@
 
 int main()
 {
-	int t,y;
+	int t,y,x;
 	double s,r,p;
 	scanf("%d",&t);
 	while(t--)
@@ -13,7 +13,15 @@ int main()
 		{
 			y++;
 			s=s+s*(p/100);
+			/*
 			printf("%f\n",s);
+			if(s!=(int)s)
+				x=(int)s+1;
+			else
+				x=(int)s;
+			if(x>=r)
+				break;
+			*/
 			/*
 			if((s-(int)s)!=0.0)
 			{
