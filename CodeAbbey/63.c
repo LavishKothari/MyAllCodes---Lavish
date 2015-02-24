@@ -2,27 +2,30 @@
 
 int main()
 {
-	int t,i,n;
-	scanf("%d",&t);
+	long long int t,i,n,counter,arr[10000];
+	scanf("%lld",&t);
 	while(t--)
 	{
-		scanf("%d",&n);
+		counter=0;
+		scanf("%lld",&n);
 		while((n&1)==0)
 		{
-			printf("2*");
+			arr[counter++]=2;
 			n/=2;
 		}
 		for(i=3;i*i<=n;i+=2)
 		{
 			while(n%i==0)
 			{
-				printf("%d*",i);
+				arr[counter++]=i;
 				n/=i;
 			}
 		}
 		if(n>2)
-			printf("%d",n);
-		printf(" ");
+			arr[counter++]=n;
+		for(i=0;i<counter-1;i++)
+			printf("%lld*",arr[i]);
+		printf("%lld ",arr[counter-1]);
 	}
 	return 0;
 }
