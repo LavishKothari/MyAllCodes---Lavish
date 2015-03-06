@@ -30,6 +30,7 @@ struct Graph
 typedef struct AdjacencyLinkedListNode AdjacencyLinkedListNode;
 typedef struct GraphNode GraphNode;
 typedef struct Graph Graph;
+
 AdjacencyLinkedListNode * makeLinkedListNode()
 {
     AdjacencyLinkedListNode *nn;
