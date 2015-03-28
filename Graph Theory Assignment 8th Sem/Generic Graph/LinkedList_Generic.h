@@ -15,6 +15,6 @@ struct ListNode_Generic
 	struct ListNode_Generic*next;
 };
 struct LinkedList_Generic *makeAndInitialiseLinkedList();
-struct ListNode_Generic *makeAndInitialiseLisNode();
-void addElement(struct LinkedList_Generic*list,void*element);
+struct ListNode_Generic *makeAndInitialiseListNode(struct LinkedList_Generic *list,void*element);
+void addElement(struct LinkedList_Generic*list,struct ListNode_Generic*element);
 void removeElement(struct LinkedList_Generic*list,int ide,int(*getId)(struct ListNode_Generic*));

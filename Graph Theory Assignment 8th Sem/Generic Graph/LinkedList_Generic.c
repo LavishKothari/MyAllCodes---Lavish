@@ -1,4 +1,5 @@
 #include<stdlib.h>
+#include<string.h>
 #include"LinkedList_Generic.h"
 
 struct LinkedList_Generic *makeAndInitialiseLinkedList(int elementSize)
@@ -9,15 +10,17 @@ struct LinkedList_Generic *makeAndInitialiseLinkedList(int elementSize)
 	list->elementSize=elementSize;
 	return list;
 }
-struct ListNode_Generic *makeAndInitialiseLisNode(struct LinkedList_Generic *list)
+struct ListNode_Generic *makeAndInitialiseListNode(struct LinkedList_Generic *list,void*element)
 {
 	struct ListNode_Generic*listNode;
 	listNode=(struct ListNode_Generic*)malloc(sizeof(struct ListNode_Generic));
-	listNode->data=malloc(sizeof(list->elementSize));
+	listNode->data=element;
+	//listNode->data=malloc(sizeof(list->elementSize));
+	//memcpy(listNode->data,element,list->elementSize);
 	listNode->next=NULL;
 	return listNode;
 }
-void addElement(struct LinkedList_Generic*list,void*element)
+void addElement(struct LinkedList_Generic*list,struct ListNode_Generic*element)
 {
 	struct ListNode_Generic*ptr,*prev;
 	if((list->start)==NULL)
@@ -25,7 +28,7 @@ void addElement(struct LinkedList_Generic*list,void*element)
 	else
 	{
 		for(ptr=(list->start);ptr;prev=ptr,ptr=ptr->next);
-		prev->next=element;
+		(prev->next)=element;
 	}
 }
 void removeElement(struct LinkedList_Generic*list,int ide,int(*getId)(struct ListNode_Generic*))
