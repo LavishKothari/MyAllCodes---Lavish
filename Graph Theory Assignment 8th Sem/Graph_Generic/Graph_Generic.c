@@ -16,9 +16,7 @@ struct Edge *makeEdge(int sourceVertex,int destinationVertex,int weight,int isDi
 {
 	static int edgeNumber=0;
 	struct Edge*edge;
-	printf("hello Rakshit Kothari\n");
 	edge=(struct Edge*)malloc(sizeof(struct Edge));
-	printf("hello lavish Kothari\n");
 	edge->sourceVertex=sourceVertex;
 	edge->destinationVertex=destinationVertex;	
 	edge->weight=weight;

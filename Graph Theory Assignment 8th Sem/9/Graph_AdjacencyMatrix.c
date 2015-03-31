@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include"graph.h"
+#include"Graph_AdjacencyMatrix.h"
 #include"two_D_bit_array.h"
 #include"one_D_bit_array.h"
 
