@@ -6,3 +6,5 @@ Graph_Generic.o: Graph_Generic.c
 	gcc -c Graph_Generic.c
 main.o: main.c
 	gcc -c main.c
+clean:
+	rm -rf *.o *~ hello

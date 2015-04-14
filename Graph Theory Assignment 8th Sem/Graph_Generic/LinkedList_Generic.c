@@ -31,16 +31,37 @@ void addElement(struct LinkedList_Generic*list,struct ListNode_Generic*element)
 		(prev->next)=element;
 	}
 }
-void removeElement(struct LinkedList_Generic*list,int ide,int(*getId)(struct ListNode_Generic*))
+void removeElement(struct LinkedList_Generic*list,struct ListNode_Generic*node)
 {
 	struct ListNode_Generic*ptr,*prev;
-	for(ptr=(list->start),prev=NULL;ptr && (*getId)(ptr)!=ide;prev=ptr,ptr=ptr->next);
-	if(prev!=NULL)
+	for(ptr=(list->start),prev=NULL;ptr && (ptr)!=node;prev=ptr,ptr=ptr->next);
+	if(ptr)
 	{
-		prev->next=ptr->next;
-		free(ptr->data);
-		free(ptr);
+		if(prev!=NULL)
+		{
+			prev->next=ptr->next;
+			if(ptr)
+			{
+				free(ptr);
+			}
+		}
+		else if(prev==NULL && ptr!=NULL) // means the element that we need to delete is the start of the list.
+		{
+			prev=list->start;
+			(list->start)=((list->start)->next);
+			if(prev)
+			{
+				free(prev);
+			}
+		}
 	}
-	else if(prev==NULL && ptr!=NULL) // means the element that we need to delete is the start of the list.
-		(list->start)=((list->start)->next);
+}
+struct ListNode_Generic*getNodeReferenceWithGivenData(struct LinkedList_Generic*list,void*data)
+{
+	struct ListNode_Generic*node;
+	for(node=list->start;node;node=node->next)
+	{
+		if((node->data)==data)
+			return node;
+	}
 }

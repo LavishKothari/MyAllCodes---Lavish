@@ -32,14 +32,6 @@ struct Vertex *makeVertex()
 	(vertex->id)=vertexNumber++;
 	return vertex;
 }
-int getVertexId(struct ListNode_Generic*node)
-{
-	return ((struct Vertex*)(node->data))->id;
-}
-int getEdgeId(struct ListNode_Generic*node)
-{
-	return ((struct Edge*)(node->data))->id;
-}
 
 void addVertex(struct Graph_Generic*graph,struct Vertex*vertex)
 {
@@ -48,18 +40,47 @@ void addVertex(struct Graph_Generic*graph,struct Vertex*vertex)
 }
 void removeVertex(struct Graph_Generic*graph,int vertexNumber)
 {
+	struct Edge*e;
+	struct ListNode_Generic*ptr,*ptr1;
 	(graph->numberOfVertices)--;
-	removeElement(graph->vertexList,vertexNumber,getVertexId);
+	for(ptr=graph->vertexList->start;ptr;ptr=ptr->next)
+	{
+		if(((struct Vertex*)(ptr->data))->id==vertexNumber)
+			break;
+	}
+	if(ptr)
+	{
+		/*
+			when you will be deleting an vertex then all the edges from and to that vertex should be deleted.
+		*/
+		for(ptr1=graph->edgeList->start;ptr1;ptr1=ptr1->next)
+		{
+			e=(struct Edge*)(ptr1->data);
+			if(e->sourceVertex==vertexNumber || e->destinationVertex==vertexNumber)
+				removeEdge(graph,e->sourceVertex,e->destinationVertex,e->weight);
+		}
+		removeElement(graph->vertexList,ptr);
+	}
 }
 void addEdge(struct Graph_Generic*graph,struct Edge*edge)
 {
 	(graph->numberOfEdges)++;
 	addElement(graph->edgeList,makeAndInitialiseListNode(graph->edgeList,edge));
 }
-void removeEdge(struct Graph_Generic *graph,int edgeNumber)
+void removeEdge(struct Graph_Generic *graph,int sourceVertex,int destinationVertex,int weight)
 {
+	struct ListNode_Generic*ptr;
 	(graph->numberOfEdges)--;
-	removeElement(graph->edgeList,edgeNumber,getEdgeId);
+	for(ptr=(graph->edgeList->start);ptr;ptr=ptr->next)
+	{
+		if(
+			((struct Edge*)(ptr->data))->sourceVertex==sourceVertex &&
+			((struct Edge*)(ptr->data))->destinationVertex==destinationVertex &&
+			((struct Edge*)(ptr->data))->weight==weight
+		) break;
+	}
+	if(ptr)
+		removeElement(graph->edgeList,ptr);
 }
 void printGraph_Generic(struct Graph_Generic*graph)
 {

@@ -3,7 +3,7 @@
 int main()
 {
 	struct Graph_Generic*graph;
-	int a,b,weight,isDirected,i,numberOfVertices,numberOfEdges;
+	int a,b,weight,isDirected,i,numberOfVertices,numberOfEdges,sourceVertex,destinationVertex,vertexNumber;
 
 	printf("Enter the number of Vertices in the Graph : ");
 	scanf("%d",&(numberOfVertices));
@@ -29,6 +29,19 @@ int main()
 		addEdge(graph,makeEdge(a,b,weight,isDirected));
 	}
 	printGraph_Generic(graph);
+	
+	printf("\nDeleting an Edge : \n");
+	printf("Enter the sourceVertex, destinationVertex and weight of the graph : ");
+	scanf("%d%d%d",&sourceVertex,&destinationVertex,&weight);
+	removeEdge(graph,sourceVertex,destinationVertex,weight);
+	
+	printf("Deleting a Vertex : \n");
+	printf("Enter the Vertex number to be deleted : ");
+	scanf("%d",&vertexNumber);
+	removeVertex(graph,vertexNumber);
+	
+	printGraph_Generic(graph);
+	
 	printf("Program Execution Successful...\n");
 	return 0;
 }

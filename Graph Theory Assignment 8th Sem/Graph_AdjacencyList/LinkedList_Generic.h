@@ -17,4 +17,5 @@ struct ListNode_Generic
 struct LinkedList_Generic *makeAndInitialiseLinkedList();
 struct ListNode_Generic *makeAndInitialiseListNode(struct LinkedList_Generic *list,void*element);
 void addElement(struct LinkedList_Generic*list,struct ListNode_Generic*element);
-void removeElement(struct LinkedList_Generic*list,int ide,int(*getId)(struct ListNode_Generic*));
+void removeElement(struct LinkedList_Generic*list,struct ListNode_Generic*node);
+struct ListNode_Generic*getNodeReferenceWithGivenData(struct LinkedList_Generic*list,void*data);

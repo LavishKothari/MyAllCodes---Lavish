@@ -48,7 +48,6 @@ void showAdjacencyMatrix(struct Graph*g)
 		printf("\n");
 	}
 }
-
 int findNumberOfComponents(struct Graph*g)
 {
 	/*
@@ -80,9 +79,9 @@ int findNumberOfComponents(struct Graph*g)
 	{
 		if(get_one_D_bit_array(i,flag)==0) // means ith vertex is alive
 		{
-			for(j=i+1;j<(g->numberOfVertices);j++)
+			for(j=0;j<(g->numberOfVertices);j++)
 			{
-				if(get_one_D_bit_array(j,flag)==0) // means the jth vertex is alive
+				if(j!=i && get_one_D_bit_array(j,flag)==0) // means the jth vertex is alive
 				{
 					if(get_two_D_bit_array(i,j,adjacencyMatrix_copy,g->numberOfVertices)==1)
 					{

@@ -6,3 +6,5 @@ Graph_AdjacencyList.o: Graph_AdjacencyList.c
 	gcc -c Graph_AdjacencyList.c
 main.o: main.c
 	gcc -c main.c
+clean :
+	rm -rf *~ *.o hello

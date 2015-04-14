@@ -3,7 +3,7 @@
 int main()
 {
 	struct Graph_AdjacencyList*graph;
-	int a,b,weight,isDirected,i,numberOfVertices,numberOfEdges;
+	int a,b,weight,isDirected,i,numberOfVertices,numberOfEdges,sourceVertexNumber,destinationVertexNumber,vertexNumber;
 
 	printf("Enter the number of Vertices in the Graph : ");
 	scanf("%d",&(numberOfVertices));
@@ -26,6 +26,18 @@ int main()
 		scanf("%d%d",&a,&b);
 		addEdge(graph,a,b);
 	}
+	printGraph_AdjacencyList(graph);
+	
+	/* Deleting an Edge */
+	printf("To Remove an Edge Enter the source and destination vertex number : ");
+	scanf("%d%d",&sourceVertexNumber,&destinationVertexNumber);
+	removeEdge(graph,sourceVertexNumber,destinationVertexNumber);
+	printGraph_AdjacencyList(graph);
+	
+	/* Deleting a Vertex */
+	printf("To delete a vertex enter the vertex number :");
+	scanf("%d",&vertexNumber);
+	removeVertex(graph,vertexNumber);
 	printGraph_AdjacencyList(graph);
 	printf("Program Execution Successful...\n");
 	return 0;
