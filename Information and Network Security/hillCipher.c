@@ -30,7 +30,7 @@ void printMatrix(int**matrix,int r,int c)
 		printf("\n");
 	}
 }
-int plainTextToCipherText(char plainText[],int**matrix)
+void plainTextToCipherText(char plainText[],int**matrix)
 {
 	int len,**plainTextMatrix,**resultMatrix,i,j;
 	// The matrix will be of dimensions strlen(plainText) by strlen(plainText)
