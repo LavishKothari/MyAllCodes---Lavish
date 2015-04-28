@@ -14,8 +14,8 @@ struct ListNode_Generic
 	void *data;
 	struct ListNode_Generic*next;
 };
-struct LinkedList_Generic *makeAndInitialiseLinkedList();
-struct ListNode_Generic *makeAndInitialiseListNode(struct LinkedList_Generic *list,void*element);
+struct LinkedList_Generic *createList();
+struct ListNode_Generic *createNode(struct LinkedList_Generic *list,void*element);
 void addElement(struct LinkedList_Generic*list,struct ListNode_Generic*element);
 void removeElement(struct LinkedList_Generic*list,struct ListNode_Generic*node);
 struct ListNode_Generic*getNodeReferenceWithGivenData(struct LinkedList_Generic*list,void*data);

@@ -189,7 +189,7 @@ struct Graph_AdjacencyList* DFS(struct Graph_AdjacencyList*graph,int startingVer
 	// basic initialization completes here
 	
 	stack=createStack(sizeof(struct Vertex_AdjacencyList));
-	push(stack,createNode(stack->list,startingVertex));
+	push(stack,createNode(queue->list,startingVertex));
 	printf("Running DFS : \n");
 	while((queue->numberOfElements)!=0)
 	{

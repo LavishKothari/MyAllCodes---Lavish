@@ -1,10 +1,10 @@
 #include<stdlib.h>
 #include"queue.h"
-struct Queue* makeAndInitializeQueue(int elementSize)
+struct Queue* createQueue(int elementSize)
 {
 	struct Queue *q;
 	q=(struct Queue*)malloc(sizeof(struct Queue));
-	q->list=makeAndInitialiseLinkedList(elementSize);
+	q->list=createList(elementSize);
 	return q;
 }
 void enqueue(struct Queue*q,struct ListNode_Generic*node)
@@ -17,22 +17,15 @@ struct ListNode_Generic* dequeue(struct Queue*q)
 	struct ListNode_Generic*node,*prevNode;
 	prevNode=NULL;
 	(q->numberOfElements)--;
-	
-	for(node=q->list->start;node && node->next;prevNode=node,node=node->next);
-	if(prevNode==NULL)
+	/* here you need to delete the first element of the queue. */
+	if(q->list->start)
 	{
-		if(node==NULL)
-			return NULL;
-		else if(node->next==NULL)
-		{
-			node=q->list->start;
-			q->list->start=NULL;
-			return node;
-		}
+	    node=q->list->start;
+	    q->list->start=q->list->start->next;
+	    return node;
 	}
-	else if(prevNode)
-		prevNode->next=NULL;
-	return node;
+	else 
+	    return NULL;
 }
 void freeQueue(struct Queue*q)
 {

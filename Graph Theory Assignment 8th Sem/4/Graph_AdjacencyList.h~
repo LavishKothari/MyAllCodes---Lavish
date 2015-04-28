@@ -1,7 +1,5 @@
 //#include"LinkedList_Generic.h"
 #include"queue.h"
-#include"stack.h"
-
 #define BLACK 0
 #define GRAY 1
 #define WHITE 2
