@@ -29,3 +29,4 @@ void removeEdge(struct Graph_AdjacencyList *graph,int sourceVertexNumber,int des
 struct Vertex_AdjacencyList *makeVertex(int);
 void printGraph_AdjacencyList(struct Graph_AdjacencyList*graph);
 struct Graph_AdjacencyList* BFS(struct Graph_AdjacencyList*graph,int startingVertexNumber);
+struct Graph_AdjacencyList* DFS(struct Graph_AdjacencyList*graph,int startingVertexNumber);

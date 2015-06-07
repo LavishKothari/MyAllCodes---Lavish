@@ -1,7 +1,10 @@
 /*
 	The queue is implemented using the concept of generic linked list.
 */
+#ifndef LinkedList_Generic_H
 #include"LinkedList_Generic.h"
+#endif
+
 struct Queue
 {
 	struct LinkedList_Generic *list;

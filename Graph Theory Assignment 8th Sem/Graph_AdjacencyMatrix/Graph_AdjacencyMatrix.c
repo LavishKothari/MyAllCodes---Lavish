@@ -4,15 +4,15 @@
 #include"two_D_bit_array.h"
 #include"one_D_bit_array.h"
 
-struct Graph*makeNewGraph()
+struct Graph_AdjacencyMatrix*makeNewGraph(int numberOfVertices)
 {
-	struct Graph*g;
-	g=(struct Graph*)malloc(sizeof(struct Graph));
-	return g;
-}
-void initializeAdjacencyMatrix(struct Graph*g)
-{
-	/*
+    int numberOfIntegerColumns,i;
+	
+	struct Graph_AdjacencyMatrix*g;
+	g=(struct Graph_AdjacencyMatrix*)malloc(sizeof(struct Graph_AdjacencyMatrix));
+	g->numberOfVertices=numberOfVertices;
+	 
+    /*
 		The adjacencyMatrix corresponding to vertex u and v will contain 1 if there is an edge from u to v
 		otherwise it will contain 0
 
@@ -23,23 +23,25 @@ void initializeAdjacencyMatrix(struct Graph*g)
 			* For a standard 32 bit compiler (like gcc 4.8.2) size of an integer is 32 bits (4 bytes).
 			* By this linear arrangement of AdjacencyMatrix we will optimally exploit every single bit.
 	*/
-	int sizeOfIntegerColumns,i,j;
-	sizeOfIntegerColumns=((g->numberOfVertices)*(g->numberOfVertices))/32+1;
-	(g->adjacencyMatrix)=(unsigned int*)malloc(sizeof(unsigned int)*sizeOfIntegerColumns);
-	for(i=0;i<sizeOfIntegerColumns;i++)
+
+	numberOfIntegerColumns=((g->numberOfVertices)*(g->numberOfVertices))/32+1;
+	(g->adjacencyMatrix)=(unsigned int*)malloc(sizeof(unsigned int)*numberOfIntegerColumns);
+	for(i=0;i<numberOfIntegerColumns;i++)
 		(g->adjacencyMatrix)[i]=0;
+   
+	return g;
 }
-void createEdge(struct Graph*g,int a,int b)
+void createEdge(struct Graph_AdjacencyMatrix*g,int a,int b)
 {
 	set_two_D_bit_array(a,b,g->adjacencyMatrix,g->numberOfVertices);
 }
-void removeEdge(struct Graph*g,int a,int b)
+void removeEdge(struct Graph_AdjacencyMatrix*g,int a,int b)
 {
 	reset_two_D_bit_array(a,b,g->adjacencyMatrix,g->numberOfVertices);
 }
-void showAdjacencyMatrix(struct Graph*g)
+void showAdjacencyMatrix(struct Graph_AdjacencyMatrix*g)
 {
-	int i,j,bitNumber;
+	int i,j;
 	printf("The adjacency Matrix of the Graph is as follows : \n");
 	for(i=0;i<(g->numberOfVertices);i++)
 	{
@@ -49,7 +51,7 @@ void showAdjacencyMatrix(struct Graph*g)
 	}
 }
 
-int findNumberOfComponents(struct Graph*g)
+int findNumberOfComponents(struct Graph_AdjacencyMatrix*g)
 {
 	/*
 		first of all we need to create a copy of the AdjacencyMatrix.

@@ -9,3 +9,5 @@ main.o: main.c
 	gcc -c main.c
 graph.o: Graph_AdjacencyMatrix.c
 	gcc -c Graph_AdjacencyMatrix.c
+clean:
+	rm -rf *.o *~ hello

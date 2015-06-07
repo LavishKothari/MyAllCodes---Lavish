@@ -3,16 +3,20 @@
 
 int main()
 {
-	int i,n,a,b;
-	struct Graph*g;
-	g=makeNewGraph();
+	int i,n,a,b,numberOfVertices,numberOfEdges;
+	struct Graph_AdjacencyMatrix*g;
+	
 	printf("Enter the number of Vertices in the Graph : ");
-	scanf("%d",&(g->numberOfVertices));
+	scanf("%d",&numberOfVertices);
 	printf("Enter the number of Edges in the Graph : ");
-	scanf("%d",&(g->numberOfEdges));
-	initializeAdjacencyMatrix(g);
+	scanf("%d",&numberOfEdges);
+	
+	g=makeNewGraph(numberOfVertices);
+	
 	printf("NOTE : The ordering of the vertices is zero indexed.\n");
-	for(i=0;i<(g->numberOfEdges);i++)
+
+    printf("Enter the information about edges : \n");
+    for(i=0;i<numberOfEdges;i++)
 	{
 		printf("Enter the edge Number %d : ",i+1);
 		scanf("%d%d",&a,&b);

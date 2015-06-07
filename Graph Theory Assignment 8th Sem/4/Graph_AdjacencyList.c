@@ -12,6 +12,7 @@
 */
 
 #include"Graph_AdjacencyList.h"
+
 #include<stdlib.h>
 #include<stdio.h>
 struct Graph_AdjacencyList*createGraph(int numberOfVertices)
@@ -118,24 +119,16 @@ struct Vertex_AdjacencyList*getVertexReferenceByID(struct Graph_AdjacencyList*gr
 	}
 	return NULL;
 }
-struct Graph_AdjacencyList* BFS(struct Graph_AdjacencyList*graph,int startingVertexNumber)
+void BFSVisit(struct Graph_AdjacencyList*graph,int startingVertexNumber,struct Graph_AdjacencyList*BFSTree)
 {
 	struct Queue*queue;
-	struct ListNode_Generic*node,*p;
-	struct Vertex_AdjacencyList*vertex,*startingVertex,*u,*v;
-	struct Graph_AdjacencyList*BFSTree;
-	BFSTree=createGraph(graph->numberOfVertices);
+	struct ListNode_Generic*p;
+	struct Vertex_AdjacencyList*startingVertex,*u,*v;
 	
 	startingVertex=getVertexReferenceByID(graph,startingVertexNumber);
 	
 	// basic initialization part of BFS
-	for(node=graph->vertexList->start;node;node=node->next)
-	{
-		vertex=(struct Vertex_AdjacencyList*)(node->data);
-		vertex->color=WHITE;
-		vertex->distance=INFINITY;
-		vertex->parent=NULL;
-	}
+	
 	startingVertex->color=GRAY;
 	startingVertex->distance=0;
 	startingVertex->parent=NULL;
@@ -143,11 +136,11 @@ struct Graph_AdjacencyList* BFS(struct Graph_AdjacencyList*graph,int startingVer
 	
 	queue=createQueue(sizeof(struct Vertex_AdjacencyList));
 	enqueue(queue,createNode(queue->list,startingVertex));
-	printf("Running BFS : \n");
+	//printf("Running BFS : \n");
 	while((queue->numberOfElements)!=0)
 	{
 		u=(struct Vertex_AdjacencyList*)(dequeue(queue)->data);
-		printf("%d ",u->id);
+		//printf("%d ",u->id);
 		for(p=u->adjacencyList->start;p;p=p->next)
 		{
 		    v=(struct Vertex_AdjacencyList*)(p->data);
@@ -162,53 +155,90 @@ struct Graph_AdjacencyList* BFS(struct Graph_AdjacencyList*graph,int startingVer
 		}
 		u->color=BLACK;
 	}
-	printf("BFS finished\n");
-	return BFSTree;
+	//printf("\nBFS finished\n");
 }
-struct Graph_AdjacencyList* DFS(struct Graph_AdjacencyList*graph,int startingVertexNumber)
+struct Graph_AdjacencyList*BFS(struct Graph_AdjacencyList*graph,int startingVertexNumber)
 {
-    struct Stack*stack;
-	struct ListNode_Generic*node,*p;
-	struct Vertex_AdjacencyList*vertex,*startingVertex,*u,*v;
-	struct Graph_AdjacencyList*DFSTree;
-	DFSTree=createGraph(graph->numberOfVertices);
-	
-	startingVertex=getVertexReferenceByID(graph,startingVertexNumber);
-	
-	// basic initialization part of BFS
-	for(node=graph->vertexList->start;node;node=node->next)
+    struct ListNode_Generic*node;
+    struct Vertex_AdjacencyList*vertex;
+    struct Graph_AdjacencyList*BFSTree;
+	BFSTree=createGraph(graph->numberOfVertices);
+    for(node=graph->vertexList->start;node;node=node->next)
 	{
 		vertex=(struct Vertex_AdjacencyList*)(node->data);
 		vertex->color=WHITE;
 		vertex->distance=INFINITY;
 		vertex->parent=NULL;
 	}
+	for(node=graph->vertexList->start;node;node=node->next)
+	{
+		vertex=(struct Vertex_AdjacencyList*)(node->data);
+		if(vertex->color==WHITE)
+		    BFSVisit(graph,vertex->id,BFSTree);
+	}
+	return BFSTree;
+}
+
+void DFSVisit(struct Graph_AdjacencyList*graph,int startingVertexNumber,struct Graph_AdjacencyList*DFSTree)
+{
+    struct Stack*stack;
+    struct ListNode_Generic*ptr;
+    struct Vertex_AdjacencyList *u,*v,*startingVertex;
+    startingVertex=getVertexReferenceByID(graph,startingVertexNumber);
+	
+	// basic initialization part of DFS
+	
 	startingVertex->color=GRAY;
 	startingVertex->distance=0;
 	startingVertex->parent=NULL;
 	// basic initialization completes here
-	
 	stack=createStack(sizeof(struct Vertex_AdjacencyList));
-	push(stack,createNode(stack->list,startingVertex));
-	printf("Running DFS : \n");
-	while((queue->numberOfElements)!=0)
+    push(stack,createNode(stack->list,startingVertex));
+    
+    while(stack->numberOfElements!=0)
+    {
+        u=(struct Vertex_AdjacencyList*)(getTopOfStack(stack)->data);
+        // now we need to traverse the adjacency List of u and find a node whose color is white
+        v=NULL;
+        for(ptr=u->adjacencyList->start;ptr;ptr=ptr->next)
+        {
+            v=(struct Vertex_AdjacencyList*)(ptr->data);
+            if(v->color==WHITE)
+                break;
+            v=NULL;
+        }
+        if(v==NULL)
+        {
+            u->color=BLACK;
+            pop(stack);
+        }
+        else
+        {
+            addEdge(DFSTree,u->id,v->id);
+            push(stack,createNode(stack->list,v));
+            printf("%d ",v->id);
+            v->color=GRAY;
+        }
+    }
+}
+struct Graph_AdjacencyList*DFS(struct Graph_AdjacencyList*graph,int startingVertexNumber)
+{
+    struct ListNode_Generic*node;
+    struct Vertex_AdjacencyList*vertex;
+    struct Graph_AdjacencyList*DFSTree;
+	DFSTree=createGraph(graph->numberOfVertices);
+    for(node=graph->vertexList->start;node;node=node->next)
 	{
-		u=(struct Vertex_AdjacencyList*)(pop(stack)->data);
-		printf("%d ",u->id);
-		for(p=u->adjacencyList->start;p;p=p->next)
-		{
-		    v=(struct Vertex_AdjacencyList*)(p->data);
-		    if(v->color==WHITE)
-		    {
-		        addEdge(DFSTree,u->id,v->id);
-		        v->color=GRAY;
-		        v->distance=u->distance+1;
-		        v->parent=u;
-		        push(queue,createNode(queue->list,v));   
-		    }
-		}
-		u->color=BLACK;
+		vertex=(struct Vertex_AdjacencyList*)(node->data);
+		vertex->color=WHITE;
+		vertex->distance=INFINITY;
+		vertex->parent=NULL;
 	}
-	printf("BFS finished\n");
+	for(node=graph->vertexList->start;node;node=node->next)
+	{
+		vertex=(struct Vertex_AdjacencyList*)(node->data);
+		if(vertex->color==WHITE)
+		    DFSVisit(graph,vertex->id,DFSTree);
+	}
 	return DFSTree;
 }

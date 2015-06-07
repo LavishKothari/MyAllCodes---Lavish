@@ -3,10 +3,19 @@ import java.util.LinkedList;
 public class HuffmanTree
 {
 	int treeHeight;
+	/*
+	    codeString is the array of string - binary String
+	    codeString[i] stores the huffman code of character whose ascii value is i
+	    the huffman code will consists of either 0 or 1
+	*/
 	String codeString[]=new String[256];
-	int numberOfNodes; // this represents the number of leaf nodes
+	int numberOfNodes; // this represents the number of leaf nodes in the huffman tree.
 	LinkedList<TreeNode> nodeList;
 	
+	/*
+	    this constructor will initialize the linked list
+	    and this constructor will also initialize each of the codeString to empty string
+	*/
 	HuffmanTree()
 	{
 		numberOfNodes=0;
@@ -19,6 +28,10 @@ public class HuffmanTree
 	public TreeNode makeHuffmanTree(char charArray[],long frequencyArray[])
 	{
 		Queue q=new Queue();
+		
+		/*
+		    this loop enqueue each TreeNode into queue
+		*/
 		for(int i=0;i<charArray.length;i++)
 		{
 			TreeNode node=new TreeNode(frequencyArray[i], charArray[i], null,null,null);
@@ -40,7 +53,7 @@ public class HuffmanTree
 			q.enQueue(z);
 		}
 		
-		return q.extractMin();
+		return q.extractMin(); // this will return the root of the Huffman tree.
 	}
 	public void inorder(TreeNode root)
 	{
@@ -55,6 +68,10 @@ public class HuffmanTree
 	}
 	public void makeCodes()
 	{
+	    /*
+	        this method will generate huffman code of each distinct character first in reverse order
+	        and then reverse each huffman code again to get correct code.
+	    */
 		for(int i=0;i<numberOfNodes;i++)
 		{
 			TreeNode x=nodeList.get(i);

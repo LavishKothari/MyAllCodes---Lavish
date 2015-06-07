@@ -21,7 +21,7 @@ int main()
     printf("Enter the array m (all the elements of m should be pairwise co-prime) :\n");
     for(i=0;i<n;i++)
         scanf("%lld",&m[i]);
-    M=1;
+    M=1; // M represents the common modulus
     for(i=0;i<n;i++)
         M*=m[i];
     for(i=0;i<n;i++)

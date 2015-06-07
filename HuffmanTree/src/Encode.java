@@ -3,10 +3,9 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-
 public class Encode 
 {
-	String fileName;
+	String fileName;// the file to be encoded.
 	public Encode(String fileName)throws IOException
 	{
 		this.fileName=fileName;
@@ -24,7 +23,7 @@ public class Encode
 	
 	public void encode()throws IOException
 	{
-		int noOfCharacters=0;
+		int noOfCharacters=0; // distinct number of characters in the file
 		HuffmanTree ht=new HuffmanTree();
 		char charArrayNew[];
 		long frequencyArrayNew[];
@@ -53,6 +52,7 @@ public class Encode
 				j++;
 			}
 		}
+		
 		ht.makeHuffmanTree(charArrayNew,frequencyArrayNew);
 		
 		ht.makeCodes();
@@ -110,7 +110,5 @@ public class Encode
 			fos.write(writeCharacter);
 			tempString=new String(tempString.substring(8, tempString.length()));
 		}
-	
 	}
-
 }

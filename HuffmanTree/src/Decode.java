@@ -42,6 +42,9 @@ public class Decode
 		int remainingBitLength=0;
 		int ch;
 		int maxLength=0;
+		/*
+		    reading the logfile to store the huffman code of each character 
+		*/
 		while((ch=fisLog.read())!=-1)
 		{
 			if(fisLog.read()==-1) // extracing the : from the file

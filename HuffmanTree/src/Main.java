@@ -13,6 +13,5 @@ public class Main
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 		//Encode obj=new Encode(br.readLine());
 		Decode obj1=new Decode("d:/alogfile.txt", "d:/aencodedFile.txt");
-		
 	}
 }

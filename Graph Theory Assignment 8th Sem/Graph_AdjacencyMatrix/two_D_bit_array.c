@@ -7,7 +7,7 @@
 		from the array 'arr'
 		which provides an abstraction of 2-D bit array of size n * n.
 */ 
-int get_two_D_bit_array(int i,int j,int* arr,int n)
+int get_two_D_bit_array(int i,int j,unsigned int* arr,int n)
 {
 	int bitNumber=i*n+j;
 	if((arr[bitNumber/32]&((unsigned int)1<<(31-bitNumber%32)))!=0)
@@ -23,7 +23,7 @@ int get_two_D_bit_array(int i,int j,int* arr,int n)
 		which provides an abstraction of 2-D bit array of size n * n
 		to 1.
 */ 
-void set_two_D_bit_array(int i,int j,int *arr,int n)
+void set_two_D_bit_array(int i,int j,unsigned int *arr,int n)
 {	
 	int bitNumber=i*n+j;
 	arr[bitNumber/32]|=((unsigned int)1<<(31-bitNumber%32));  // to set its 31-(bitNumber%32) th bit.
@@ -37,7 +37,7 @@ void set_two_D_bit_array(int i,int j,int *arr,int n)
 		which provides an abstraction of 2-D bit array of size n * n
 		to 0.
 */ 
-void reset_two_D_bit_array(int i,int j,int *arr,int n)
+void reset_two_D_bit_array(int i,int j,unsigned int *arr,int n)
 {
 	int bitNumber=i*n+j;
 	arr[bitNumber/32]&=(~((unsigned int)1<<(31-bitNumber%32))); // to reset its 31-(bitNumber%32) th bit.

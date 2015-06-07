@@ -39,7 +39,12 @@ int main()
 	printGraph_AdjacencyList(graph);
     */
     
+    printf("\nBFS : ");
     printGraph_AdjacencyList(BFS(graph,0));  
+	
+	printf("\nDFS : ");
+    printGraph_AdjacencyList(DFS(graph,0));  
+	
 	printf("Program Execution Successful...\n");
 	return 0;
 }

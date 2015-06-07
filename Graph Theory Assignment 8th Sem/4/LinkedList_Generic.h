@@ -1,3 +1,4 @@
+#define LinkedList_Generic_H 0
 struct LinkedList_Generic
 {
 	struct ListNode_Generic*start;
