@@ -31,7 +31,9 @@ char*cipherTextToPlainText(char cipherText[],int n)
 			plainText[i]=c;
 		}
 		else
+		{
 			plainText[i]=cipherText[i];
+		}
 	}
 	plainText[i]='\0';
 	return plainText;

@@ -7,6 +7,7 @@ long long int gcd_Euclid_Recursive(long long int a,long long int b)
     return gcd_Euclid_Recursive(b,a%b);
 }
 
+
 long long int gcd_Euclid_NonRecursive(long long int a,long long int b)
 {
     long long int r;
