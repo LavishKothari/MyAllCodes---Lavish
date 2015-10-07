@@ -1,0 +1,6 @@
+t=input()
+for i in range(0,t):
+	a=raw_input().split()
+	e=2*a[2]-a[0]
+	f=2*a[3]-a[1]
+	print "%d %d" % (e,f) 

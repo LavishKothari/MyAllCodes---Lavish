@@ -1,0 +1,14 @@
+print "hello lavish kothari"
+n=input()
+print n
+for i in range(0,n):
+	print "enter another number :"
+	a=raw_input().split()
+print a
+a=map(int,a)
+print a
+sum=0
+print "hello lavish kothari"
+for i in range(0,n):
+	sum=sum+a[i]
+print sum
