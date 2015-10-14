@@ -23,10 +23,8 @@ pylab.plot(x[3],y[3],'c')
 pylab.plot(x[4],y[4],'r')
 pylab.plot(x[5],y[5],'m')
 
-
 pylab.xlabel("Input size")
 pylab.ylabel("time of execution")
 pylab.legend(['Bubble Sort', 'Insertion Sort', 'Selection Sort', 'Quick Sort', 'Merge Sort', 'Binary Search '], loc='upper left')
 pylab.show()
 ftest.close()
-
