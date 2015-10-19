@@ -7,7 +7,7 @@ using namespace std;
 stack<int>newStack;
 struct Vertex
 {
-	vector<int>adjacencyList;
+	vector<int>adjacencyList(1000,0);
 	int color,startTime,finishTime,parent;
 };
 struct Graph

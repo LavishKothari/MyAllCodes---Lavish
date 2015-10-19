@@ -3,7 +3,7 @@
 #include<time.h>
 #define MAX 1000000
 #define START 10
-#define END 1000
+#define END 100
 #define STEP 1
 void bubbleSort(int*arr,int n)
 {

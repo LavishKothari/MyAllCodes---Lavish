@@ -7,7 +7,7 @@ using namespace std;
 stack<int>newStack;
 struct Vertex
 {
-	vector<int>adjacencyList;
+	std::vector<int>adjacencyList(1000,0);
 	int color,startTime,finishTime,parent;
 };
 struct Graph
@@ -22,7 +22,7 @@ struct Graph*initialiseGraph(int n,int e)
 	struct Graph*graph;
 	graph=(struct Graph*)malloc(sizeof(struct Graph));
 	graph->numberOfVertices=n;
-	graph->numberOfEdges=e;
+	graph->numberOfEdges=0;
 	graph->vertexArray=(struct Vertex*)malloc(sizeof(struct Vertex)*n);
 	for(i=0;i<n;i++)
 	{
@@ -50,7 +50,8 @@ void addEdge(struct Graph*graph,int s,int d)
 	{
 		printf("helllo lavish kothari\n");
 		printf("finally = %d %d = %d\n",s,d,(graph->vertexArray)[s].adjacencyList.size());
-		(((graph->vertexArray)[s]).adjacencyList).push_back(d);
+		(((graph->vertexArray)[s]).adjacencyList)[graph->numberOfEdges]=d;
+		graph->numberOfEdges++;
 		printf("after finally\n");
 	}
 }

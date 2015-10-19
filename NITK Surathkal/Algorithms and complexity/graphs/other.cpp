@@ -7,13 +7,13 @@ using namespace std;
 stack<int>newStack;
 struct Vertex
 {
-	vector<int>adjacencyList;
+	std::vector<int>adjacencyList (1000,0);
 	int color,startTime,finishTime,parent;
 };
 struct Graph
 {
 	int numberOfVertices,numberOfEdges;
-	struct Vertex**vertexArray;
+	struct Vertex*vertexArray;
 };
 
 struct Graph*initialiseGraph(int n,int e)
@@ -22,33 +22,37 @@ struct Graph*initialiseGraph(int n,int e)
 	struct Graph*graph;
 	graph=(struct Graph*)malloc(sizeof(struct Graph));
 	graph->numberOfVertices=n;
-	graph->numberOfEdges=e;
-	graph->vertexArray=(struct Vertex**)malloc(sizeof(struct Vertex*)*n);
+	graph->numberOfEdges=0;
+	graph->vertexArray=(struct Vertex*)malloc(sizeof(struct Vertex)*n);
 	for(i=0;i<n;i++)
 	{
-		(graph->vertexArray)[i]=NULL;		
-		(graph->vertexArray)[i]=(struct Vertex*)malloc(sizeof(struct Vertex));
+		printf("till here you are doing everything right %d\n",i);
+		struct Vertex *vertex;
+		vertex=(struct Vertex*)malloc(sizeof(struct Vertex));
+		//std::memcpy(&((graph->vertexArray)[i]),vertex,sizeof(struct Vertex));
+		(graph->vertexArray)[i]=*vertex;
 		
-		(graph->vertexArray)[i]->color=0;
-		(graph->vertexArray)[i]->startTime=-1;
-		(graph->vertexArray)[i]->finishTime=-1;
-		(graph->vertexArray)[i]->parent=-1;	
+		(graph->vertexArray)[i].color=0;
+		(graph->vertexArray)[i].startTime=-1;
+		(graph->vertexArray)[i].finishTime=-1;
+		(graph->vertexArray)[i].parent=-1;
+		printf("this is the final check of size : %d\n",(graph->vertexArray)[i].adjacencyList.size());
+		
+		//printf("this is size of zero = %d %d\n",i,(graph->vertexArray)[i].adjacencyList.size());
 	}
-	//printf("Graph successfully Initialized...\n");
+	printf("Graph successfully Initialized...\n");
 	return graph;
 }
 void addEdge(struct Graph*graph,int s,int d)
 {
-	int i;
+	printf("Adding edge : %d %d\n",s,d);
 	if(s<(graph->numberOfVertices) && d<(graph->numberOfVertices))
 	{
-		printf("finally = %d %d = %d\n",s,d,((graph->vertexArray)[s])->adjacencyList.size());
-		/*
-		for(i=0;i<((graph->vertexArray)[s])->adjacencyList.size();i++)
-			printf("%d ",(((graph->vertexArray)[s])->adjacencyList)[i]);
-		*/
-		(((graph->vertexArray)[0])->adjacencyList).push_back(d);
-		printf("S\n");
+		printf("helllo lavish kothari\n");
+		printf("finally = %d %d = %d\n",s,d,(graph->vertexArray)[s].adjacencyList.size());
+		(((graph->vertexArray)[s]).adjacencyList)[graph->numberOfEdges]=d;
+		graph->numberOfEdges++;
+		printf("after finally\n");
 	}
 }
 void printGraph(struct Graph*graph)
@@ -58,34 +62,33 @@ void printGraph(struct Graph*graph)
 	for(i=0;i<(graph->numberOfVertices);i++)
 	{
 		printf("%d : ",i);
-		for(j=0;j<(((graph->vertexArray)[i])->adjacencyList).size();j++)
-			printf("%d ",(graph->vertexArray)[i]->adjacencyList[j]);
+		for(j=0;j<(graph->vertexArray)[i].adjacencyList.size();j++)
+			printf("%d ",(graph->vertexArray)[i].adjacencyList[j]);
 		printf("\n");
 	}
-	printf("printing finished\n");
 }
 int dfsVisit(struct Graph*graph,int u,int time,int flag)
 {
 	int i,v;
 	printf("%d ",u);
 	time++;
-	(graph->vertexArray)[u]->startTime=time;
-	(graph->vertexArray)[u]->color=1;
-	for(i=0;i<(graph->vertexArray)[u]->adjacencyList.size();i++)
+	(graph->vertexArray)[u].startTime=time;
+	(graph->vertexArray)[u].color=1;
+	for(i=0;i<(graph->vertexArray)[u].adjacencyList.size();i++)
 	{
-		v=(graph->vertexArray)[u]->adjacencyList[i];
-		if((graph->vertexArray)[v]->color==0)
+		v=(graph->vertexArray)[u].adjacencyList[i];
+		if((graph->vertexArray)[v].color==0)
 		{
-			(graph->vertexArray)[v]->parent=u;
+			(graph->vertexArray)[v].parent=u;
 			dfsVisit(graph,v,time,flag);
 		}
 	}
 	/* the uth vertex is now finished */
 	if(flag==0)
 		newStack.push(u);
-	(graph->vertexArray)[u]->color=2;
+	(graph->vertexArray)[u].color=2;
 	time++;
-	(graph->vertexArray)[u]->finishTime=time;
+	(graph->vertexArray)[u].finishTime=time;
 	return time;
 }
 void dfs(struct Graph*graph,int flag)
@@ -93,16 +96,16 @@ void dfs(struct Graph*graph,int flag)
 	int i,time,j;
 	for(i=0;i<(graph->numberOfVertices);i++)
 	{
-		(graph->vertexArray)[i]->color=0;
-		(graph->vertexArray)[i]->startTime=-1;
-		(graph->vertexArray)[i]->finishTime=-1;
-		(graph->vertexArray)[i]->parent=-1;
+		(graph->vertexArray)[i].color=0;
+		(graph->vertexArray)[i].startTime=-1;
+		(graph->vertexArray)[i].finishTime=-1;
+		(graph->vertexArray)[i].parent=-1;
 	}
 	time=0;
 	if(flag==0)
 		for(i=0;i<(graph->numberOfVertices);i++)
 		{
-			if((graph->vertexArray)[i]->color==0)
+			if((graph->vertexArray)[i].color==0)
 				time=dfsVisit(graph,i,time,flag);
 		}
 	else
@@ -111,7 +114,7 @@ void dfs(struct Graph*graph,int flag)
 			//printf("this is the stack size = %d\n",newStack.size());
 			i=newStack.top();
 			newStack.pop();
-			if((graph->vertexArray)[i]->color==0)
+			if((graph->vertexArray)[i].color==0)
 			{
 				printf("\n");
 				time=dfsVisit(graph,i,time,flag);
@@ -125,9 +128,9 @@ struct Graph*transpose(struct Graph*graph)
 	newGraph=initialiseGraph(graph->numberOfVertices,graph->numberOfEdges);
 	for(i=0;i<(graph->numberOfVertices);i++)
 	{
-		for(j=0;j<(graph->vertexArray)[i]->adjacencyList.size();j++)
+		for(j=0;j<(graph->vertexArray)[i].adjacencyList.size();j++)
 		{
-			addEdge(newGraph,(graph->vertexArray)[i]->adjacencyList[j],i);
+			addEdge(newGraph,(graph->vertexArray)[i].adjacencyList[j],i);
 		}
 	}
 	return newGraph;
@@ -150,8 +153,8 @@ int main()
 		
 		printGraph(graph);
 		dfs(graph,0); // zero means stack is not yet filled
+		
 		newGraph=transpose(graph);
-		printf("Dfs finished\n");
 		printGraph(newGraph);
 		printf("\nPrinting the vertices in strongly connected components : \n");
 		dfs(newGraph,1); // 1 means stack is now filled and perform dfs on basis of elements in stack.
