@@ -40,9 +40,7 @@ long long int LIS(long long int*arr,long long int n)
 		max=1;
 		for(j=0;j<i;j++)
 			if(arr[j]<arr[i] && max<L[j]+1)
-			{
 				max=L[j]+1;
-			}
 		L[i]=max;
 	}
 	
