@@ -1,6 +1,6 @@
 /*
 	Lab program number 10
-	ques : write a program to print all the circular primes before 1 million
+	ques : Write a program to print all the circular primes before 1 million
 	
 	This program uses seive of Eratosthenes to do so.
 	

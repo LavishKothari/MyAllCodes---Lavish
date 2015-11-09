@@ -1,5 +1,9 @@
  /*
-	implementation of Seive of Eratosthenes
+ 	Name - Lavish Kothari
+		Computer Science and Engineering - Information Security
+		NITK
+		
+	Implementation of Seive of Eratosthenes
 	and counting the number of bit operations
 */
 #include<stdlib.h>

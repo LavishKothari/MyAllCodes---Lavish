@@ -91,10 +91,8 @@ int primeFactors(long long int num)
 	{
 		while(num%i==0)
 		{
-		bitoperations=bitoperations+(int)(log10(num)/log10(2))*(int)(log10(num)/log10(2));
-			
+			bitoperations=bitoperations+(int)(log10(num)/log10(2))*(int)(log10(num)/log10(2));
 			num/=i;
-			
 			printf("%d,",i);
 		}
 	}
@@ -174,4 +172,3 @@ int main()
 	}
 	return 0;
 }
-

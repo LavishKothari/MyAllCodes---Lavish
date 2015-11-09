@@ -10,13 +10,9 @@ void populatePrimeArray()
 	for(i=2;i<=N;i++)
 		primes[i]=1;
 	for(i=2;i*i<=N;i++)
-	{
 		if(primes[i])
-		{
 			for(j=i*i;j<=N;j+=i)
 				primes[j]=0;
-		}
-	}
 }
 int main()
 {
@@ -35,12 +31,13 @@ int main()
 			}
 	}
 	int count=0;
+	printf("Number\tPower\n");
 	for(int i=0;i<=N;i++)
 		if(counter[i]!=0)
 		{
 			count++;
-			printf("%d %d\n",i,counter[i]);
+			printf("%d\t%d\n",i,counter[i]);
 		}
-	printf("Total = %d\n",count);
+	printf("\nTotal Primes = %d\n",count);
 	return 0;
 }

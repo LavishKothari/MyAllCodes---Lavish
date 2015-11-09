@@ -1,3 +1,9 @@
+/*
+	Name - Lavish Kothari
+		Computer Science and Engineering - Information Security
+		NITK
+	print the nth digit of the sequence 12345678910111213141516171819202122.....9899100101102....
+*/
 #include<stdio.h>
 /*********/
 long count_digits(long);

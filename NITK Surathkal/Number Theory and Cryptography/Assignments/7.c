@@ -1,4 +1,8 @@
- /*
+/*
+	Name - Lavish Kothari
+		Computer Science and Engineering - Information Security
+		NITK
+		
 	Construct a hash function which takes university roll number and generates 2 digit
 	integer out of it. Use this hash function to map a class of 54 students on to an integer.
 	Out of 54 students, 27 are from Mtech CSE and other 27 are from Mtech CSE-IS

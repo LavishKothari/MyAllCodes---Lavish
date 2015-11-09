@@ -3,7 +3,7 @@
 		Computer Science and Engineering - Information Security
 		NITK
 		
-	Question :
+	Question # 3 :
 	Write a program to find gcd of two numbers using Euclid's approach.
 	Express 1 as the linear combination of two co-primes using the above program.
 	Or in general express GCD(a,b) as the linear combination of a and b
@@ -21,7 +21,6 @@ long long int GCD(long long int a,long long int b)
 	{
 		quotient=a/b;
 		remainder=a%b;
-		
 		
 		a=b;
 		b=remainder;

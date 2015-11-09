@@ -1,0 +1,43 @@
+1 - Number system conversion
+
+2 - Finding number of bit operations in 
+                Addition  
+                Multiplication
+                Finding prime factors
+                Binary to decimal conversion
+
+3 - Write a program to find gcd of two numbers using Euclid's approach.
+	Express 1 as the linear combination of two co-primes using the above program.
+	Or in general express GCD(a,b) as the linear combination of a and b
+  
+4 - Find out Euler's phi function for a power of a prime.
+	Also give the list of all these numbers.
+
+5 - Implementation of Seive of Eratosthenes
+	and counting the number of bit operations
+
+6 - Design crypto-system and crypt-analysis System
+
+7 - Construct a hash function which takes university roll number and generates 2 digit
+	integer out of it. Use this hash function to map a class of 54 students on to an integer.
+	Out of 54 students, 27 are from Mtech CSE and other 27 are from Mtech CSE-IS
+	Try developing the inverse hash function.
+
+8 - Steps for Encryption : 
+		Take a message from the user
+		divide the message in blocks of 4
+		reverse each block
+		treat each block as a base 26 number,
+		find equivalent decimal of above number
+		multiply the equivalent number by 37
+		add 96 to above number
+		finally convert the number to base 16.
+		This is the encrypted form of the number.
+		Also perform the reverse of this process to get back the original message.
+
+9 - Print the nth digit of the sequence   12345678910111213141516171819202122.....9899100101102....
+
+10 - Write a program to print all the circular primes before 1 million
+	 This program uses seive of Eratosthenes to do so.
+
+11 - Find the powers of all the prime factors of 100! 
