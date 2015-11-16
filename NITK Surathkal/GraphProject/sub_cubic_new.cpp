@@ -1,3 +1,11 @@
+/*
+	This program is the implementation of the following research paper :
+	http://ac.els-cdn.com/S0012365X0701031X/1-s2.0-S0012365X0701031X-main.pdf?_tid=d3694c48-8c88-11e5-9253-00000aab0f01&acdnat=1447695679_6df106f720a587b0e7e4647ca036d9ec
+	http://www.sciencedirect.com/science/article/pii/S0012365X0701031X
+	
+	
+*/
+
 #include<stdio.h>
 #include<set>
 #include<algorithm>
@@ -18,8 +26,9 @@ class Vertex
 class Edge
 {
 	public:
-	int start,end,color,edgeNumber;
+	int start,end,color;
 	Edge();
+	Edge(Edge const &);
 	Edge(int,int);
 };
 Edge::Edge()
@@ -29,7 +38,16 @@ Edge::Edge(int start,int end)
 {
 	this->start=start;
 	this->end=end;
+	this->color=-1;
 }
+
+Edge::Edge(Edge const&e)
+{
+	this->start=e.start;
+	this->end=e.end;
+	this->color=-1;
+}
+
 class Graph
 {
 	public:
@@ -42,7 +60,8 @@ class Graph
 	void addEdge(int,int);
 	void print();
 	void deleteGraph();
-	//void arrangeEdges(); // very important thing. for description see the function definition.
+	void arrangeEdges(); // very important thing. for description see the function definition.
+	Vertex& findVertexWithDegreeAtMost2(bool*);
 	void colorEdge(Edge&);
 	Edge findEdge(int,int); // given vertexNumber number of two vertices, this function returns the edge between them.
 	int findColor(int,int); // given two vertices of graph this function returns its color.
@@ -52,7 +71,6 @@ class Graph
 	void recolor(Edge &e,int c); // recolors the edge e with color c. 
 	void colorExchange(Edge &e1,Edge &e2); // exchanges the color of edge e1 and e2.
 	bool isInConfigurationA(Vertex const&,Vertex const&,Vertex const&,set<int>const&,set<int>const&); // checks whether the five tuples are in configuration A or not.
-	void assignColors();
 };
 
 Graph::Graph(int numberOfVertices,int numberOfEdges)
@@ -68,13 +86,10 @@ Graph::Graph(int numberOfVertices,int numberOfEdges)
 void Graph::addEdge(int start,int end)
 {
 	Edge*e=new Edge(start,end);
-	colorEdge(*e);
 	(this->edgeList).push_back(*e);
-	//(this->edgeList).push_back(*(new Edge(end,start)));
 	
 	vertexArray[start].adjacencyList.push_back(end);
 	vertexArray[end].adjacencyList.push_back(start);
-	printf("################ Successfully pushed %d edges #####################\n",edgeList.size());
 }
 int Graph::findColor(int a,int b)
 {
@@ -141,7 +156,7 @@ Edge Graph::findEdge(int a,int b)
 	for(list<Edge>::iterator i=edgeList.begin();i!=edgeList.end();i++)
 	{
 		Edge e=*i;
-		if( (e.start==a && e.end==b) || e.start==b && e.end==a )
+		if( (e.start==a && e.end==b) || (e.start==b && e.end==a) )
 			return e;
 	}
 }
@@ -190,54 +205,42 @@ bool Graph::isInConfigurationA(Vertex const&u,Vertex const&a,Vertex const&b,set<
 void Graph::colorEdge(Edge&e)
 {
 	Vertex v,u;
-	printf("\n***********Doing work for edge : %d %d***********\n",e.start,e.end);
 	u=vertexArray[e.start];
 	v=vertexArray[e.end];
 	
 	set<int>fu,fv;
 	for(list<int>::iterator i=u.adjacencyList.begin();i!=u.adjacencyList.end();i++)
 	{
-		fu.insert(findColor(u.vertexNumber,*i)); // insert the color of Fu into the set.
+		int col=findColor(u.vertexNumber,*i);
+		if(col!=-1)
+			fu.insert(col); // insert the color of Fu into the set.
 	}
 	for(list<int>::iterator i=v.adjacencyList.begin();i!=v.adjacencyList.end();i++)
 	{
-		fv.insert(findColor(v.vertexNumber,*i)); // insert the color of Fv into the set.
+		int col=findColor(v.vertexNumber,*i);
+		if(col!=-1)
+			fv.insert(col); // insert the color of Fv into the set.
 	}
-	
-	printSet(fu);
-	printSet(fv);
-	
+
+	/* here we will be finding the union of fu and fv and also the intersection of fu and fv */
 	set<int>fuINTERSECTIONfv,fuUNIONfv;
 	set_intersection(fu.begin(),fu.end(),fv.begin(),fv.end(),inserter(fuINTERSECTIONfv,fuINTERSECTIONfv.begin()));
 	set_union(fu.begin(),fu.end(),fv.begin(),fv.end(),inserter(fuUNIONfv,fuUNIONfv.begin()));
 	
-	/* here we will be finding the union of fu and fv and also the intersection of fu and fv */
 	if(fuINTERSECTIONfv.size()==0) // no need to check for bichromatic cycles here. // case 1 of the research paper is covered here.
 	{
-		if(fuUNIONfv.size()<4) // DONE
-		{
-			printf("This case is already handled here %d %d\n",e.start,e.end);
-			printf("So filling this color here : %d\n",*(findCandidateColors(e).begin()));
-			e.color=*(findCandidateColors(e).begin()); // for this case we will definitely get a color that is also valid for the edge 'e'.
-		}
-		else if(fuUNIONfv.size()==4) // this case is still remaining.
-		{
-			/* this means that you will not get any candidate color for the edge (u,v) */
-			/* in this case you need to recolor one of the edges. */
-			printf("________________________$$ Some this you need to here $$________________________1\n");
-		}
+		e.color=*(findCandidateColors(e).begin()); // for this case we will definitely get a color that is also valid for the edge 'e'.
 	}
-	else if(fuINTERSECTIONfv.size()==1) 
+	else if(fuINTERSECTIONfv.size()==1) // we need to check for the Bichromatic cycles // case 2 of the research paper
 	{
 		set<int>candidateColors=findCandidateColors(e);
 		if(fuUNIONfv.size()==1) // DONE
 		{
 			set<int>Sua=S(u.vertexNumber,*(u.adjacencyList.begin()));
-			set<int>newSet;
+			set<int>newSet; // this newSet will contain all the candidate colors which will also be valid for the the current Edge
 			Sua.insert(findColor(u.vertexNumber,*(u.adjacencyList.begin())));
 			set_difference(candidateColors.begin(),candidateColors.end(),Sua.begin(),Sua.end(),inserter(newSet,newSet.begin()));
 			e.color=*(newSet.begin()); // for this case we will definitely get a color that is also valid for the edge 'e'.
-			printf("this is for the edge (%d,%d) -> filling the color %d here\n",e.start,e.end,*(newSet.begin()));
 		}
 		else if(fuUNIONfv.size()==2)
 		{
@@ -306,77 +309,61 @@ void Graph::colorEdge(Edge&e)
 				e.color=*i;
 			}
 		}
-		else if(fuUNIONfv.size()==3)// this case is still remaining.
-		{
-			/* In this case we will have only one candidate color. */
-			int cc=*(candidateColors.begin()); // cc denotes the only candidate color.
-			
-			if(isCriticalPath(e,*(fuINTERSECTIONfv.begin()),cc)) // if critical path exists then we need ot do something.
-			{
-				printf("________________________$$ Some this you need to here $$________________________2\n");
-			
-				// finding out the configurationA
-				set<int>NDash,NDoubleDash; // these are the two partitions of neighbor set of u - {a,b}
-			
-				Vertex a,b;
-				list<int>::iterator it=u.adjacencyList.begin();
-				a=vertexArray[*it];
-				it++;
-				b=vertexArray[*it];
-			
-				if(isInConfigurationA(u,a,b,NDash,NDoubleDash))
-				{
-					/* as this is in configuration A and |NDash| = 0 and |NDoubleDash| = 0 
-						so the colorExchange(ua,ub) is valid.
-					*/
-					Edge e1=findEdge(u.vertexNumber,a.vertexNumber);
-					Edge e2=findEdge(u.vertexNumber,b.vertexNumber);
-					colorExchange(e1,e2);
-					/* now the  candidate color that was invalid before the color exchange now becomes valid. */
-					e.color=cc;
-					printf("Assigning to the edge (%d,%d) -> color=%d\n",e.start,e.end,cc);
-				}
-				else // it is not in configuration A.// this case is still remaining.
-				{
-					/* find Sua and Sub */
-					set<int>Sua=S(u.vertexNumber,a.vertexNumber);
-					set<int>Sub=S(u.vertexNumber,b.vertexNumber);
-					Edge ua=findEdge(u.vertexNumber,a.vertexNumber);
-					Edge ub=findEdge(u.vertexNumber,b.vertexNumber);
-					if(Sua.find(ub.color)!=Sua.end())
-					{
-						/* here I need to recolor ua with fv-fuINTERSECTIONfv */
-						// tochange=ua;
-						set<int>newSet;
-						set_difference(fv.begin(),fv.end(),fuINTERSECTIONfv.begin(),fuINTERSECTIONfv.end(),inserter(newSet,newSet.begin()));
-						
-						/* the following recoloring could lead to bichromatic cycles. */ /* confused. */
-						recolor(ua,*(newSet.begin())); 
-						
-						/*  */
-						e.color=cc;
-					}
-					else if(Sub.find(ua.color)!=Sub.end())
-					{
-						//tochange=ub;
-						// this case is still remaining.
-					}
-					else {} // this part of code will never be executed. 
-				}
-			}
-			else // this means that candidate color dont form a critical path and so candidate color is valid.
-			{
-				e.color=cc;
-				printf("Assigning to edge e=(%d,%d) -> color=%d\n",e.start,e.end,cc);
-			}
-		}	
 	}
-	else if(fuINTERSECTIONfv.size()==2) // this means that fuUNIONfv.size() is equal to 2 // this case is still remaining.
-	{
-		printf("________________________$$ Some this you need to here $$_______________________3\n");
-	}
-	
 }
+Vertex& Graph::findVertexWithDegreeAtMost2(bool *isVertexCovered)
+{
+	for(int i=0;i<numberOfVertices;i++)
+	{
+		if(!isVertexCovered[i])
+		{
+			int deg=0;
+			for(list<int>::iterator it=vertexArray[i].adjacencyList.begin();it!=vertexArray[i].adjacencyList.end();it++)
+			{
+				if(!isVertexCovered[*it])
+					deg++;
+			}
+			if(deg<=2)
+				return vertexArray[i];
+		}
+	}
+}
+void Graph::arrangeEdges()
+{
+	bool *isVertexCovered=new bool[numberOfVertices];
+	for(int i=0;i<numberOfVertices;i++)
+		isVertexCovered[i]=false; // initially no Vertex is covered.
+	
+	/* now I need to find a vertex which has degree less than equal to 2 */
+	list<Edge>newEdgeList;
+	
+	for(int i=0;i<numberOfVertices;i++)
+	{
+		Vertex &x=findVertexWithDegreeAtMost2(isVertexCovered);
+		isVertexCovered[x.vertexNumber]=true; // now the vertex x is covered.
+		/* 
+			now traverse the adjacencyList of x (only for the vertices that are uncovered.)
+			find the edge that is formed between x and its adjacency
+			let this edge be called e
+			enumerate e.
+		*/
+		for(list<int>::iterator it=x.adjacencyList.begin();it!=x.adjacencyList.end();it++)
+		{
+			if(!isVertexCovered[*it])
+			{
+				Edge e=findEdge(x.vertexNumber,*it);
+				newEdgeList.push_back(*(new Edge(e)));
+			}
+		}
+	}
+	edgeList.erase(edgeList.begin(),edgeList.end());
+	for(list<Edge>::iterator it=newEdgeList.begin();it!=newEdgeList.end();it++)
+	{
+		edgeList.push_back(*it);
+	}
+	delete(isVertexCovered);
+}
+
 void Graph::print()
 {
 	printf("\nThe graph is as follows : \n");
@@ -392,15 +379,8 @@ void Graph::print()
 	}
 	printf("\nThe edge List of the Graph is as follows : \n");
 	for(list<Edge>::iterator i=edgeList.begin();i!=edgeList.end();i++)
-		printf("%d <--> %d   Color=%d\n",(*i).start,(*i).end,(*i).color);
+		printf("%d <--> %d\tColor=%d\n",(*i).start,(*i).end,(*i).color);
 	printf("\n");
-}
-void Graph::assignColors() // dropping this Idea---I'll implement it as my backup plan.
-{
-	/*
-		I am planning to remove all the edges that make degree 3 for a vertex 
-		meanwhile I will keep the track of all the deleted Edges
-	*/
 }
 void Graph::deleteGraph()
 {
@@ -423,9 +403,14 @@ int main()
 			fscanf(fp,"%d%d",&s,&d);
 			graph.addEdge(s,d);
 		}
-		graph.assignColors();
+		
+		graph.arrangeEdges();
+		// this is a test to print the edgelist 
+		for(list<Edge>::iterator it=graph.edgeList.begin();it!=graph.edgeList.end();it++)
+			graph.colorEdge(*it);
 		graph.print();
 		graph.deleteGraph();
+		
 	}
 	else printf("There was some error in opening the file.\n");
 	return 0;

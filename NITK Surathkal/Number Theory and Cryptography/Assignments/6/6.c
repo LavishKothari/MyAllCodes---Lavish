@@ -22,8 +22,6 @@ long long int modularInverse(long long int a,long long int b)
 	{
 		quotient=a/b;
 		remainder=a%b;
-		
-		
 		a=b;
 		b=remainder;
 		if(remainder==0)

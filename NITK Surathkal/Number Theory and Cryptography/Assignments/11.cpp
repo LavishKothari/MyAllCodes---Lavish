@@ -1,22 +1,12 @@
+/*
+	Find the powers of all the prime factors of 100! 
+*/
+
 #include<stdio.h>
 #include<stdlib.h>
 #define N 100
-int *primes;
-void populatePrimeArray()
-{
-	int i,j;
-	primes=(int*)malloc(sizeof(int)*(N+1));
-	primes[0]=primes[1]=0;
-	for(i=2;i<=N;i++)
-		primes[i]=1;
-	for(i=2;i*i<=N;i++)
-		if(primes[i])
-			for(j=i*i;j<=N;j+=i)
-				primes[j]=0;
-}
 int main()
 {
-	populatePrimeArray();
 	int counter[N+1];
 	for(int i=0;i<=N;i++)
 		counter[i]=0;

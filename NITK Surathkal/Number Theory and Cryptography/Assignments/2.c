@@ -1,3 +1,11 @@
+/*
+Fnding number of bit operations in 
+           1     Addition  
+           2     Multiplication
+           3     Finding prime factors
+           4     Binary to decimal conversion
+*/
+
 #include<math.h>
 #include<stdio.h>
 #include<string.h>
