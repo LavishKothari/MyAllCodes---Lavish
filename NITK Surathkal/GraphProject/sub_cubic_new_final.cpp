@@ -379,6 +379,19 @@ void Graph::print()
 	for(list<Edge>::iterator i=edgeList.begin();i!=edgeList.end();i++)
 		printf("%d <--> %d\tColor=%d\n",(*i).start,(*i).end,(*i).color);
 	printf("\n");
+	/*
+		Generating the output file
+	*/
+	FILE* fp;
+	fp=fopen("result.txt","w");
+	if(fp)
+	{
+		fprintf(fp,"%d %d\n",numberOfVertices,numberOfEdges);
+		for(list<Edge>::iterator it=edgeList.begin();it!=edgeList.end();it++)
+			fprintf(fp,"%d %d %d\n",(*it).start,(*it).end,(*it).color);
+		fclose(fp);
+	}
+	else printf("There was some error in opening the file\n");
 }
 void Graph::deleteGraph()
 {
@@ -387,29 +400,96 @@ void Graph::deleteGraph()
 
 int main()
 {
-	FILE*fp;
-	fp=fopen("test.txt","r");
-	if(fp)
+	system("clear");
+	printf("\nYou have the following options : \n");
+	printf("1. Give the input in Adjacency Matrix form\n");
+	printf("2. Give the input as each edge of the Graph\n");
+	printf("3. Give the input from a file\n");
+	printf("\nEnter your Choice : ");
+	int choice;
+	scanf("%d",&choice);
+	if(choice==1)
 	{
 		int n,e;
-		fscanf(fp,"%d%d",&n,&e);
+		printf("\nEnter the number of Vertices : ");
+		scanf("%d",&n);
+		printf("Enter the number of Edges : ");
+		scanf("%d",&e);
 		Graph graph(n,e);
-		//printf("Graph initialization complete\n");
-		for(int i=0;i<e;i++)
+		printf("Enter the Adjacency Matrix of the graph : \n");
+		for(int i=0;i<n;i++)
 		{
-			int s,d;
-			fscanf(fp,"%d%d",&s,&d);
-			graph.addEdge(s,d);
+			for(int j=0;j<n;j++)
+			{
+				int temp;
+				scanf("%d",&temp);
+				if(i<j && temp==1)
+					graph.addEdge(i,j);
+			}			
+			//graph.addEdge(s,d);
 		}
-		
+	
 		graph.arrangeEdges();
 		// this is a test to print the edgelist 
 		for(list<Edge>::iterator it=graph.edgeList.begin();it!=graph.edgeList.end();it++)
 			graph.colorEdge(*it);
 		graph.print();
 		graph.deleteGraph();
-		
 	}
-	else printf("There was some error in opening the file.\n");
+	else if(choice==2)
+	{
+		int n,e;
+		
+		printf("\nEnter the number of Vertices : ");
+		scanf("%d",&n);
+		printf("Enter the number of Edges : ");
+		scanf("%d",&e);
+		Graph graph(n,e);
+		//printf("Graph initialization complete\n");
+		printf("Enter the source and destination of %d number of edges : \n",e);
+		for(int i=0;i<e;i++)
+		{
+			int s,d;
+			scanf("%d%d",&s,&d);
+			graph.addEdge(s,d);
+		}
+	
+		graph.arrangeEdges();
+		// this is a test to print the edgelist 
+		for(list<Edge>::iterator it=graph.edgeList.begin();it!=graph.edgeList.end();it++)
+			graph.colorEdge(*it);
+		graph.print();
+		graph.deleteGraph();
+	}
+	else if(choice==3)
+	{
+		FILE*fp;
+		printf("\nEnter the file name for input : ");
+		char fileName[100];
+		scanf("%s",fileName);
+		fp=fopen(fileName,"r");
+		if(fp)
+		{
+			int n,e;
+			fscanf(fp,"%d%d",&n,&e);
+			Graph graph(n,e);
+			//printf("Graph initialization complete\n");
+			for(int i=0;i<e;i++)
+			{
+				int s,d;
+				fscanf(fp,"%d%d",&s,&d);
+				graph.addEdge(s,d);
+			}
+		
+			graph.arrangeEdges();
+			// this is a test to print the edgelist 
+			for(list<Edge>::iterator it=graph.edgeList.begin();it!=graph.edgeList.end();it++)
+				graph.colorEdge(*it);
+			graph.print();
+			graph.deleteGraph();
+			fclose(fp);
+		}
+		else printf("There was some error in opening the file.\n");
+	}
 	return 0;
 }
