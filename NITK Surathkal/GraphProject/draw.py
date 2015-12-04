@@ -106,8 +106,6 @@ def draw_graph(edges,vertices,graph, labels=None, graph_layout='shell',
 	plt.show()
 
 
-
-
 inFile=open("result.txt",'r')
 vertices,edges=map(int,inFile.readline().split())
 graph=[]
