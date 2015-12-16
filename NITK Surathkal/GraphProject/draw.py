@@ -1,7 +1,7 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
-def draw_graph(edges,vertices,graph, labels=None, graph_layout='shell',
+def draw_graph(edges,vertices,graph, labels=None, graph_layout='random',
                node_size=600, node_color='cyan', node_alpha=0.3,
                node_text_size=10,
                edge_color='black', edge_alpha=0.3, edge_tickness=5,

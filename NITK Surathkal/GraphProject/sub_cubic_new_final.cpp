@@ -350,7 +350,7 @@ void Graph::arrangeEdges()
 			if(!isVertexCovered[*it])
 			{
 				Edge e=findEdge(x.vertexNumber,*it);
-				newEdgeList.push_back(*(new Edge(e)));
+				newEdgeList.insert(newEdgeList.begin(),*(new Edge(e)));
 			}
 		}
 	}
@@ -482,6 +482,7 @@ int main()
 			}
 		
 			graph.arrangeEdges();
+			
 			// this is a test to print the edgelist 
 			for(list<Edge>::iterator it=graph.edgeList.begin();it!=graph.edgeList.end();it++)
 				graph.colorEdge(*it);
