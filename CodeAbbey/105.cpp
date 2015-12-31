@@ -2,7 +2,7 @@
 #include<stdlib.h>
 double triArea(long long int x1,long long int y1,long long int x2,long long int y2,long long int x3,long long int y3)
 {
-	double area=0.5*x1*(y2-y3)
+	double area=0.5*(x1*(y2-y3)+x2*(y3-y1)+x3*(y1-y2));
 	return area;
 }
 int main()
@@ -19,6 +19,6 @@ int main()
 	{
 		area+=triArea(x[0],y[0],x[i],y[i],x[i+1],y[i+1]);
 	}
-	printf("%lf\n",area);
+	printf("%.5lf\n",area);
 	return 0;
 }
