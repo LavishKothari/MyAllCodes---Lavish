@@ -1,31 +1,19 @@
-// binary search
-#include<stdlib.h>
+/*
+	evaluate y= x^1 + x^2 + x^3 + x^4 + x^5 + ... + x^n  recursively
+*/
 #include<stdio.h>
-int binarySearch(int*arr,int a,int b,int sval)
+double evaluate(double x,int n)
 {
-	int mid;
-	if(b<a)
-		return -1;
-	mid=(a+b)/2;
-	if(arr[mid]==sval)
-		return mid;
-	if(arr[mid]>sval)
-		return binarySearch(arr,a,mid-1,sval);
-	else return binarySearch(arr,mid+1,b,sval);
+	if(n<=0) return 1;
+	else return 1+x*evaluate(x,n-1);
 }
+
 int main()
 {
-	int i,n,*arr,sval,result;
-	printf("Enter n : \n");
-	scanf("%d",&n);
-	arr=(int*)malloc(sizeof(int)*n);
-	for(i=0;i<n;i++)
-		scanf("%d",&arr[i]);
-	printf("Enter Element to be searched : ");
-	scanf("%d",&sval);
-	result=binarySearch(arr,0,n-1,sval);
-	if(result==-1)
-		printf("Element not found\n");
-	else printf("Element found at position : %d\n",result);
+	double x;
+	int n;
+	printf("Enter the value of x and n : ");
+	scanf("%lf%d",&x,&n);
+	printf("the answer is : %g\n",evaluate(x,n)-1);
 	return 0;
 }

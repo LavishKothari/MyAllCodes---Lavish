@@ -1,16 +1,24 @@
+//Write a function to find GCD of two numbers and use it to find GCD of n numbers.
+
 #include<stdio.h>
 
 typedef long long int ll;
 
-ll gcd(ll a,ll b)
+ll gcdRecursive(ll a,ll b)
 {
 	if(b==0)
 		return a;
-	return gcd(b,a%b);
+	return gcdRecursive(b,a%b);
 }
-ll gcd(ll a,ll b)
-{	
-	while
+ll gcdIterative(ll a,ll b)
+{
+	while(b)
+	{
+		ll temp=a;
+		a=b;
+		b=temp%b;
+	}
+	return a;
 }
 int main()
 {
@@ -20,11 +28,11 @@ int main()
 	printf("Enter %d numbers : \n",n);
 	ll g,a,b;
 	scanf("%lld %lld",&a,&b);
-	g=gcd(a,b);
+	g=gcdIterative(a,b);
 	for(i=0;i<n-2;i++)
 	{
 		scanf("%lld",&a);
-		g=gcd(g,a);
+		g=gcdIterative(g,a);
 	}
 	printf("the gcd is : %lld\n",g);
 	return 0;

@@ -1,3 +1,4 @@
+// write a iterative function to print fibonacci series.
 #include<stdio.h>
 
 typedef long long int ll;

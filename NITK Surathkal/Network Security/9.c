@@ -1,3 +1,7 @@
+/*
+	write a program to find print fibonacci series up to n elements.
+*/
+
 #include<stdio.h>
 
 typedef long long int ll;

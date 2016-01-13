@@ -1,0 +1,16 @@
+1. Write a function to find GCD of two numbers and use it to find GCD of n numbers.
+2. Write a iterative function to find Factorial of a number.
+3. Write a iterative function to print fibonacci series.
+4. Write a program to find position of largest element in a given array.
+5. Write a program to implement your own 
+		strlen()
+		strcpy()
+		strcmp()
+6. Evaluate y= x^1 + x^2 + x^3 + x^4 + x^5 + ... + x^n iteratively
+7. Write a program to sort n numbers.
+8. Write a program to find factorial of a number recursively.
+9. Write a program to find print fibonacci series up to n elements.
+10. Write a Recursive function to find GCD of two numbers and use it to find GCD of n numbers.
+11. Evaluate y= x^1 + x^2 + x^3 + x^4 + x^5 + ... + x^n  recursively
+12. Evaluate 1/1! + 1/3! + 1/5! + 1/7! + ... + 1/N! recursively.
+13. Write a program to implement binary search

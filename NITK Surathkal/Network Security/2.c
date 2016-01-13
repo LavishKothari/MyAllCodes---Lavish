@@ -1,3 +1,4 @@
+// Write a iterative function to find Factorial of a number.
 #include<stdio.h>
 
 typedef long long int ll;

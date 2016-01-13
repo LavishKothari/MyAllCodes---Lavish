@@ -1,3 +1,4 @@
+// write a program to find factorial of a number recursively.
 #include<stdio.h>
 
 typedef long long int ll;

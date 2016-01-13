@@ -1,27 +1,29 @@
+//Write a Recursive function to find GCD of two numbers and use it to find GCD of n numbers.
+
 #include<stdio.h>
+
 typedef long long int ll;
-ll factorial(int n)
+
+ll gcdRecursive(ll a,ll b)
 {
-	if(n==1)
-		return 1;
-	return factorial(n-1)*n;
-}
-double evaluate(int n)
-{
-	int i;
-	double sum=0.0;
-	for(i=0;i<n;i++)
-	{
-		sum+=1/(double)factorial(i+1);
-	}
-	return sum;
+	if(b==0)
+		return a;
+	return gcdRecursive(b,a%b);
 }
 int main()
 {
-	int n;
-	printf("Enter the value of n : ");
+	int n,i;
+	printf("Enter the count of numbers : ");
 	scanf("%d",&n);
-	printf("the answer is : %lf\n",evaluate(n));
+	printf("Enter %d numbers : \n",n);
+	ll g,a,b;
+	scanf("%lld %lld",&a,&b);
+	g=gcdRecursive(a,b);
+	for(i=0;i<n-2;i++)
+	{
+		scanf("%lld",&a);
+		g=gcdRecursive(g,a);
+	}
+	printf("the gcd is : %lld\n",g);
 	return 0;
-	
 }

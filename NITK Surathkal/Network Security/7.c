@@ -1,3 +1,4 @@
+// write a program to sort n numbers.
 #include<stdio.h>
 #include<stdlib.h>
 void sort(int*arr,int n) // insertion sort
