@@ -1,0 +1,4 @@
+hello.com 10.15.2.31
+coding.com 123.125.123.123
+google.com 198.0.0.1
+localhost 127.0.0.1
