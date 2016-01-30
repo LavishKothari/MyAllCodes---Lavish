@@ -1,55 +1,25 @@
+/*
+	This program demonstrate the concurrent server
+	using multiplexing select system call.
+	
+	the 0th argument will be executable file's name
+	First argument : Timeout
+	all other following arguments will be the port numbers on which server is serving.
+*/
 #include<sys/socket.h>
 #include<stdio.h>
 #include<netinet/in.h>
 #include<string.h>
-int main()
+int main(int argc,char*argv[])
 {
-	int i;
-	char buffer[1000];
-	struct sockaddr_in mysock,servsock,clientsock;int b,c,l,len,request;
-	memset(&mysock,'0',sizeof(mysock));
-	memset(&servsock,'0',sizeof(servsock));
-	memset(&clientsock,'0',sizeof(clientsock));
-	
-	int fd=socket(AF_INET,SOCK_STREAM,0);
-	if(fd<0)
-		printf("socket not created successfully\n");
-	else
+	long long int timeout;
+	int number_of_ports;
+	if(argc<3)
 	{
-		printf("socket created successfully\n");
-		mysock.sin_family=AF_INET;
-		mysock.sin_addr.s_addr=htonl(INADDR_ANY);
-		mysock.sin_port=htons(5900);
-		b=bind(fd,(struct sockaddr*)&mysock,sizeof(mysock));
-		if(b<0)
-			printf("There was some problem in bind system call\n");
-		else
-		{
-			printf("Bind system call executed successfully\n");
-			l=listen(fd,10);
-			if(l<0)
-				printf("There was some problem in listen system call\n");
-			else 
-			{
-				printf("listen system call was successful\n");
-				while(1)
-				{
-					len=sizeof(clientsock);
-					request=accept(fd,(struct sockaddr*)&clientsock,&len);
-					read(request,buffer,1000);
-					printf("Client sent : %s\n",buffer);
-					
-					for(i=0;buffer[i];i++)
-						if(buffer[i]>='a' && buffer[i]<='z')
-							buffer[i]=buffer[i]-('a'-'A');
-					
-					write(request,buffer,strlen(buffer)+1);
-					close(request);
-				}
-				
-			}
-		}
-		close(fd);
+		printf("Not sufficient number of arguments.\n");
+		return 1;
 	}
+	timeout=atoi(argv[1]);
+	number_of_ports=argc-2;
 	return 0;
 }
