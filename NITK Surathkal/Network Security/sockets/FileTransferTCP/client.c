@@ -19,7 +19,7 @@ int main()
 		printf("socket created successfully\n");
 		printf("Bind system call executed successfully\n");
 		servsock.sin_family=AF_INET;
-		servsock.sin_addr.s_addr=inet_addr("127.0.0.1"); // there is some doubt here
+		servsock.sin_addr.s_addr=inet_addr("127.0.0.1"); 
 		servsock.sin_port=htons(5900);
 		c=connect(fd,(struct sockaddr*)&servsock,sizeof(servsock));
 		

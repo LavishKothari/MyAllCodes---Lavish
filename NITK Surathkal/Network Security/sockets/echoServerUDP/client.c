@@ -21,7 +21,7 @@ int main()
 	{
 		printf("Socket created successfully\n");
 		servAddr.sin_family=AF_INET;
-		servAddr.sin_port=htons(6100);
+		servAddr.sin_port=htons(7890);
 		servAddr.sin_addr.s_addr=inet_addr("127.0.0.1");
 		while(1)
 		{

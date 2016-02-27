@@ -2,10 +2,10 @@
 #include<stdio.h>
 #include<netinet/in.h>
 #include<string.h>
-
+#define MAX_SIZE 1000
 int main(int argc,char*argv[]) // the first argument is ./a.out and the second argument is the port number of the server
 {
-	char buffer[1000];
+	char buffer[MAX_SIZE];
 	int port_no;
 	struct sockaddr_in mysock,servsock;int b,c;
 	port_no=atoi(argv[1]);
@@ -33,7 +33,7 @@ int main(int argc,char*argv[]) // the first argument is ./a.out and the second a
 			scanf(" %[^\n]s",buffer);
 			printf("On the client side you entered : %s\n",buffer);
 			write(fd,buffer,strlen(buffer)+1);
-			read(fd,buffer,1000);
+			read(fd,buffer,MAX_SIZE);
 			printf("the server sent : %s\n",buffer);
 		}
 		close(fd);

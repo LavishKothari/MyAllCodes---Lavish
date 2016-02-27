@@ -1,55 +1,93 @@
-#include<sys/socket.h>
+/*
+	Design a TCP concurrent server to convert a given text by client into upper case using
+	multiplexing system call “select”.
+
+	Server Program
+*/
 #include<stdio.h>
 #include<netinet/in.h>
+#include<sys/types.h>
 #include<string.h>
-int main()
+#include<stdlib.h>
+#include<sys/socket.h>
+#include<sys/select.h>
+#include<unistd.h>
+#define MAXLINE 20
+#define SERV_PORT 7134
+main(int argc,char **argv)
 {
-	int i;
-	char buffer[1000];
-	struct sockaddr_in mysock,servsock,clientsock;int b,c,l,len,request;
-	memset(&mysock,'0',sizeof(mysock));
-	memset(&servsock,'0',sizeof(servsock));
-	memset(&clientsock,'0',sizeof(clientsock));
-	
-	int fd=socket(AF_INET,SOCK_STREAM,0);
-	if(fd<0)
-		printf("socket not created successfully\n");
-	else
-	{
-		printf("socket created successfully\n");
-		mysock.sin_family=AF_INET;
-		mysock.sin_addr.s_addr=htonl(INADDR_ANY);
-		mysock.sin_port=htons(5900);
-		b=bind(fd,(struct sockaddr*)&mysock,sizeof(mysock));
-		if(b<0)
-			printf("There was some problem in bind system call\n");
-		else
-		{
-			printf("Bind system call executed successfully\n");
-			l=listen(fd,10);
-			if(l<0)
-				printf("There was some problem in listen system call\n");
-			else 
+	 int i,j,maxi,maxfd,listenfd,connfd,sockfd;
+	 int nread,client[FD_SETSIZE];
+	 ssize_t n;
+	 fd_set rset,allset;
+	 char line[MAXLINE];
+	 socklen_t clilen;
+	 struct sockaddr_in cliaddr,servaddr;
+
+	 listenfd=socket(AF_INET,SOCK_STREAM,0);
+	 bzero(&servaddr,sizeof(servaddr));
+	 servaddr.sin_family=AF_INET;
+	 servaddr.sin_port=htons(SERV_PORT);
+	 bind(listenfd,(struct sockaddr *)&servaddr,sizeof(servaddr));
+	 listen(listenfd,1);
+	 maxfd=listenfd;
+	 maxi=-1;
+
+	 for(i=0;i<FD_SETSIZE;i++)
+	 	client[i]=-1;
+	 FD_ZERO(&allset);
+	 FD_SET(listenfd,&allset);
+	 for(; ;)
+	 {
+		 rset=allset;
+		 printf("%d\n",maxfd);
+		 nread=select(maxfd+1,&rset,NULL,NULL,NULL);
+		 printf("hello lavish kothari\n");
+		 if(FD_ISSET(listenfd,&rset))
+		 {
+			 clilen=sizeof(cliaddr);
+			 connfd=accept(listenfd,(struct sockaddr*)&cliaddr,&clilen);
+			 for(i=0;i<FD_SETSIZE;i++)
+				 if(client[i]<0)
+				 {
+					 client[i]=connfd;
+					 break;
+				 }
+			 if(i==FD_SETSIZE)
+			 {
+				 printf("too many clients");
+				 exit(0);
+			 }
+			 FD_SET(connfd,&allset);
+			 if(connfd>maxfd)
+			 	maxfd=connfd;
+			 if(i>maxi)
+			 	maxi=i;
+			 if(--nread<=0)
+			 	continue;
+		 }
+		 for(i=0;i<=maxi;i++)
+		 {
+			if((sockfd=client[i])<0)
+			 	continue;
+			if(FD_ISSET(sockfd,&rset))
 			{
-				printf("listen system call was successful\n");
-				while(1)
+				if((n=read(sockfd,line,MAXLINE))==0)
 				{
-					len=sizeof(clientsock);
-					request=accept(fd,(struct sockaddr*)&clientsock,&len);
-					read(request,buffer,1000);
-					printf("Client sent : %s\n",buffer);
-					
-					for(i=0;buffer[i];i++)
-						if(buffer[i]>='a' && buffer[i]<='z')
-							buffer[i]=buffer[i]-('a'-'A');
-					
-					write(request,buffer,strlen(buffer)+1);
-					close(request);
+					close(sockfd);
+					FD_CLR(sockfd,&allset);
+					client[i]=-1;
 				}
-				
+				else
+				{
+					printf("line recieved from the client : %s\n",line);
+					for(j=0;line[j]!='\0';j++)
+						line[j]=toupper(line[j]);
+					write(sockfd,line,MAXLINE);
+				}
+				if(--nread<=0)
+					break;
 			}
-		}
-		close(fd);
-	}
-	return 0;
+		 }
+	 }
 }

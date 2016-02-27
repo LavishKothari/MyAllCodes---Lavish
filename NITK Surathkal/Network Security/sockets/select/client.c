@@ -1,42 +1,44 @@
-#include<sys/socket.h>
-#include<stdio.h>
-#include<netinet/in.h>
-#include<string.h>
+/*
+	Design a TCP concurrent server to convert a given text by client into upper case using
+	multiplexing system call “select”.
 
-int main(int argc,char*argv[]) // the first argument is ./a.out and the second argument is the port number of the server
+	Client Program
+*/
+#include<netinet/in.h>
+#include<sys/types.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<sys/socket.h>
+#include<sys/select.h>
+#include<unistd.h>
+#define MAXLINE 20
+#define SERV_PORT 7134
+main(int argc,char **argv)
 {
-	char buffer[1000];
-	int port_no;
-	struct sockaddr_in mysock,servsock;int b,c;
-	port_no=atoi(argv[1]);
-	memset(&mysock,0,sizeof(mysock));
-	memset(&servsock,0,sizeof(servsock));
-	
-	int fd=socket(AF_INET,SOCK_STREAM,0);
-	if(fd<0)
-		printf("socket not created successfully\n");
-	else
-	{
-		printf("socket created successfully\n");
-		printf("Bind system call executed successfully\n");
-		servsock.sin_family=AF_INET;
-		servsock.sin_addr.s_addr=inet_addr("127.0.0.1");
-		servsock.sin_port=htons(port_no);
-		c=connect(fd,(struct sockaddr*)&servsock,sizeof(servsock));
-		
-		if(c<0)
-			printf("There was some problem in connecting to the server.\n");
-		else
-		{
-			printf("Connecting to the server was successful\n");
-			printf("Enter a string : ");
-			scanf(" %[^\n]s",buffer);
-			printf("On the client side you entered : %s\n",buffer);
-			write(fd,buffer,strlen(buffer)+1);
-			read(fd,buffer,1000);
-			printf("the server sent : %s\n",buffer);
-		}
-		close(fd);
-	}
-	return 0;
+	 int maxfdp1;
+	 fd_set rset;
+	 char sendline[MAXLINE],recvline[MAXLINE];
+	 int sockfd;
+	 struct sockaddr_in servaddr;
+	 if(argc!=2)
+	 {
+		 printf("usage tcpcli <ipaddress>");
+		 return;
+	 }
+	 sockfd=socket(AF_INET,SOCK_STREAM,0);
+	 bzero(&servaddr,sizeof(servaddr));
+	 servaddr.sin_family=AF_INET;
+	 servaddr.sin_port=htons(SERV_PORT);
+	 inet_pton(AF_INET,argv[1],&servaddr.sin_addr);
+	 connect(sockfd,(struct sockaddr*)&servaddr,sizeof(servaddr));
+	 printf("\nenter data to be send : ");
+	 while(fgets(sendline,MAXLINE,stdin)!=NULL)
+	 {
+		 write(sockfd,sendline,MAXLINE);
+		 printf("\nline send to server is %s",sendline);
+		 read(sockfd,recvline,MAXLINE);
+		 printf("\nline recieved from the server %s",recvline);
+	 }
+	 exit(0);
 }

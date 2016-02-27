@@ -21,7 +21,7 @@ int main()
 	{
 		printf("Socket created successfully\n");
 		servAddr.sin_family=AF_INET;
-		servAddr.sin_port=htons(6100);
+		servAddr.sin_port=htons(7890);
 		servAddr.sin_addr.s_addr=htonl(INADDR_ANY);
 		b=bind(fd,(struct sockaddr*)&servAddr,sizeof(servAddr));
 		if(b<0)
@@ -34,6 +34,7 @@ int main()
 			printf("Binding successful\n");
 			while(1)
 			{
+				addr_size=sizeof(clientAddr);
 				recvfrom(fd,buffer,MAX_SIZE,0,(struct sockaddr*)&clientAddr,&addr_size);
 				printf("Client sent : %s\n",buffer);
 				for(i=0;buffer[i];i++)
@@ -42,7 +43,8 @@ int main()
 				printf("At server after capitalization : %s\n",buffer);
 				printf("the lenght of the string is : %d\n",strlen(buffer));
 				s=sendto(fd,buffer,strlen(buffer)+1,0,(struct sockaddr*)&clientAddr,addr_size);
-				if(s<0) printf("there is some serious issue\n");
+				if(s<0) 
+					printf("there is some serious issue\n");
 			}
 		}
 	}
