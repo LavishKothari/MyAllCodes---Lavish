@@ -1,9 +1,0 @@
-import java.io.*;
-import java.awt.*;
-import java.awt.event.*;
-
-class NotepadFra	}
-}
-
-hello lavish kothari
-how are you?

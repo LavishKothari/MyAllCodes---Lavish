@@ -41,6 +41,7 @@ long long int GCD(long long int a,long long int b)
 }
 int main()
 {
+	int i;
 	long long int a,b;
 	printf("Enter the two numbers : ");
 	scanf("%lld%lld",&a,&b);
@@ -48,5 +49,8 @@ int main()
 	printf("Expressing the gcd as the linear combination of a=%lld and b=%lld\n",a,b);
 	printf("gcd = a*x + b*y\n");
 	printf("then x = %lld   and   y = %lld\n\n",x,y);
+	for(i=0;i<676;i++)
+		if(gcd(i,676)==1)
+			printf("hello laivsh kothair %d",i);
 	return 0;
 }
