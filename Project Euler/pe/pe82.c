@@ -32,12 +32,6 @@ int main()
             for(j=n-2;j>=0;j--)
                 minimum[j][i]=min2(minimum[j+1][i]+mat[j][i],minimum[j][i]);
         }
-        for(i=0;i<n;i++)
-        {
-            for(j=0;j<n;j++)
-                printf("%d ",minimum[i][j]);
-            printf("\n");
-        }
         min=2147483647;
         for(i=0;i<n;i++)
             if(min>minimum[i][n-1])
