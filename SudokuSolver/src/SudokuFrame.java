@@ -112,7 +112,7 @@ public class SudokuFrame extends JFrame implements MouseListener,ActionListener
         developerPanel.setOpaque(false);
         developerPanel.setLayout(new GridLayout(3,1,5,5));
         JLabel lbl1=new JLabel("Developed By : ");
-        JLabel lbl2=new JLabel("Kavleen Kalra");
+        JLabel lbl2=new JLabel("");
         JLabel lbl3=new JLabel("Lavish Kothari");
         lbl1.setFont(new Font("lucida console",Font.BOLD,20));
         lbl2.setFont(new Font("lucida console",Font.BOLD,20));
@@ -171,7 +171,7 @@ public class SudokuFrame extends JFrame implements MouseListener,ActionListener
 	        SolverPanel sp=new SolverPanel(numberArray);
 	        JPanel developedPanel=new JPanel();
 			developedPanel.setLayout(new FlowLayout(FlowLayout.RIGHT,5,5));
-			JLabel developedLabel=new JLabel("Developed by :- Kavleen Kalra and Lavish Kothari");
+			JLabel developedLabel=new JLabel("Developed by :- Lavish Kothari");
 			developedLabel.setFont(new Font("lucida console",Font.ITALIC,20));
 			developedPanel.add(developedLabel);
 			superSp.add(sp);

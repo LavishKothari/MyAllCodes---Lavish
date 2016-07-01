@@ -1,21 +1,28 @@
 #include<stdio.h>
-
+typedef long long int ll;
+int max(ll a,ll b)
+{
+	return a>b?a:b;
+}
+int min(ll a,ll b)
+{
+	return a<b?a:b;
+}
 int main()
 {
-	int t;
-	long long int min,x,y,n,i,j,max;
-	scanf("%d",&t);
+
+	ll t,p,q,r,y,a,b,x ;
+	scanf("%lld",&t);
 	while(t--)
 	{
-		min=2147483647;
-		scanf("%lld%lld%lld",&x,&y,&n);
-		for(i=0,j=n;i<=n;i++,j--)
-		{
-			max=i*x>j*y?i*x:j*y;
-			if(max<min)
-				min=max;
-		}
-		printf("%lld ",min);
-	}
+		scanf("%lld%lld%lld",&p,&q,&r);
+		y=(p*r)/(p+q);
+		a=max(q*y,(r-y)*p);
+		
+		x=(q*r)/(p+q);
+		b=max(p*x,(r-x)*q);
+		
+		printf("%d ",min(a,b));
+	}	
 	return 0;
 }
