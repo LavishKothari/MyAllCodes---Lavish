@@ -43,11 +43,11 @@ int main()
 	south=east=1;
 	west=north=0;
 	x=y=0;
-	printf("0 0 ");
+	printf("0 0 \n");
 	for(i=0;i<100;i++)
 	{
 		findNext();
-		printf("%d %d ",x,y);
+		printf("%d %d \n",x,y);
 	}
 	return 0;
 }

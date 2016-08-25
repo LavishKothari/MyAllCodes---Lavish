@@ -112,8 +112,8 @@ public class SudokuFrame extends JFrame implements MouseListener,ActionListener
         developerPanel.setOpaque(false);
         developerPanel.setLayout(new GridLayout(3,1,5,5));
         JLabel lbl1=new JLabel("Developed By : ");
-        JLabel lbl2=new JLabel("");
-        JLabel lbl3=new JLabel("Lavish Kothari");
+        JLabel lbl2=new JLabel("Lavish Kothari");
+        JLabel lbl3=new JLabel("");
         lbl1.setFont(new Font("lucida console",Font.BOLD,20));
         lbl2.setFont(new Font("lucida console",Font.BOLD,20));
         lbl3.setFont(new Font("lucida console",Font.BOLD,20));
