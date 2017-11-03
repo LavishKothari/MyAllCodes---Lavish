@@ -11,13 +11,13 @@ class Main
 			int t=Integer.parseInt(br.readLine());
 			for(int i=0;i<t;i++)
 			{
-				
+
 				str=(br.readLine());
 				StringTokenizer st=new StringTokenizer(str);
 				int n=Integer.parseInt(""+st.nextElement());
 				int c=Integer.parseInt(""+st.nextElement());
 				int sum=0;
-				
+
 				str=(br.readLine());
 				st=new StringTokenizer(str);
 				for(int j=0;j<n;j++)
@@ -33,4 +33,4 @@ class Main
 		catch(Exception e){}
 	}
 }
-					
+

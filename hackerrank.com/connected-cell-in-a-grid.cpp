@@ -6,14 +6,14 @@ using namespace std;
 class vertex
 {
 	public:
-	int color,value,number;
-	vector<int>adjacencyList;
-	vertex(int color,int value,int number)
-	{
-		this->color=color;
-		this->value=value;
-		this->number=number;
-	}
+		int color,value,number;
+		vector<int>adjacencyList;
+		vertex(int color,int value,int number)
+		{
+			this->color=color;
+			this->value=value;
+			this->number=number;
+		}
 };
 vector<vertex>vertexArray;
 vector<int>stack;
@@ -72,12 +72,12 @@ int main()
 			if(i-1>=0 && vertexArray[(i-1)*n+j].value==1) vertexArray[i*n+j].adjacencyList.push_back((i-1)*n+j);
 			if(j+1<m && vertexArray[(i)*n+j+1].value==1) vertexArray[i*n+j].adjacencyList.push_back((i)*n+j+1);
 			if(j-1>=0 && vertexArray[(i)*n+j-1].value==1) vertexArray[i*n+j].adjacencyList.push_back((i)*n+j-1);
-			
+
 			if(i+1<m && j+1<n && vertexArray[(i+1)*n+j+1].value==1) vertexArray[i*n+j].adjacencyList.push_back((i+1)*n+j+1);
 			if(i+1<m && j-1>=0 && vertexArray[(i+1)*n+j-1].value==1) vertexArray[i*n+j].adjacencyList.push_back((i+1)*n+j-1);
 			if(i-1>=0 && j+1<n && vertexArray[(i-1)*n+j+1].value==1) vertexArray[i*n+j].adjacencyList.push_back((i-1)*n+j+1);
 			if(i-1>=0 && j-1>=0 && vertexArray[(i-1)*n+j-1].value==1) vertexArray[i*n+j].adjacencyList.push_back((i-1)*n+j-1);
-			
+
 		}
 	}
 	printf("%d\n",findAnswer());

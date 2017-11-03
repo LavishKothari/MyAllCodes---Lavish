@@ -9,7 +9,7 @@ ll power(ll a, ll b)
 	if(b&1) return ((t*t)%MOD*a)%MOD;
 	else return (t*t)%MOD;
 }
-	
+
 int main()
 {
 	int t;

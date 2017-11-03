@@ -14,7 +14,7 @@ ll findAnswer(ll n,ll m,ll z,ll l,ll r,ll b)
 		return n*m;
 	ll answer=0;
 	answer+=l+z;
-	
+
 }
 
 int main()

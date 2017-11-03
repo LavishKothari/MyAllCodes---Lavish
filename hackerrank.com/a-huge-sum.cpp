@@ -7,7 +7,7 @@ typedef long long int ll;
 vector<int>firstPrime(MAX,0);
 vector< map<int,int> >number_of_divisors(MAX,map<int,int>());
 bitset<MAX>isPrime;
-	
+
 void populatePrimes()
 {
 	isPrime.reset();
@@ -22,7 +22,7 @@ void populatePrimes()
 					firstPrime[j]=i;
 				isPrime[j]=0;	
 			}
-	
+
 	for(int i=2;i<MAX;i++)
 		if(isPrime[i])
 		{
@@ -41,13 +41,13 @@ void populateDivisors()
 	{
 		if(isPrime[i])
 			continue;
-		
+
 		int n=i;
 		int k=0;
 		int p = firstPrime[i];
 		int rem = n/p;
-		
-		
+
+
 		number_of_divisors[i][p]=1;
 		for(map<int,int>::iterator it=number_of_divisors[rem].begin();it!=number_of_divisors[rem].end();it++)
 		{
@@ -57,8 +57,8 @@ void populateDivisors()
 				number_of_divisors[i][key]=value;
 			else number_of_divisors[i][p]+=value;
 		}
-		
-	
+
+
 	}
 }
 
@@ -87,17 +87,17 @@ int main()
 	clock_t end = clock();
 	double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
 	cout<<"time taken = "<<time_spent<<endl;
-	
-	
+
+
 	begin = clock();
 	populateDivisors();
 	cout<<"population completed\n";
-	 end = clock();
+	end = clock();
 	time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
 	cout<<"time taken = "<<time_spent<<endl;
-	
-	
-	
+
+
+
 	int t;
 	scanf("%d",&t);
 	while(t--)

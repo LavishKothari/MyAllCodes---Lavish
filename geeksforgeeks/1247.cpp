@@ -3,7 +3,7 @@
 using namespace std;
 int findAnswer(string &s)
 {
-	
+
 }
 int main()
 {

@@ -33,7 +33,7 @@ bool findAnswer(ll a,ll b,ll c,ll d,ll e)
 		int x=e/a;
 		p = p || find(a,b-x,d,c);
 	}
-	
+
 	if(c%b==0)
 	{
 		int x=c/b;

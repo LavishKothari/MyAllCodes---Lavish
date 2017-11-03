@@ -20,7 +20,7 @@ int main()
 		scanf(" %s %s",s1,s2);
 		string a=string(s1);
 		string b=string(s2);
-		
+
 		int counter=0;
 		for(int i=0;i<=a.size();i++)
 		{

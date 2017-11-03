@@ -50,7 +50,7 @@ int findBlocks(vector<int>x,vector<int>y) // this function finds the number of b
 			blocks++;
 			while(true)
 			{
-			
+
 				map<int,set<int> >::iterator nextit=graph.find(*((it->second).begin()));
 				if(nextit==graph.end())
 					break;
@@ -61,7 +61,7 @@ int findBlocks(vector<int>x,vector<int>y) // this function finds the number of b
 				//it=graph.find(temp);
 				it=nextit;
 			}
-			
+
 		}
 	}
 	if(blocks==0 || graph.size()!=blocks)
@@ -80,7 +80,7 @@ ll findBad(int number)
 		{
 			newax.push_back(ax[m-i]);
 			newbx.push_back(bx[m-i]);
-			
+
 			myset.insert(ax[m-i]);
 			myset.insert(bx[m-i]);
 			//printf("$$$$$$m,i = %d,%d and %d,%d\n",m,i,ax[m-i],bx[m-i]);
@@ -127,7 +127,7 @@ ll findAnswer()
 		else
 		{
 			//printf("findbad(%d) = %lld\n",i,-fb);
-		 	p=(p-fb)%MOD;
+			p=(p-fb)%MOD;
 		}
 	}
 	answer=(answer-p)%MOD;
@@ -135,7 +135,7 @@ ll findAnswer()
 		answer+=MOD;
 	return answer;
 }
-.
+	.
 int main()
 {
 	int t;

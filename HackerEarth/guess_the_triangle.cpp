@@ -46,15 +46,15 @@ int main()
 	struct Point points[3];
 	points[0].x=p;
 	points[0].y=q;
-	
+
 	points[1].x=r;
 	points[1].y=s;
-	
+
 	points[2].x=t;
 	points[2].y=u;
-	
+
 	qsort(points,3,sizeof(struct Point),cmp);
-	
+
 	if(isGreater(points[0].x,points[1].x)==0)
 	{
 		double mi=min(points[0].y,points[1].y);

@@ -56,6 +56,6 @@ int main()
 	if(a)
 		printf("YES\n");
 	else printf("NO\n");
-	
+
 	return 0;
 }

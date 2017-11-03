@@ -35,14 +35,14 @@ long long int stringSimilarity(char a[])
 }
 int main() 
 {
-    int t, i;
-    scanf("%d",&t);
-    char a[100001];
-    for (i=0;i<t;i++) 
-    {
-        scanf("%s",a);
-        long long int res=stringSimilarity(a);
-        printf("%lld\n",res);  
-    }
-    return 0;
+	int t, i;
+	scanf("%d",&t);
+	char a[100001];
+	for (i=0;i<t;i++) 
+	{
+		scanf("%s",a);
+		long long int res=stringSimilarity(a);
+		printf("%lld\n",res);  
+	}
+	return 0;
 }

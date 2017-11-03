@@ -9,7 +9,7 @@ public class Main
 {
 	static int n,p,k;
 	static int []arr;
-	
+
 	public static void main(String args[]) throws NumberFormatException, IOException
 	{
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
@@ -17,27 +17,27 @@ public class Main
 		n=Integer.parseInt(stz.nextToken());
 		k=Integer.parseInt(stz.nextToken());
 		p=Integer.parseInt(stz.nextToken());
-		
+
 		stz=new StringTokenizer(br.readLine());
-		
+
 		arr=new int[n];
-		
+
 		for(int i=0;i<n;i++)
 		{
 			arr[i]=Integer.parseInt((String) stz.nextElement());
 		}
-		
+
 		for(int i=0;i<p;i++)
 		{
 			StringTokenizer s=new StringTokenizer(br.readLine());
 			int a=Integer.parseInt((String)s.nextElement());
 			int b=Integer.parseInt((String)s.nextElement());
-			
+
 			printAnswer(a-1,b-1);
 		}
-		
+
 	}
-	
+
 	public static void printAnswer(int a,int b)
 	{
 		if(a>b)
@@ -64,7 +64,7 @@ public class Main
 	public static int findNext(int a)
 	{
 		int searchval;
-	
+
 		for(int z=0;z<=k;z++)
 		{
 			searchval=arr[a]+z;

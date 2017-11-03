@@ -26,7 +26,7 @@ int main()
 	for(int i=0;i<n;i++)
 		speed[i]=dist[i]=0;
 	int prevTime=1,t;
-		
+
 	while(query--)
 	{
 		scanf("%d",&q);

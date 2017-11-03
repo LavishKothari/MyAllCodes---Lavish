@@ -21,7 +21,7 @@ bool ismagic(vector<int>&v)
 		if(sum!=(N*(N*N+1))/2)
 			return false;
 	}
-	
+
 	// cols
 	for(int j=0;j<N;j++)
 	{
@@ -33,24 +33,24 @@ bool ismagic(vector<int>&v)
 		if(sum!=(N*(N*N+1))/2)
 			return false;
 	}
-	
+
 	// diagonal 1
 	int sum=0;
 	for(int i=0;i<N;i++)
 		sum+=get(v,i,i);
 	if(sum!=(N*(N*N+1))/2)
 		return false;
-	
+
 	// diagonal 2
 	sum=0;
 	for(int i=0;i<N;i++)
 		for(int j=0;j<N;j++)
 			if(i+j==N-1)
 				sum+=get(v,i,j);
-	
+
 	if(sum!=(N*(N*N+1))/2)
 		return false;
-		
+
 	// all okay
 	return true;
 }
@@ -74,7 +74,7 @@ int main()
 	for(int i=0;i<N*N;i++)
 		arr[i]=i+1;
 	vector<int>v(arr,arr+N*N);
-	
+
 	vector< vector<int> >magic;
 	while(1)
 	{
@@ -85,17 +85,17 @@ int main()
 			break;
 	}
 	/*
-	for(int x=0;x<magic.size();x++)
-	{
-		for(int i=0;i<N;i++)
-		{
-			for(int j=0;j<N;j++)
-				cout<<get(magic[x],i,j)<<" ";
-			cout<<endl;
-		}
-		cout<<endl;
-	}
-	*/
+	   for(int x=0;x<magic.size();x++)
+	   {
+	   for(int i=0;i<N;i++)
+	   {
+	   for(int j=0;j<N;j++)
+	   cout<<get(magic[x],i,j)<<" ";
+	   cout<<endl;
+	   }
+	   cout<<endl;
+	   }
+	 */
 	for(int i=0;i<N*N;i++)
 		cin>>v[i];
 	cout<<findAnswer(magic,v)<<endl;

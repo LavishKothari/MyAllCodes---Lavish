@@ -21,7 +21,7 @@ int main()
 		vector<char>x;
 		for(char i='A';i<='L';i++)
 			x.push_back(i);
-		
+
 		for(int i=N-1;i>=0;i--)
 		{
 			cout<<x[n/fact[i]];

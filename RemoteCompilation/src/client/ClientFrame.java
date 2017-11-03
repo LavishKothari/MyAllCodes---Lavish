@@ -44,20 +44,20 @@ import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 
 public class ClientFrame extends JFrame implements ActionListener,KeyListener {
-	
+
 	String secretKey;
 	PublicKey serverPublicKey,clientPublicKey;
 	PrivateKey clientPrivateKey;
-	
+
 	int portNumber;
 	String ipAddress;
-	
+
 	Socket server;
 	DataInputStream dis;
 	DataOutputStream dos;
-	
+
 	JTabbedPane centerTabbedPane;
-	
+
 	JLabel uploadStatusLabel,exportStatusLabel;
 	JPanel topPanel,bottomPanel,centerPanel,mainPanel;
 	JButton clearButton,submitButton,exportOutputButton,exportErrorButton,uploadButton,uploadInputFileButton;
@@ -68,25 +68,25 @@ public class ClientFrame extends JFrame implements ActionListener,KeyListener {
 		if(ipAddress==null || ipAddress.length()<=0)
 			System.exit(1); // if no ipaddress was filled
 		createSocket();
-		
+
 		this.setTitle("Client Frame");
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		this.setSize(screenSize);
 		this.setResizable(true);
-		
-		
+
+
 		mainPanel=new JPanel();
 		mainPanel.setLayout(new BorderLayout(5,5));
-		
+
 		constructTopPanel();
 		mainPanel.add(topPanel,BorderLayout.NORTH);
-		
+
 		constructBottomPanel();
 		mainPanel.add(bottomPanel,BorderLayout.SOUTH);
-		
+
 		constructCenterPanel();
 		mainPanel.add(centerPanel,BorderLayout.CENTER);
-		
+
 		this.add(mainPanel);
 		addWindowListener(new MyWndAdapter(dis,dos));
 	}
@@ -98,32 +98,32 @@ public class ClientFrame extends JFrame implements ActionListener,KeyListener {
 			server=new Socket(ipAddress,portNumber);
 			dis=new DataInputStream(server.getInputStream());
 			dos=new DataOutputStream(server.getOutputStream());
-			
+
 			ObjectInputStream ois=new ObjectInputStream(server.getInputStream());
 			serverPublicKey=(PublicKey)ois.readObject();
 			System.out.println(serverPublicKey);
-			
+
 			/***********************************************************************************/
 			final KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA"); // Generating public key and private key of client.
-		    keyGen.initialize(1024);
-		    final KeyPair key = keyGen.generateKeyPair();
-		    /*
-		    System.out.println(key.getPrivate());
-		    System.out.println(key.getPublic());
-		    */
-		    clientPublicKey=key.getPublic();
-		    clientPrivateKey=key.getPrivate();
-		    
-		    ObjectOutputStream oos=new ObjectOutputStream(server.getOutputStream());
-		    oos.writeObject(clientPublicKey);
-		    /***********************************************************************************/
-		    
-		    int len=Integer.parseInt(dis.readUTF());
-		    byte[]secretKeyBytes=new byte[len];
-		    dis.readFully(secretKeyBytes,0,len);
-		    System.out.println("secret key on client. = this is a final test "+new String(secretKeyBytes));
-		    secretKeyBytes=decryptKey(secretKeyBytes,clientPrivateKey);
-		    secretKey=new String(secretKeyBytes);
+			keyGen.initialize(1024);
+			final KeyPair key = keyGen.generateKeyPair();
+			/*
+			   System.out.println(key.getPrivate());
+			   System.out.println(key.getPublic());
+			 */
+			clientPublicKey=key.getPublic();
+			clientPrivateKey=key.getPrivate();
+
+			ObjectOutputStream oos=new ObjectOutputStream(server.getOutputStream());
+			oos.writeObject(clientPublicKey);
+			/***********************************************************************************/
+
+			int len=Integer.parseInt(dis.readUTF());
+			byte[]secretKeyBytes=new byte[len];
+			dis.readFully(secretKeyBytes,0,len);
+			System.out.println("secret key on client. = this is a final test "+new String(secretKeyBytes));
+			secretKeyBytes=decryptKey(secretKeyBytes,clientPrivateKey);
+			secretKey=new String(secretKeyBytes);
 		}
 		catch (Exception e)
 		{
@@ -132,29 +132,29 @@ public class ClientFrame extends JFrame implements ActionListener,KeyListener {
 		}
 	}
 	public byte[] decryptKey(byte[] text, PrivateKey key) {
-		  System.out.println(text.length);
-		  System.out.println("in decrypt : "+new String(text));
-		  byte[] dectyptedText = null;
-		  try {
-			  final Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
+		System.out.println(text.length);
+		System.out.println("in decrypt : "+new String(text));
+		byte[] dectyptedText = null;
+		try {
+			final Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
 
-			  cipher.init(Cipher.DECRYPT_MODE, key);
-			  dectyptedText = cipher.doFinal(text);
+			cipher.init(Cipher.DECRYPT_MODE, key);
+			dectyptedText = cipher.doFinal(text);
 
-		  } catch (Exception ex) {
-			  System.out.println("here an exception is generated");
-			  ex.printStackTrace();
-		  }
-		  return dectyptedText;
-		  //return new String(dectyptedText,StandardCharsets.UTF_8);
-	  }
+		} catch (Exception ex) {
+			System.out.println("here an exception is generated");
+			ex.printStackTrace();
+		}
+		return dectyptedText;
+		//return new String(dectyptedText,StandardCharsets.UTF_8);
+	}
 	public void constructTopPanel()
 	{
 		topPanel=new JPanel();
 		topPanel.setLayout(new BorderLayout(5, 5));
-		
+
 		uploadStatusLabel=new JLabel();
-		
+
 		clearButton=new JButton("Clear");
 		submitButton=new JButton("Submit");
 		uploadButton=new JButton("Upload Source Code");
@@ -163,79 +163,79 @@ public class ClientFrame extends JFrame implements ActionListener,KeyListener {
 		submitButton.addActionListener(this);
 		uploadButton.addActionListener(this);
 		uploadInputFileButton.addActionListener(this);
-		
+
 		JLabel enterCmd=new JLabel("Enter the command");
 		enterCmd.setFont(new Font("Lucida Console", 1, 12));
-		
+
 		commandTextField=new JTextField();
 		commandTextField.setFont(new Font("Lucida Console", 1, 12));
 		commandTextField.addKeyListener(this);
-		
+
 		topPanel.add(enterCmd,BorderLayout.WEST);
 		topPanel.add(commandTextField,BorderLayout.CENTER);
-		
+
 		JPanel uploadButtonPanel=new JPanel();
 		uploadButtonPanel.add(uploadButton);
 		//uploadButtonPanel.add(uploadInputFileButton);
-		
+
 		topPanel.add(uploadButtonPanel,BorderLayout.NORTH);
-		
+
 		JPanel buttonPanel=new JPanel();
 		buttonPanel.setLayout(new GridLayout(1, 2));
 		buttonPanel.add(submitButton);
 		buttonPanel.add(clearButton);
 		topPanel.add(buttonPanel,BorderLayout.EAST);
-		
+
 	}
 	public void constructBottomPanel()
 	{
 		bottomPanel=new JPanel();
 		bottomPanel.setLayout(new BorderLayout(5,5));
-		
+
 		exportStatusLabel=new JLabel("");
 		exportStatusLabel.setFont(new Font("Lucida console", 1, 12));
-		
+
 		exportOutputButton=new JButton("Export Output");
 		exportOutputButton.addActionListener(this);
 		exportErrorButton=new JButton("Export Error");
 		exportErrorButton.addActionListener(this);
-		
+
 		JPanel innerPanel=new JPanel();
 		innerPanel.add(exportOutputButton);
 		innerPanel.add(exportErrorButton);
 		innerPanel.add(exportStatusLabel);
-		
+
 		bottomPanel.add(innerPanel,BorderLayout.WEST);
 	}
 	public void constructCenterPanel()
 	{
 		centerTabbedPane=new JTabbedPane();
-		
+
 		centerPanel=new JPanel();
 		centerPanel.setLayout(new BorderLayout(5,5));
 		inputTextArea=new JTextArea();
 		outputTextArea=new JTextArea();
 		errorTextArea=new JTextArea();
-		
+
 		inputTextArea.setEditable(false);
 		outputTextArea.setEditable(false);
 		errorTextArea.setEditable(false);
-		
+
 		/*
-		inputTextArea.setColumns(112);
-		outputTextArea.setColumns(112);
-		errorTextArea.setColumns(112);
-		*/
-		
+		   inputTextArea.setColumns(112);
+		   outputTextArea.setColumns(112);
+		   errorTextArea.setColumns(112);
+		 */
+
 		inputTextArea.setRows(1);
 		inputTextArea.setFont(new Font("Lucida console", 1, 12));
 		outputTextArea.setRows(35);
 		outputTextArea.setFont(new Font("Lucida console", 1, 12));
 		errorTextArea.setRows(35);
 		errorTextArea.setFont(new Font("Lucida console", 1, 12));
-		
-		
-		
+
+
+
 		JPanel innerTopPanel,innerCenterPanelOutput,innerCenterPanelError;
 		innerTopPanel=new JPanel(new BorderLayout(5,5));
 		innerCenterPanelOutput=new JPanel();
@@ -246,38 +246,38 @@ public class ClientFrame extends JFrame implements ActionListener,KeyListener {
 		JScrollPane jspInput = new JScrollPane(inputTextArea,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		JScrollPane jspError = new JScrollPane(errorTextArea,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		/*
-		outputTextArea.setBounds(5, 35, 385, 330);
-		outputTextArea.setLineWrap(true);
-		outputTextArea.setWrapStyleWord(true);
-		*/
+		   outputTextArea.setBounds(5, 35, 385, 330);
+		   outputTextArea.setLineWrap(true);
+		   outputTextArea.setWrapStyleWord(true);
+		 */
 		jspOutput.setBounds(20, 30, 100, 40);// You have to set bounds for all the controls and containers incas eof null layout
 		jspInput.setBounds(20, 30, 100, 40);
 		jspError.setBounds(20, 30, 100, 40);
-        
-		
+
+
 		TitledBorder titleTop = BorderFactory.createTitledBorder("Input command");
 		titleTop.setTitleColor(Color.RED);
 		innerTopPanel.setBorder(titleTop);
-		
+
 		TitledBorder titleCenterOutput = BorderFactory.createTitledBorder("Output");
 		titleCenterOutput.setTitleColor(Color.RED);
 		innerCenterPanelOutput.setBorder(titleCenterOutput);
-		
+
 		TitledBorder titleCenterError = BorderFactory.createTitledBorder("Error / Warnings");
 		titleCenterError.setTitleColor(Color.RED);
 		innerCenterPanelError.setBorder(titleCenterError);
-		
+
 		innerTopPanel.add(jspInput,BorderLayout.CENTER);
 		innerCenterPanelOutput.add(jspOutput);// adding the scroll pane
 		innerCenterPanelError.add(jspError);
-		
+
 		centerTabbedPane.addTab("Output", innerCenterPanelOutput);
 		centerTabbedPane.addTab("Error / Warnings", innerCenterPanelError);
-		
+
 		centerPanel.add(innerTopPanel,BorderLayout.NORTH);
 		centerPanel.add(centerTabbedPane,BorderLayout.CENTER);
 	}
-	
+
 	public void submitCommand() throws Exception
 	{
 		inputTextArea.setText(commandTextField.getText());
@@ -292,24 +292,24 @@ public class ClientFrame extends JFrame implements ActionListener,KeyListener {
 		else
 		{
 			try {
-	    		encryptedWrite("COMMAND");
-	    		System.out.println("you are here");
+				encryptedWrite("COMMAND");
+				System.out.println("you are here");
 				encryptedWrite(commandTextField.getText()); // command text
 				System.out.println("second you are here");
 				outputTextArea.setText(encryptedRead());
 				errorTextArea.setText(encryptedRead());
-				
+
 				if(!errorTextArea.getText().equals(""))
 					centerTabbedPane.setSelectedIndex(1);
 				if(!outputTextArea.getText().equals(""))
 					centerTabbedPane.setSelectedIndex(0);
-				
+
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-	    	
-	    	commandTextField.setText("");
+
+			commandTextField.setText("");
 		}
 	}
 	public String getContentsOfFile(String filename) throws IOException
@@ -317,7 +317,7 @@ public class ClientFrame extends JFrame implements ActionListener,KeyListener {
 		String contents="",tempString;
 		FileInputStream fis=new FileInputStream(filename);
 		BufferedReader br=new BufferedReader(new InputStreamReader(fis));
-		
+
 		while((tempString=br.readLine())!=null)
 		{
 			contents+=tempString+"\n";
@@ -326,14 +326,14 @@ public class ClientFrame extends JFrame implements ActionListener,KeyListener {
 		fis.close();
 		return contents;
 	}
-	
+
 	public void writeContentsToFile(String fileName,String contents) throws IOException
 	{
 		PrintWriter out=new PrintWriter(fileName);
 		out.print(contents);
 		out.close();
 	}
-	
+
 	public void actionPerformed(ActionEvent ae)
 	{
 		if(ae.getSource()==clearButton)
@@ -443,34 +443,34 @@ public class ClientFrame extends JFrame implements ActionListener,KeyListener {
 		}
 	}
 	@Override
-	public void keyTyped(KeyEvent e) {
-		
-	}
+		public void keyTyped(KeyEvent e) {
+
+		}
 	@Override
-	public void keyPressed(KeyEvent e) {
-        if(e.getKeyCode() == KeyEvent.VK_ENTER){
-        	try {
-				submitCommand();
-			} catch (Exception e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
+		public void keyPressed(KeyEvent e) {
+			if(e.getKeyCode() == KeyEvent.VK_ENTER){
+				try {
+					submitCommand();
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
-        }
-     }
+		}
 	@Override
-	public void keyReleased(KeyEvent e) {
-		
-	}
+		public void keyReleased(KeyEvent e) {
+
+		}
 	public void encryptedWrite(String s) throws Exception
 	{
 		/*********/
 		Cipher c = Cipher.getInstance("AES");
 		SecretKeySpec k =new SecretKeySpec(secretKey.getBytes(), "AES");
-		
-		
+
+
 		c.init(Cipher.ENCRYPT_MODE, k);
 		byte[] barray = c.doFinal(s.getBytes());
-		
+
 		dos.writeUTF(barray.length+"");
 		dos.write(barray);
 		System.out.println(new String(barray));
@@ -481,18 +481,18 @@ public class ClientFrame extends JFrame implements ActionListener,KeyListener {
 		byte[]encryptedText=new byte[len];
 		dis.readFully(encryptedText,0,len);
 		byte[]barray;;
-		
+
 		Cipher c = Cipher.getInstance("AES");
-		
+
 		SecretKeySpec k =new SecretKeySpec(secretKey.getBytes(), "AES");
-		
-		
+
+
 		c.init(Cipher.DECRYPT_MODE, k);
 		barray = c.doFinal(encryptedText);
 		System.out.println(new String(barray));
 		return new String(barray);
 	}
-	
+
 }
 
 class MyWndAdapter extends WindowAdapter

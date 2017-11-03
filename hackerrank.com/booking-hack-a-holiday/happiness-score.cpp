@@ -11,18 +11,18 @@ void populatePrimes()
 	primes.flip();
 	primes[0]=primes[1]=0;
 	for(ll i=2;i*i<MAX;i++)
-			if(primes[i])
-				for(ll j=i*i;j<MAX;j+=i)
-					primes[j]=0;
+		if(primes[i])
+			for(ll j=i*i;j<MAX;j+=i)
+				primes[j]=0;
 }
 int main()
 {
 	populatePrimes();
 	/*
-	for(int i=0;i<MAX;i++)
-		if(primes[i])
-			printf("%d\n",i);
-	*/
+	   for(int i=0;i<MAX;i++)
+	   if(primes[i])
+	   printf("%d\n",i);
+	 */
 	int n;
 	scanf("%d",&n);
 	int*arr=new int[n];

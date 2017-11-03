@@ -16,19 +16,19 @@ class Main
 				for(j=1;j<=n/2;j++)
 				{
 					pro=(n-j)*j;
-					
+
 					if(j!=n/2.0)
 						answer=answer+2*fun(pro,max(n-j,j));
 					else
 						answer+=fun(pro,max(n-j,j));
 				}
-				
+
 				System.out.println(answer);
-						
+
 			}	
 		}
 		catch(Exception e){}
-		
+
 	}
 	public static int max(int a,int b)
 	{	
@@ -47,14 +47,14 @@ class Main
 			else
 				answer=answer+n/i-i;
 		answer*=2;
-	
+
 		if((int)Math.sqrt(n)*(int)Math.sqrt(n)==n)
 		{
 			answer+=Math.sqrt(n)-1;
 		}
 		else 
 			answer+=Math.sqrt(n);
-	
+
 		return answer;
 	}
 }

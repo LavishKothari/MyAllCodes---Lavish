@@ -39,14 +39,14 @@ long long int findAnswer(int*arr,int n,int target,int *count,int m)
 		}
 	}
 	/*
-	printf("this is a check at the end: %d %d \n",n,target);
-	for(int i=0;i<=n;i++)
-	{
-		for(int j=0;j<max_value;j++)
-			printf("arr[%d][%d] = %d\n",i,j,table[i][j]);
-		printf("\n\n");
-	}
-	*/
+	   printf("this is a check at the end: %d %d \n",n,target);
+	   for(int i=0;i<=n;i++)
+	   {
+	   for(int j=0;j<max_value;j++)
+	   printf("arr[%d][%d] = %d\n",i,j,table[i][j]);
+	   printf("\n\n");
+	   }
+	 */
 	long long int answer=table[n][target];
 	for(int i=0;i<=n;i++)
 		free(table[i]);
@@ -99,7 +99,7 @@ int main()
 		set<int>::iterator it;
 		for(i=0,it=f.begin();i<f.size();i++,it++)
 			arr[i]=(*it);
-		
+
 		long long int answer=(findAnswer(arr,f.size(),n,count,m)*tempanswer)%MOD;
 		long long int other=1;
 		for(i=0;i<1024;i++)
@@ -108,7 +108,7 @@ int main()
 		}		
 		answer=(answer*other)%MOD;
 		printf("%lld\n",answer);
-		
+
 		free(count);
 		f.erase(f.begin(),f.end());
 		free(arr);

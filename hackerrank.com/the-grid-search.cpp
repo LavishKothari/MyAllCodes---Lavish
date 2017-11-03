@@ -21,7 +21,7 @@ bool findAnswer()
 			//printf("ci and cj = %d %d\n",ci,cj);
 			if(ci<=a && cj<=b && k==c && l==d)
 				return true;
-			lavish:;
+lavish:;
 		}
 	}
 	return false;
@@ -33,18 +33,18 @@ int main()
 	while(t--)
 	{
 		scanf("%d%d",&a,&b);
-		
+
 		for(int i=0;i<a;i++)
 			scanf(" %s",p[i]);
 		scanf("%d%d",&c,&d);
-		
+
 		for(int i=0;i<c;i++)
 			scanf(" %s",q[i]);
 		bool ans=findAnswer();
 		if(ans) printf("YES\n");
 		else printf("NO\n");
-		
-		
+
+
 	}
 	return 0;
 }

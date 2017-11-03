@@ -24,7 +24,7 @@ int main()
 				printf("2\n");
 			else printf("-1\n");
 		}
-		
+
 	}
 	return 0;
 }

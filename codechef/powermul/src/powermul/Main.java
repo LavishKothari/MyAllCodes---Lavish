@@ -35,7 +35,7 @@ public class Main
 			smallPartition=r+1;
 			partition=n-r+1;
 		}
-		
+
 		for(int i=0;i<=n;i++)
 		{
 			if(i<smallPartition)
@@ -82,7 +82,7 @@ public class Main
 				}
 			}
 		}
-		
+
 		int answer=1;
 		ap[1]=bp[1]=0;
 		for(int i=1;i<=n;i++)
@@ -95,7 +95,7 @@ public class Main
 		}
 		return answer;
 	}
-	
+
 	public static void main(String[] args) throws IOException
 	{
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));

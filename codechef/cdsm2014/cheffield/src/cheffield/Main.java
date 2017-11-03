@@ -19,10 +19,10 @@ public class Main {
 					for(int j=2*i;j<=1000000;j+=i)
 						primes[j]=true;
 			/*
-			for(int i=0;i<100;i++)
-				if(!primes[i]) // means i is prime
-					System.out.println(i);
-			*/
+			   for(int i=0;i<100;i++)
+			   if(!primes[i]) // means i is prime
+			   System.out.println(i);
+			 */
 			BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 			int t=Integer.parseInt(br.readLine());
 			for(int i=0;i<t;i++)
@@ -42,11 +42,11 @@ public class Main {
 				long area=(long)l*b;
 				System.out.println(area);
 			}
-			
+
 		}
 		catch(Exception e)
 		{
-			
+
 		}
 	}
 

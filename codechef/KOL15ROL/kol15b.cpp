@@ -23,7 +23,7 @@ int main()
 		for(int i=0;i<n;i++)
 		{
 			bool flag=true;
-		
+
 			for(int j=0;j<m;j++)
 			{
 				scanf("%d",&arr[i][j]);
@@ -41,7 +41,7 @@ int main()
 		{
 			for(int j=0;j<m;j++)
 			{
-				
+
 				long long int value=0;
 				long long int maxim1=1<<30;
 				for(int k=j;k<=last[i];k++) // move right
@@ -79,7 +79,7 @@ int main()
 					min=val[i][j];
 			}
 		}
-				
+
 		printf("%d\n",min);
 	}
 	return 0;

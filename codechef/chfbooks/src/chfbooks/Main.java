@@ -9,121 +9,121 @@ public class Main
 	public static int heapLength;
 	public static int getParentIndex(int n)
 
-    {
+	{
 
-          return (n/2);
+		return (n/2);
 
-    }
+	}
 
-    public static int getLeftChildIndex(int n)
+	public static int getLeftChildIndex(int n)
 
-    {
+	{
 
-          return n*2;
+		return n*2;
 
-    }
+	}
 
-    public static int getRightChildIndex(int n)
+	public static int getRightChildIndex(int n)
 
-    {
+	{
 
-          return n*2+1;
+		return n*2+1;
 
-    }
+	}
 
-    
 
-    public static void maxHeapify(int []arr,int i)
 
-    {
+	public static void maxHeapify(int []arr,int i)
 
-          int l=getLeftChildIndex(i+1)-1; // our array is zero indexed array...
+	{
 
-          int r=getRightChildIndex(i+1)-1;
+		int l=getLeftChildIndex(i+1)-1; // our array is zero indexed array...
 
-          int largest,tmp;
+		int r=getRightChildIndex(i+1)-1;
 
-          if(l<=heapLength-1 && arr[l]>arr[i])
+		int largest,tmp;
 
-               largest=l;
+		if(l<=heapLength-1 && arr[l]>arr[i])
 
-          else
+			largest=l;
 
-               largest=i;
+		else
 
-               
+			largest=i;
 
-          if(r<=heapLength-1 && arr[r]>arr[largest])
 
-               largest=r;
 
-          
+		if(r<=heapLength-1 && arr[r]>arr[largest])
 
-          // exchange arr[i] and arr[largest]
+			largest=r;
 
-          if(largest!=i)
 
-          {
 
-               tmp=arr[i];
+		// exchange arr[i] and arr[largest]
 
-               arr[i]=arr[largest];
+		if(largest!=i)
 
-               arr[largest]=tmp;
+		{
 
-               
+			tmp=arr[i];
 
-               maxHeapify(arr,largest);
+			arr[i]=arr[largest];
 
-          }
+			arr[largest]=tmp;
 
-    }
 
-    
 
-    public static void buildMaxHeap(int []arr)
+			maxHeapify(arr,largest);
 
-    {
+		}
 
-          for(int i=getParentIndex(arr.length)-1;i>=0;i--)
+	}
 
-               maxHeapify(arr,i);
 
-    }
 
-    
+	public static void buildMaxHeap(int []arr)
 
-    public static void heapSort(int[]arr)
+	{
 
-    {
+		for(int i=getParentIndex(arr.length)-1;i>=0;i--)
 
-          buildMaxHeap(arr);
+			maxHeapify(arr,i);
 
-          int tmp;
+	}
 
-          for(int i=arr.length-1;i>=1;i--)
 
-          {
 
-               tmp=arr[0];
+	public static void heapSort(int[]arr)
 
-               arr[0]=arr[i];
+	{
 
-               arr[i]=tmp;
+		buildMaxHeap(arr);
 
-               
+		int tmp;
 
-               heapLength--;
+		for(int i=arr.length-1;i>=1;i--)
 
-               maxHeapify(arr,0);
+		{
 
-          }
+			tmp=arr[0];
 
-    }    
+			arr[0]=arr[i];
+
+			arr[i]=tmp;
+
+
+
+			heapLength--;
+
+			maxHeapify(arr,0);
+
+		}
+
+	}    
 
 	public static void main(String[] args) 
 	{
-		
+
 		try
 		{
 			BufferedReader br=new BufferedReader(new InputStreamReader(System.in));

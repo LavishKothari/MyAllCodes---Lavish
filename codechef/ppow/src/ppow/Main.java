@@ -42,7 +42,7 @@ public class Main {
 			int b=Integer.parseInt(stz.nextToken());
 			System.out.println("Case "+(i+1)+": "+ans[a][b]);
 		}
-		
+
 	}
 
 }

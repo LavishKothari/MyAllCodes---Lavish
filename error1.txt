@@ -1,0 +1,1127 @@
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+VIM - Vi IMproved 8.0 (2016 Sep 12, compiled Jan 02 2017 06:40:50)
+Too many edit arguments: "-"
+More info with: "vim -h"
+VIM - Vi IMproved 8.0 (2016 Sep 12, compiled Jan 02 2017 06:40:50)
+Too many edit arguments: "-"
+More info with: "vim -h"
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+sh: 1: Syntax error: Unterminated quoted string
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Press ENTER or type command to continue
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+VIM - Vi IMproved 8.0 (2016 Sep 12, compiled Jan 02 2017 06:40:50)
+Too many edit arguments: "-"
+More info with: "vim -h"
+VIM - Vi IMproved 8.0 (2016 Sep 12, compiled Jan 02 2017 06:40:50)
+Too many edit arguments: "-"
+More info with: "vim -h"
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+VIM - Vi IMproved 8.0 (2016 Sep 12, compiled Jan 02 2017 06:40:50)
+Too many edit arguments: "-"
+More info with: "vim -h"
+VIM - Vi IMproved 8.0 (2016 Sep 12, compiled Jan 02 2017 06:40:50)
+Too many edit arguments: "-"
+More info with: "vim -h"
+VIM - Vi IMproved 8.0 (2016 Sep 12, compiled Jan 02 2017 06:40:50)
+Too many edit arguments: "-"
+More info with: "vim -h"
+VIM - Vi IMproved 8.0 (2016 Sep 12, compiled Jan 02 2017 06:40:50)
+Too many edit arguments: "-"
+More info with: "vim -h"
+VIM - Vi IMproved 8.0 (2016 Sep 12, compiled Jan 02 2017 06:40:50)
+Too many edit arguments: "-"
+More info with: "vim -h"
+VIM - Vi IMproved 8.0 (2016 Sep 12, compiled Jan 02 2017 06:40:50)
+Too many edit arguments: "-"
+More info with: "vim -h"
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal

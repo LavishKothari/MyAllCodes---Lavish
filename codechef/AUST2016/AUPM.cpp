@@ -49,9 +49,9 @@ void draw(int n)
 				printf("#");
 				continue;
 			}
-			
+
 			printf(" ");
-			
+
 		}
 		printf("\n");
 	}

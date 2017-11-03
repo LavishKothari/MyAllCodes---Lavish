@@ -4,8 +4,8 @@ typedef long long int ll;
 class point
 {
 	public:
-	ll x,y;
-	double dist;
+		ll x,y;
+		double dist;
 };
 bool cp(const point&a,const point&b)
 {
@@ -30,15 +30,15 @@ int main()
 		pts[i].dist=sqrt(x*x+y*y);
 		dist[i]=pts[i].dist;
 	}
-	
+
 	sort(dist.begin(),dist.end());
 	/*
-	for(int i=0;i<n;i++)
-		printf("%lld %lld %lf\n",pts[i].x,pts[i].y,pts[i].dist);
-	*/
+	   for(int i=0;i<n;i++)
+	   printf("%lld %lld %lf\n",pts[i].x,pts[i].y,pts[i].dist);
+	 */
 	int q;
 	scanf("%d",&q);
-	
+
 	while(q--)
 	{
 		ll r;

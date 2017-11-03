@@ -5,8 +5,8 @@ int main()
 	int n;
 	cin>>n>>str;
 
-	
-	
+
+
 	findAnswer(str);
 	return 0;
 }

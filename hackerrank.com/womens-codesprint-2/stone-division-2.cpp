@@ -14,12 +14,12 @@ int nearestThatDivides(vector<ll>&s,ll n)
 	{
 		return index;
 	}
-	
+
 }
 
 int main()
 {
-    
+
 	int t;
 	scanf("%d",&t);
 	while(t--)
@@ -32,7 +32,7 @@ int main()
 
 		sort(s.begin(),s.end());
 
-		
+
 	}
-    return 0;
+	return 0;
 }

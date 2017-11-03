@@ -57,7 +57,7 @@ int select(vector<int>arr,int r)
 		else 
 			w.push_back(arr[i]);
 	}
-	
+
 	if(r<=u.size())
 		return select(u,r);
 	else if(r<=u.size()+v.size())
@@ -77,7 +77,7 @@ int select1(vector<int>arr,int r)
 		else 
 			w.push_back(arr[i]);
 	}
-	
+
 	if(r<=u.size())
 		return select1(u,r);
 	else if(r<=u.size()+v.size())

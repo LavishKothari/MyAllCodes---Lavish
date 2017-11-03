@@ -12,22 +12,22 @@ long long int GCD(long long int a,long long int b)
 	{
 		quotient=a/b;
 		remainder=a%b;
-		
-		
+
+
 		a=b;
 		b=remainder;
 		if(remainder==0)
 			break;
-		
+
 		temp=x;
 		x=px-x*quotient;
 		px=temp;
-		
+
 		temp=y;
 		y=py-y*quotient;
 		py=temp;
 		//printf("%lld = %lld * %lld + %lld * %lld\n",remainder,x,ca,y,cb);
-		
+
 	}
 	return a;
 }

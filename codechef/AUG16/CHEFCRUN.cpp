@@ -49,7 +49,7 @@ int main()
 				cs[i]=v[i];
 			else cs[i]=cs[i-1]+v[i];
 		}
-		
+
 		for(int i=n-1;i>=0;i--)
 		{
 			if(i==n-1)
@@ -70,15 +70,15 @@ int main()
 			minimum=min(minimum,sum);
 		}
 		ll x=0,y=0;
-		
+
 		if(start-1>=0)
 			x=cs[start-1];
 		y=cs[cs.size()-1]-cs[end-1];
-		
+
 		ll answer1=x+y+2*minimum;
 		if(minimum==0)
 			answer1=min(answer1,answer1+totalSum);
-		
+
 		/******************************************************************************************************/
 		// left case
 		x=y=0;
@@ -114,7 +114,7 @@ int main()
 			answer3=min(answer3,answer3+totalSum);
 		/******************************************************************************************************/
 		// left1 case
-		
+
 		x=0;
 		for(int i=(start-1+n)%n;;i=(i-1+n)%n)
 		{
@@ -139,9 +139,9 @@ int main()
 		if(start-1>=0)
 			x=cs[end-1]-cs[start-1];
 		else x=cs[end-1]; 
-		
+
 		int index1,index2;
-		
+
 		sum=0;
 		ll minimum1=0;
 		for(int i=(start-1+n)%n;;i=(i-1+n)%n)
@@ -153,7 +153,7 @@ int main()
 			if(i==end)
 				break;
 		}
-		
+
 		sum=0;
 		ll minimum2=0;
 		for(int i=end;i!=start;i=(i+1)%n)
@@ -178,7 +178,7 @@ int main()
 			if(i==end)
 				break;
 		}
-		
+
 		sum=minimum1=0;
 		for(int i=(end-1+n)%n;i>=start;i=(i-1+n)%n)
 		{
@@ -189,7 +189,7 @@ int main()
 			if(i==start)
 				break;
 		}
-	
+
 		minimum2=0;
 		sum=0;
 		for(int i=start;i<end;i++)
@@ -204,7 +204,7 @@ int main()
 		if(minimum1!=0 && minimum2!=0 && index1>index2)
 			answer6=answer6+2*minimum1+2*minimum2;
 		/******************************************************************************************************/
-		
+
 		cout<<"answer1 and answer2 = "<<answer1<<" "<<answer2<<" "<<answer3<<" "<<answer4<<" "<<answer5<<" "<<answer6<<endl;
 		cout<<min(min(min(min(min(answer1,answer2),answer3),answer4),answer5),answer6)<<endl;
 	}

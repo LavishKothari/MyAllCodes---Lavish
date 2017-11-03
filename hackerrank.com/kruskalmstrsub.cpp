@@ -25,7 +25,7 @@ int isThereAPath(int x,int y)
 	isVisited=new int[n];
 	for(int i=0;i<n;i++)
 		isVisited[i]=false;
-	
+
 	while(stack.size()!=0)
 	{
 		int u=stack[0];
@@ -90,12 +90,12 @@ int main()
 				mat[y-1][x-1]=wt;	
 			}
 			/*
-			edges[i].start=x-1;
-			edges[i].end=y-1;
-			edges[i].w=wt;
-			*/
+			   edges[i].start=x-1;
+			   edges[i].end=y-1;
+			   edges[i].w=wt;
+			 */
 		}
-		
+
 		m=0;
 		for(i=0;i<n;i++)
 			for(j=0;j<n;j++)
@@ -112,15 +112,15 @@ int main()
 					counter++;
 				}
 		/*
-		for(int i=0;i<m;i++)
-			printf("%d %d %d\n",edges[i].start+1,edges[i].end+1,edges[i].w);
-		*/
+		   for(int i=0;i<m;i++)
+		   printf("%d %d %d\n",edges[i].start+1,edges[i].end+1,edges[i].w);
+		 */
 		qsort(edges,m,sizeof(struct Edge),cmp);
 		scanf("%d",&start);
 		printf("%d",kruskal());
-		
+
 		free(edges);
 	}
-	
+
 	return 0;
 }

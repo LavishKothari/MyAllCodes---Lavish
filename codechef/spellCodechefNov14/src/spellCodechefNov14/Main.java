@@ -8,23 +8,23 @@ public class Main {
 
 	static String dict1[];
 	public static int BinarySearch(String sval)
-    {
+	{
 		int first=0;
 		int last=dict1.length-1;
-        int mid;
-        while(first<=last)
-        {           
-        	mid=(first+last)/2;
-        	if(sval.compareTo(dict1[mid])==0)
-	           	return mid;
-	       	else if(sval.compareTo(dict1[mid])>0)
-	           	first=mid+1;
-	           else if(sval.compareTo(dict1[mid])<=0)
-	           	last=mid-1;
-	       }
-	       return -1;
-    }
-	
+		int mid;
+		while(first<=last)
+		{           
+			mid=(first+last)/2;
+			if(sval.compareTo(dict1[mid])==0)
+				return mid;
+			else if(sval.compareTo(dict1[mid])>0)
+				first=mid+1;
+			else if(sval.compareTo(dict1[mid])<=0)
+				last=mid-1;
+		}
+		return -1;
+	}
+
 	static boolean isPermutation(String s1,String s2)
 	{
 		int flag1[]=new int[26];
@@ -58,7 +58,7 @@ public class Main {
 		if(str.length()!=1)
 		{
 			// case 1 swapping of two letters
-		
+
 			for(int i=0;i<dict1.length;i++)
 			{
 				if(isPermutation(str,dict1[i]))
@@ -86,7 +86,7 @@ public class Main {
 					return dict1[index];
 			}
 		}
-		
+
 		// case 3 to insert an irrelevant letter
 		// you need to delete a letter from the word and then search in dict1ionary.
 		if(str.length()!=1)
@@ -124,7 +124,7 @@ public class Main {
 			for(int i=0;i<d;i++)
 				dict1[i]=new String(br.readLine());
 			StringTokenizer stz=new StringTokenizer(br.readLine());
-			
+
 			int counter=stz.countTokens();
 			for(int i=0;i<counter;i++)
 			{
@@ -185,8 +185,8 @@ public class Main {
 		}
 		catch(Exception e)
 		{
-			
+
 		}
-		
+
 	}
 }

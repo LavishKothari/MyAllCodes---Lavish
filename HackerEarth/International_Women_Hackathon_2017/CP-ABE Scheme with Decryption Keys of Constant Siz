@@ -1,0 +1,8 @@
+CP-ABE Scheme with Decryption Keys of Constant Size using ECC with Expressive Threshold Access
+
+
+Area : Cryptology
+Sub Area: Cipher text policy Attribute based encryption
+
+Problems intended to be addressed by proposed project
+For distributed organizations virtual organizations is the most suitable model. In virtual organizations, there are many organizations participating, who work collaboratively to achieve a common task. Giving proper access rights to individuals on the basis of the attributes possessed by them, is a challenging task. Our solution is intended to solve this problem of appropriately giving and maintaining the access rights, with compromising any privacy and security. Access policy can be specified in terms of access structure, and we solve the problem of providing proper access which is defined by the access structure.

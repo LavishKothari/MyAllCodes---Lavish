@@ -7,7 +7,7 @@ public class Main
 {
 	static int ishcfnm1;
 	static int primeArray[]=new int[9592];
-	
+
 	static boolean isMPrime=false;
 	public static boolean isPrime(int n)
 	{
@@ -16,10 +16,10 @@ public class Main
 				return false;
 		return true;
 	}
-	
+
 	static long modularMultiplicativeInverse(int n, int MOD)
 	{
-	    return pow(n,MOD-2,MOD);
+		return pow(n,MOD-2,MOD);
 	}
 	static long pow(int base, int exp, int modulus) 
 	{
@@ -30,7 +30,7 @@ public class Main
 			if ((exp & 1) !=0) 
 				result = (result * base) % modulus;
 			base = (int)((base * (long)base) % modulus);
-		    exp >>= 1;
+			exp >>= 1;
 		}
 		return result;
 	}
@@ -74,12 +74,12 @@ public class Main
 					f[i]=(int)((f[i-1]*(long)i)%m);
 					mult[i]=(int)((mult[i-1]*(long)f[i])%m);
 				}
-				
+
 				int answer1=1,answer2=1,answer3=1;
 				answer1=(int)((pow(f[n],n,m)*modularMultiplicativeInverse(mult[n-1],m))%m);
 				answer2=(int)((pow(f[r],r,m)*modularMultiplicativeInverse(mult[r-1],m))%m);
 				answer3=(int)((pow(f[n-r],n-r,m)*modularMultiplicativeInverse(mult[n-r-1],m))%m);
-				
+
 				return (int)((((((answer1*modularMultiplicativeInverse(answer2, m))%m))%m)*modularMultiplicativeInverse(answer3, m))%m);
 			}
 			else
@@ -95,28 +95,28 @@ public class Main
 					smallPartition=r+1;
 					partition=n-r+1;
 				}
-				
+
 				int ap[]=new int[n+1];
 				int bp[]=new int[smallPartition];
-				
+
 				for(int i=0;i<smallPartition;i++)
 					bp[i]=i;
 				for(int i=partition;i<=n;i++)
 					ap[i]=i;
-				
+
 				ap[1]=bp[1]=0;
 				reduceArrayToPrimes(ap,partition);
 				reduceArrayToPrimes(bp,2);
-				
+
 				long answer=1;
 				ap[1]=bp[1]=0;
-				
+
 				for(int i=0;i<primeArray.length && n>=primeArray[i];i++)
 				{
 					int temp=primeArray[i];
 					if(temp<smallPartition)
 						ap[temp]-=bp[temp];
-					
+
 					answer=(answer*pow(temp,ap[temp],m))%m;
 				}
 				return (int)answer;
@@ -124,7 +124,7 @@ public class Main
 		}
 		catch(Exception e)
 		{
-			
+
 		}
 		return 0;
 	}
@@ -136,7 +136,7 @@ public class Main
 			for(int i=2;i<=100000;i++)
 				if(isPrime(i))
 					primeArray[j++]=i;
-			
+
 			BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 			int test=Integer.parseInt(br.readLine());
 			for(j=0;j<test;j++)

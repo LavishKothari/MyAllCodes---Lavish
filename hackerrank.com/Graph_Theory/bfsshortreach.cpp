@@ -45,12 +45,12 @@ int* Graph::BFS(int start)
 	color=(int*)malloc(sizeof(int)*numberOfVertices);
 	distance=(int*)malloc(sizeof(int)*numberOfVertices);
 	/*
-		color specification 
-		
-		0 = white
-		1 = gray
-		2 = black
-	*/
+	   color specification 
+
+	   0 = white
+	   1 = gray
+	   2 = black
+	 */
 	for(int i=0;i<numberOfVertices;i++)
 	{
 		distance[i]=-1;
@@ -58,7 +58,7 @@ int* Graph::BFS(int start)
 	}
 	color[start]=1;
 	distance[start]=0;
-	
+
 	queue<int>Q;
 	Q.push(start);
 	while(!Q.empty())
@@ -77,7 +77,7 @@ int* Graph::BFS(int start)
 		}
 		color[u]=2; // this sigifies that all the adjacent vertices of u are visited.
 	}
-	
+
 	free(color);
 	return distance;
 }

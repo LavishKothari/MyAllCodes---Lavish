@@ -42,9 +42,9 @@ int main()
 		stable_sort(m.begin(),m.end(),cmpfunc1);
 		stable_sort(m.begin(),m.end(),cmpfunc2);
 		/*
-		for(int i=0;i<n;i++)
-			printf("%d %d %d\n",m[i].index,m[i].l,m[i].r);
-		*/
+		   for(int i=0;i<n;i++)
+		   printf("%d %d %d\n",m[i].index,m[i].l,m[i].r);
+		 */
 		printf("%d\n",m[0].index);
 		delete []l;
 		delete []r;

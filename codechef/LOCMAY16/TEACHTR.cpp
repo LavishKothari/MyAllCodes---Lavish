@@ -14,7 +14,7 @@ void enqueue(int val)
 		queue[start]=val;
 		return;
 	}
-	
+
 	end++;
 	queue[end]=val;
 }	
@@ -48,15 +48,15 @@ int main()
 		graph[a-1].push_back(b-1);
 	}
 	/*
-	for(i=0;i<n;i++)
-	{
-		for(j=0;j<graph[i].size();j++)
-			printf("%d ",graph[i][j]);
-		printf("\n");
-	}
-	*/
+	   for(i=0;i<n;i++)
+	   {
+	   for(j=0;j<graph[i].size();j++)
+	   printf("%d ",graph[i][j]);
+	   printf("\n");
+	   }
+	 */
 	start=end=-1;
-	
+
 	enqueue(0);
 	while(true)
 	{
@@ -67,7 +67,7 @@ int main()
 		}
 		enqueue(-1);
 	}
-	
-	
+
+
 	return 0;
 }

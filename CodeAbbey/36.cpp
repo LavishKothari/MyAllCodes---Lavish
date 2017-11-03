@@ -31,7 +31,7 @@ int main()
 			if(findSame(arr[j],i)==c[j])
 				counter++;
 		}
-		
+
 		if(counter==n)
 		{
 			printf("%d\n",i);

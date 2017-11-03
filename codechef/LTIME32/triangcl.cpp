@@ -31,7 +31,7 @@ int main()
 		x=sqrt((c-a)*(c-a)+(d-b)*(d-b));
 		y=sqrt((e-c)*(e-c)+(f-d)*(f-d));
 		z=sqrt((e-a)*(e-a)+(f-b)*(f-b));
-		
+
 		if(subtask==1)
 		{
 			if(isScalen(x,y,z))
@@ -49,9 +49,9 @@ int main()
 			if(find==0) printf("acute triangle\n");
 			else if(find==1) printf("right triangle\n");
 			else if(find==2) printf("obtuse triangle\n");
-		
+
 		}
 	}
-	
+
 	return 0;
 }

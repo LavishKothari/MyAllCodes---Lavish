@@ -38,7 +38,7 @@ ll findAnswer1(int*a,int n) // Aishya's code
 		add = (add + ((a[i]*(power2[i])%MOD)%MOD))%MOD;
 	}
 	return sum;
-	
+
 }
 
 

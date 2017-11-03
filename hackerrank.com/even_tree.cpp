@@ -6,8 +6,8 @@ using namespace std;
 class Edge
 {
 	public:
-	int a,b;
-	Edge(int,int);
+		int a,b;
+		Edge(int,int);
 };
 Edge::Edge(int a,int b)
 {
@@ -17,15 +17,15 @@ Edge::Edge(int a,int b)
 class Graph
 {
 	public:
-	int n,e;
-	vector<Edge>edges;
-	vector< list<int> >adjacencyList;
-	Graph(int,int);
-	void addEdge(int,int);
-	void print();
-	void removeEdge(int,int);
-	int findAnswer();
-	int countVertices(int);
+		int n,e;
+		vector<Edge>edges;
+		vector< list<int> >adjacencyList;
+		Graph(int,int);
+		void addEdge(int,int);
+		void print();
+		void removeEdge(int,int);
+		int findAnswer();
+		int countVertices(int);
 };
 Graph::Graph(int n,int e)
 {

@@ -23,7 +23,7 @@ public class Main
 			if(primes[i])
 				for(int j=i*i;j<=max;j+=i)
 					primes[j]=false;
-		
+
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 		int t=Integer.parseInt(br.readLine());
 		while(t-->0)
@@ -42,11 +42,11 @@ public class Main
 							continue;
 						newPrimes[j-m]=false;
 					}
-			
+
 			for(int i=0;i<=Math.sqrt(n);i++)
 				if(i>=m && i<=n && primes[i])
 					System.out.println(i);
-				
+
 			for(int i=0;i<newPrimes.length;i++)
 				if(newPrimes[i] && i+m!=1)
 					System.out.println(""+(i+m));

@@ -11,9 +11,9 @@ int main()
 	for(int i=0;i<n;i++)
 		cin>>v[i];
 	cin>>p>>q;
-	
+
 	sort(v.begin(),v.end());
-	
+
 	vector<int>::iterator it1,it2,it;
 	it1=lower_bound(v.begin(),v.end(),p);
 	it2=upper_bound(v.begin(),v.end(),q);
@@ -38,7 +38,7 @@ int main()
 		answer1=p;
 		x=*it1-p;
 	}
-	
+
 	if(it2!=v.end())
 	{
 		int r=(*it2+*(it2-1))/2;
@@ -52,7 +52,7 @@ int main()
 			answer2=q;
 			y=min(*it2-q,q-*(it2-1));
 		}
-		
+
 	}
 	else 
 	{
@@ -71,7 +71,7 @@ int main()
 		}
 	}
 	int maa=max(max(ma,x),y);
-	
+
 	int fa=2147483647;
 	//cout<<ma<<" "<<x<<" "<<y<<" "<<maa<<"  "<<endl;
 	if(maa==ma && fa>answer)
@@ -80,7 +80,7 @@ int main()
 		fa=answer1;
 	if(maa==y && fa>answer2)
 		fa=answer2;
-	
+
 	cout<<fa<<endl;
 	return 0;
 }

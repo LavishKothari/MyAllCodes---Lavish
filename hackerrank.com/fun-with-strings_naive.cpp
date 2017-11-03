@@ -7,7 +7,7 @@ using namespace std;
 vector <string> v;
 
 void findSubstrings(string &str, int n) {
-	
+
 	int i, j;
 	string temp;
 	for(i=0; i<n; i++) {
@@ -19,7 +19,7 @@ void findSubstrings(string &str, int n) {
 	//cout<<"v.size = "<<v.size()<<endl;
 }
 int longestpref(string &a, string &b) {
-	
+
 	int count = 0;
 	int i;
 	for(i=0; i<a.size() && i<b.size(); i++) {
@@ -33,7 +33,7 @@ int longestpref(string &a, string &b) {
 
 
 int findAnswer(int n) {
-	
+
 	long long int ans=0;
 	int i, j;
 	for(i=0; i<v.size(); i++) {
@@ -42,7 +42,7 @@ int findAnswer(int n) {
 		}
 	}
 	return ans;
-	
+
 }
 
 
@@ -57,10 +57,10 @@ int main()
 		scanf("%d",&n);
 		cin >> a;
 		findSubstrings(a, n);
-		
+
 		cout<<findAnswer(n)<<endl;
 		v.erase(v.begin(),v.end());
 	}
 
-    return 0;
+	return 0;
 }

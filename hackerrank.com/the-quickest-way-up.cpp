@@ -1,9 +1,9 @@
 /*
-	Assumptions: 
-		There always exists a solution - ie.. the graph formed is always connected.
-		There is no chain of snakes and ladders.
+Assumptions: 
+There always exists a solution - ie.. the graph formed is always connected.
+There is no chain of snakes and ladders.
 
-*/
+ */
 
 #include<stdio.h>
 #include<vector>
@@ -16,26 +16,26 @@ struct Ladder_Snake
 class Vertex
 {
 	public:
-	int distance,parent;
-	bool isVisited;
-	vector<int>adj_list;
-	Vertex(){}
-	Vertex(int distance,bool isVisited)
-	{
-		this->distance=distance;
-		this->isVisited=isVisited;
-	}
+		int distance,parent;
+		bool isVisited;
+		vector<int>adj_list;
+		Vertex(){}
+		Vertex(int distance,bool isVisited)
+		{
+			this->distance=distance;
+			this->isVisited=isVisited;
+		}
 };
 map<int , Vertex>graph;	// making the graph global
 void bfs(int start)
 {
 	vector<int>q;
 	q.push_back(start);
-	
+
 	graph[start].isVisited=true;
 	graph[start].distance=0;
 	graph[start].parent=0;
-	
+
 	while(q.size()!=0)
 	{
 		int v=q[0];
@@ -84,16 +84,16 @@ int main()
 	{
 		int ladders,snakes;
 		scanf("%d",&ladders);
-		
+
 		struct Ladder_Snake ladder[15];
 		for(int i=0;i<ladders;i++)
 			scanf("%d%d",&(ladder[i].start),&(ladder[i].end));
 		scanf("%d",&snakes);
-		
+
 		struct Ladder_Snake snake[15];
 		for(int i=0;i<snakes;i++)
 			scanf("%d%d",&(snake[i].start),&(snake[i].end));
-				
+
 		for(int i=1;i<=100;i++)
 		{
 			if(isStart(i,snake,snakes)!=-1 || isStart(i,ladder,ladders)!=-1)
@@ -115,21 +115,21 @@ int main()
 		// printing the graph.
 		bfs(1);
 		/*
-		for(map<int,Vertex> ::iterator it=graph.begin();it!=graph.end();it++)
-		{
-			printf("%d -> ",it->first);
-			Vertex v=it->second;
-			for(int j=0;j<v.adj_list.size();j++)
-			{
-				printf("%d ",v.adj_list[j]);
-			}
-			printf("\t\t%d",v.parent);
-			printf("\n");
-		}
-		*/
-		
+		   for(map<int,Vertex> ::iterator it=graph.begin();it!=graph.end();it++)
+		   {
+		   printf("%d -> ",it->first);
+		   Vertex v=it->second;
+		   for(int j=0;j<v.adj_list.size();j++)
+		   {
+		   printf("%d ",v.adj_list[j]);
+		   }
+		   printf("\t\t%d",v.parent);
+		   printf("\n");
+		   }
+		 */
+
 		printf("%d\n",graph[100].distance);
-		
+
 	}
 	return 0;
 }

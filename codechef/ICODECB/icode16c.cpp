@@ -16,7 +16,7 @@ void cc(int t)
 		cc(t-1);
 		cc(t-2);
 		cc(t-3);
-		
+
 	}
 }
 pair<int,int> c(int t)

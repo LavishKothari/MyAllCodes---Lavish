@@ -6,11 +6,11 @@ using namespace std;
 class Point
 {
 	public:
-	int x,y;
-	long long int dist;
-	Point(int,int);
-	Point(){}
-	
+		int x,y;
+		long long int dist;
+		Point(int,int);
+		Point(){}
+
 };
 
 Point::Point(int x,int y)
@@ -20,10 +20,10 @@ Point::Point(int x,int y)
 }
 bool c1(const Point &p1, const Point &p2)
 {
-    if(p1.x < p2.x)
-        return true;
-    else
-        return false;
+	if(p1.x < p2.x)
+		return true;
+	else
+		return false;
 }
 int maxix,minix,maxiy,miniy;
 
@@ -48,25 +48,25 @@ bool findMinMax(vector<Point>&points)
 				minix=i;
 				minx=points[i].x;
 			}
-			
+
 			if(miny>points[i].y)
 			{
 				miniy=i;
 				miny=points[i].y;
 			}
-			
+
 			if(maxx<points[i].x)
 			{
 				maxix=i;
 				maxx=points[i].x;
 			}
-			
+
 			if(maxy<points[i].y)
 			{
 				maxiy=i;
 				maxy=points[i].y;
 			}
-			
+
 		}
 	}
 	for(i=0;i<points.size();i++)
@@ -75,7 +75,7 @@ bool findMinMax(vector<Point>&points)
 			printf("1\n%d SW\n",i+1);
 			return true;
 		}
-	
+
 	for(i=0;i<points.size();i++)
 		if(points[i].x==points[maxix].x && points[i].y==points[miniy].y)
 		{
@@ -88,15 +88,15 @@ bool findMinMax(vector<Point>&points)
 			printf("1\n%d SE\n",i+1);
 			return true;
 		}
-	
+
 	for(i=0;i<points.size();i++)
 		if(points[i].x==points[minix].x && points[i].y==points[miniy].y)
 		{
 			printf("1\n%d NE\n",i+1);
 			return true;
 		}
-	
-	
+
+
 	return false;
 }
 int main()
@@ -113,7 +113,7 @@ int main()
 			scanf("%d%d",&x,&y);
 			points.push_back(Point(x,y));
 		}
-		
+
 		b=findMinMax(points);
 		if(!b)
 		{

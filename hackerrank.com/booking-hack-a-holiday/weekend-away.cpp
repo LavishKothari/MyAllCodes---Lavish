@@ -26,14 +26,14 @@ int main()
 			graph[b].push_back(make_pair(a,d));
 		}
 		/*
-		for(int i=1;i<=n;i++)
-		{
-			printf("%d => ",i);
-			for(int j=0;j<graph[i].size();j++)
-				printf("(%d,%d)  ",graph[i][j].first,graph[i][j].second);
-			printf("\n");
-		}
-		*/
+		   for(int i=1;i<=n;i++)
+		   {
+		   printf("%d => ",i);
+		   for(int j=0;j<graph[i].size();j++)
+		   printf("(%d,%d)  ",graph[i][j].first,graph[i][j].second);
+		   printf("\n");
+		   }
+		 */
 		int min=202;
 		for(int i=1;i<=n;i++)
 		{

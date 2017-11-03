@@ -8,14 +8,14 @@ import java.io.RandomAccessFile;
 public class Decode 
 {
 	String logFile,encodedFile;
-	
+
 	Decode(String logFile,String encodedFile)throws IOException
 	{
 		this.logFile=logFile;
 		this.encodedFile=encodedFile;
 		decode();
 	}
-	
+
 	int isPresent(String searchString,String codedStrings[])
 	{
 		for(int i=0;i<codedStrings.length;i++)
@@ -25,17 +25,17 @@ public class Decode
 		}
 		return -1;
 	}
-	
+
 	public void decode()throws IOException
 	{
 		File log=new File(logFile);
 		File encoded=new File(encodedFile);
 		File decoded=new File(encoded.getParent()+encoded.getName().substring(0,encodedFile.indexOf('.'))+"Decoded.txt");
-		
+
 		FileOutputStream fosDecoded=new FileOutputStream(decoded);
 		FileInputStream fisLog=new FileInputStream(log);
 		FileInputStream fisEncoded=new FileInputStream(encoded);
-		
+
 		String codedStrings[]=new String[256];
 		for(int i=0;i<256;i++)
 			codedStrings[i]=new String("");
@@ -43,8 +43,8 @@ public class Decode
 		int ch;
 		int maxLength=0;
 		/*
-		    reading the logfile to store the huffman code of each character 
-		*/
+		   reading the logfile to store the huffman code of each character 
+		 */
 		while((ch=fisLog.read())!=-1)
 		{
 			if(fisLog.read()==-1) // extracing the : from the file
@@ -66,7 +66,7 @@ public class Decode
 		int a;
 		int j=0;
 		String searchString=new String("");
-		
+
 		RandomAccessFile randFile=new RandomAccessFile(encoded,"r");
 		long randFileLength=randFile.length();
 		long counter=0;

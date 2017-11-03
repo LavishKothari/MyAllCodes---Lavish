@@ -47,18 +47,18 @@ int main()
 				answer+=v1;
 			}
 			/*
-			else if(v2>v1)
-			{
-				map<int,int>::iterator it1=mm.end();it1--;
-				mm.erase(it1);
-				it1=mm.end();it1--;
-				int f=it1->first-v1;
-				int s=it1->second;
-				mm.erase(it1);
-				mm[f]=s;
-				answer+=v1;
-			}
-			*/
+			   else if(v2>v1)
+			   {
+			   map<int,int>::iterator it1=mm.end();it1--;
+			   mm.erase(it1);
+			   it1=mm.end();it1--;
+			   int f=it1->first-v1;
+			   int s=it1->second;
+			   mm.erase(it1);
+			   mm[f]=s;
+			   answer+=v1;
+			   }
+			 */
 			else if(v1>v2)
 			{
 				map<int,int>::iterator it1=mm.end();it1--;it1--;

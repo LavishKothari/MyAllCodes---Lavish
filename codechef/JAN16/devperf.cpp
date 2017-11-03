@@ -104,13 +104,13 @@ int main()
 			cin>>str[i];
 		printf("%d\n",findAnswer(str,r,c));
 		/*
-		for(int i=0;i<r;i++)
-		{
-			for(int j=0;j<c;j++)
-				cout<<str[i][j];
-			cout<<endl;
-		}
-		*/
+		   for(int i=0;i<r;i++)
+		   {
+		   for(int j=0;j<c;j++)
+		   cout<<str[i][j];
+		   cout<<endl;
+		   }
+		 */
 	}
 	return 0;
 }

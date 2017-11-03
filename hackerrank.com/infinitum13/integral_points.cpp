@@ -14,11 +14,11 @@ int main()
 	{
 		long long int a,b,c,d,e,f;
 		scanf("%lld%lld%lld%lld%lld%lld",&a,&b,&c,&d,&e,&f);
-		
+
 		long long int boundaryPoints=gcd(abs(c-a),abs(d-b));
 		boundaryPoints+=gcd(abs(e-c),abs(f-d));
 		boundaryPoints+=gcd(abs(a-e),abs(b-f));
-		
+
 		long long int area=((a-e)*(d-b)-(a-c)*(f-b));
 		if(area<0)
 			area=-area;

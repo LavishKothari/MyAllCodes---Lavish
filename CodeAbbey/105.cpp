@@ -13,7 +13,7 @@ int main()
 	int *y=(int*)malloc(sizeof(int)*n);
 	for(int i=0;i<n;i++)
 		scanf("%d%d",&x[i],&y[i]);
-	
+
 	double area=0.0;
 	for(int i=1;i<n-1;i++)
 	{

@@ -20,7 +20,7 @@ void isPartOfCycle(vector<int>&graph,int start,vector<bool>&answer,vector<bool>&
 		slow=graph[slow];
 		fast=graph[graph[fast]];
 	}while(slow!=fast);
-	
+
 	int current=slow;
 	while(!answer[current] && !globalVisited[current])
 	{
@@ -46,7 +46,7 @@ int main()
 #endif
 	while(t--)
 	{
-		
+
 		int n;
 
 #ifdef TEST
@@ -58,7 +58,7 @@ int main()
 		vector<bool>answer(n,false);
 		vector<int>graph(n);
 		vector<bool>globalVisited(n,false);
-		
+
 		for(int i=0;i<n;i++)
 		{
 			int temp;
@@ -73,7 +73,7 @@ int main()
 			if(i==graph[i])
 				answer[i]=true;
 		}
-		
+
 		for(int i=0;i<n;i++)
 			if(answer[i]==false && globalVisited[i]==false)
 				isPartOfCycle(graph,i,answer,globalVisited);
@@ -83,6 +83,6 @@ int main()
 				count++;
 		cout<<count<<endl;
 	}
-	
+
 	return 0;
 }

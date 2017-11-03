@@ -5,15 +5,15 @@ int main()
 	int n;
 	scanf("%d",&n);
 	char **arr,**newArr;
-	
+
 	arr=(char**)malloc(sizeof(char*)*n);
 	for(int i=0;i<n;i++)
 		arr[i]=(char*)malloc(sizeof(char)*n);
-	
+
 	newArr=(char**)malloc(sizeof(char*)*n);
 	for(int i=0;i<n;i++)
 		newArr[i]=(char*)malloc(sizeof(char)*n);
-	
+
 	for(int i=0;i<n;i++)
 		for(int j=0;j<n;j++)
 			scanf(" %c",&arr[i][j]);

@@ -83,7 +83,7 @@ int main()
 				s.push_back(sqrt(v1));
 			}			
 		}
-		
+
 	}
 	cout<<s[0]<<endl;
 	return 0;

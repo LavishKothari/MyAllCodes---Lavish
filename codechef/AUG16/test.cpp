@@ -44,13 +44,13 @@ int main()
 			cs[i]=v[i];
 		else cs[i]=cs[i-1]+v[i];
 	}
-	
-	
+
+
 	int t;
 	cin>>t;
 	while(t--)
 	{
-		
+
 		int start,end;
 		cin>>start>>end;
 		cout<<getSum(cs,start,end)<<endl;

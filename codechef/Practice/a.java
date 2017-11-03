@@ -19,7 +19,7 @@ class Main
 					answer+=fun(pro);
 				}
 				System.out.println(answer);
-						
+
 			}	
 		}
 		catch(Exception e){}

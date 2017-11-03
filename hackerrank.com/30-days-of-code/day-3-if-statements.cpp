@@ -15,6 +15,6 @@ int main()
 		else 
 			printf("Not Weird\n");
 	}
-	
+
 	return 0;
 }

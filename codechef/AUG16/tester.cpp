@@ -19,7 +19,7 @@ void print1TestCase()
 int main()
 {
 	srand(time(NULL));
-	
+
 	fp=fopen("tc.txt","w");
 	if(fp)
 	{

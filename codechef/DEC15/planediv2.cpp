@@ -31,7 +31,7 @@ int main()
 		fory.erase(fory.begin(),fory.end());
 		int n;
 		scanf("%d",&n);
-		
+
 		for(int i=0;i<n;i++)
 		{
 			int x,y,z;
@@ -66,7 +66,7 @@ int main()
 			if(tel>mmax)
 				mmax=tel;
 		}
-		
+
 		if(fory.size()>mmax)
 			mmax=fory.size();
 		printf("%d\n",mmax);

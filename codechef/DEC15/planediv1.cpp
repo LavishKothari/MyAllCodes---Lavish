@@ -13,8 +13,8 @@ int gcd(int a,int b)
 class line
 {
 	public:
-	int a,b,c,slopex,slopey;
-	line(int,int,int);
+		int a,b,c,slopex,slopey;
+		line(int,int,int);
 };
 int p(int x)
 {
@@ -40,7 +40,7 @@ line::line(int x,int y,int z)
 	}
 	int gcdxy=gcd(p(x),p(y));
 	int gc=gcd(gcdxy,p(z));
-	
+
 	this->slopex=x/gcdxy;
 	this->slopey=y/gcdxy;
 	x/=gc;
@@ -50,7 +50,7 @@ line::line(int x,int y,int z)
 	this->b=y;
 	this->c=z;
 	//printf("(%d,%d,%d)\n",a,b,c);
-	
+
 }
 vector<line>lines;
 
@@ -79,16 +79,16 @@ bool cslopey(line x,line y)
 int findAnswer()
 {
 	/*
-	printf("this is the initial check = %d\n",lines.size());
-	for(int i=0;i<lines.size();i++)
-		printf("%d,%d,%d\n",lines[i].a,lines[i].b,lines[i].c);
-	*/
+	   printf("this is the initial check = %d\n",lines.size());
+	   for(int i=0;i<lines.size();i++)
+	   printf("%d,%d,%d\n",lines[i].a,lines[i].b,lines[i].c);
+	 */
 	/*
-	vector<double>slope(lines.size());
-	for(int i=0;i<lines.size();i++)
-		slope[i]=-lines[i].a/(double)lines[i].b;
-	*/
-	
+	   vector<double>slope(lines.size());
+	   for(int i=0;i<lines.size();i++)
+	   slope[i]=-lines[i].a/(double)lines[i].b;
+	 */
+
 	sort(lines.begin(),lines.end(),cslopex);
 	for(int i=0;i<lines.size();)
 	{
@@ -103,12 +103,12 @@ int findAnswer()
 		//i=en;
 	}
 	/*
-	for(int i=0;i<lines.size();i++)
-	{
-		printf("(%d,%d) => %f \n",lines[i].slopex,lines[i].slopey,lines[i].slopex/(float)lines[i].slopey);
-	}
-	printf("\n");
-	*/
+	   for(int i=0;i<lines.size();i++)
+	   {
+	   printf("(%d,%d) => %f \n",lines[i].slopex,lines[i].slopey,lines[i].slopex/(float)lines[i].slopey);
+	   }
+	   printf("\n");
+	 */
 	int start=0,end=0;
 	int maxx=1;
 	for(int i=1;i<lines.size();i++)
@@ -153,10 +153,10 @@ int main()
 	{
 		int n;
 		scanf("%d",&n);
-		
+
 		lines.erase(lines.begin(),lines.end());
 		lines.reserve(n);
-		
+
 		for(int i=0;i<n;i++)
 		{
 			int x,y,z;
@@ -164,7 +164,7 @@ int main()
 			lines.push_back(line(x,y,z));
 		}
 		sort(lines.begin(),lines.end(),ca);
-		
+
 		for(int i=0;i<n;)
 		{
 			//printf("i = %d\n",i);
@@ -179,10 +179,10 @@ int main()
 			//i=en;
 		}
 		/*
-		printf("this is a test beginning : \n");
-		for(int i=0;i<lines.size();i++)
-			printf("%d,%d,%d\n",lines[i].a,lines[i].b,lines[i].c);
-		*/
+		   printf("this is a test beginning : \n");
+		   for(int i=0;i<lines.size();i++)
+		   printf("%d,%d,%d\n",lines[i].a,lines[i].b,lines[i].c);
+		 */
 		for(int i=0;i<n;)
 		{
 			int st,en;
@@ -196,11 +196,11 @@ int main()
 			//i=en;
 		}
 		/*
-		printf("********************\n");
-		for(int i=0;i<lines.size();i++)
-			printf("%d,%d,%d\n",lines[i].a,lines[i].b,lines[i].c);
-		printf("********************\n");
-		*/
+		   printf("********************\n");
+		   for(int i=0;i<lines.size();i++)
+		   printf("%d,%d,%d\n",lines[i].a,lines[i].b,lines[i].c);
+		   printf("********************\n");
+		 */
 		for(int i=0;i<lines.size();i++)
 		{
 			int st,en;
@@ -219,19 +219,19 @@ int main()
 			if(en>st)
 			{
 				/*
-				printf("st,en = %d,%d\n",st,en);
-				for(int j=st;j<en;j++)
-					printf("deleting this line %d %d %d\n",lines[j].a,lines[j].b,lines[j].c);
-				*/
+				   printf("st,en = %d,%d\n",st,en);
+				   for(int j=st;j<en;j++)
+				   printf("deleting this line %d %d %d\n",lines[j].a,lines[j].b,lines[j].c);
+				 */
 				lines.erase(lines.begin()+st,lines.begin()+en);
 			}
 		}
 		int withx=0,withy=0;
 		/*
-		printf("this is a test to print all the lines : \n");
-		for(int i=0;i<lines.size();i++)
-			printf("%d,%d,%d\n",lines[i].a,lines[i].b,lines[i].c);
-		*/
+		   printf("this is a test to print all the lines : \n");
+		   for(int i=0;i<lines.size();i++)
+		   printf("%d,%d,%d\n",lines[i].a,lines[i].b,lines[i].c);
+		 */
 		for(int i=0;i<lines.size();i++)
 		{
 			if(lines[i].a==0)
@@ -258,6 +258,6 @@ int main()
 		//printf("this is final check : %d %d %d\n",withx,withy,findAnswer());
 		printf("%d\n",maximum3(findAnswer(),withx,withy));
 	}
-	
+
 	return 0;
 }

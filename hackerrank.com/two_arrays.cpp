@@ -18,7 +18,7 @@ int main()
 		scanf("%d%d",&n,&k);
 		int*a=(int*)malloc(sizeof(int)*n);
 		int*b=(int*)malloc(sizeof(int)*n);
-		
+
 		for(int i=0;i<n;i++)
 			scanf("%d",&a[i]);
 		for(int i=0;i<n;i++)

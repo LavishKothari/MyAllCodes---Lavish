@@ -7,8 +7,8 @@ using namespace std;
 class O
 {
 	public:
-	int a,b,number,diff;
-	O(int,int,int,int);
+		int a,b,number,diff;
+		O(int,int,int,int);
 };
 O::O(int a,int b,int number,int diff)
 {
@@ -20,8 +20,8 @@ O::O(int a,int b,int number,int diff)
 class Button
 {
 	public:
-	int value;bool isw,isUsed;
-	Button(int,bool,bool);
+		int value;bool isw,isUsed;
+		Button(int,bool,bool);
 };
 Button::Button(int value,bool isw,bool isUsed)
 {
@@ -76,10 +76,10 @@ int main()
 		scanf("%d%d%d",&n,&k,&m);
 		vector<O>objects;
 		vector<Button>buttons;
-		
+
 		int*a=new int[n];
 		int*b=new int[n];
-		
+
 		for(int i=0;i<n;i++)
 		{
 			scanf("%d",&a[i]);
@@ -90,7 +90,7 @@ int main()
 			scanf("%d",&b[i]);
 			answer+=a[i]-b[i];
 		}
-		
+
 		for(int i=0;i<n;i++)
 		{
 			objects.push_back(O(a[i],b[i],i,a[i]-b[i]));
@@ -101,7 +101,7 @@ int main()
 		int*value=new int[k+m];
 		bool*isw=new bool[k+m];
 		bool*isUsed=new bool[k+m];
-		
+
 		for(int i=0;i<k;i++)
 		{	
 			scanf("%d",&value[i]);

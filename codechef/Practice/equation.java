@@ -10,12 +10,12 @@ class Main
 		{
 			long answer=0;
 			StringTokenizer stz=new StringTokenizer(br.readLine());
-		
+
 			int N=Integer.parseInt((String)stz.nextElement());
 			int A=Integer.parseInt((String)stz.nextElement());
 			int B=Integer.parseInt((String)stz.nextElement());
 			int C=Integer.parseInt((String)stz.nextElement());
-		
+
 			for(int a=0;a<=N;a++)
 			{
 				for(int b=0;a+b<=N;b++)

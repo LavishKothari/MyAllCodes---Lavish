@@ -57,7 +57,7 @@ int calScore(vector<int>&v,vector<int>&type)
 {
 	int temp;
 	int answer=0;
-	
+
 	answer=answer+count6(type)*4;
 	answer=answer+count5(type)*2;
 	answer=answer+count4(type)*1;

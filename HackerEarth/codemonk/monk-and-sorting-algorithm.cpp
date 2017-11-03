@@ -34,7 +34,7 @@ int main()
 	vector<ll>arr(n);
 	for(int i=0;i<n;i++)
 		scanf("%lld",&arr[i]);
-		//cin>>arr[i];
+	//cin>>arr[i];
 
 	int i=1;
 	while(true)
@@ -55,10 +55,10 @@ int main()
 		if(counter==n)
 		{
 			/*
-			for(int j=0;j<n;j++)
-				cout<<ele[j].e<<" ";
-			cout<<endl;
-			*/
+			   for(int j=0;j<n;j++)
+			   cout<<ele[j].e<<" ";
+			   cout<<endl;
+			 */
 			break;
 		}
 		stable_sort(ele.begin(),ele.end(),cmp);

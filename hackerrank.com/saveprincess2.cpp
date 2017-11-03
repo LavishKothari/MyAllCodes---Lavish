@@ -15,19 +15,19 @@ void nextMove(int n, int r, int c, vector <string> grid){
 }
 int main(void) {
 
-    int n, r, c;
-    vector <string> grid;
+	int n, r, c;
+	vector <string> grid;
 
-    cin >> n;
-    cin >> r;
-    cin >> c;
+	cin >> n;
+	cin >> r;
+	cin >> c;
 
-    for(int i=0; i<n; i++) {
-        string s; cin >> s;
-        grid.push_back(s);
-    }
+	for(int i=0; i<n; i++) {
+		string s; cin >> s;
+		grid.push_back(s);
+	}
 
-    nextMove(n, r, c, grid);
-    return 0;
+	nextMove(n, r, c, grid);
+	return 0;
 }
 

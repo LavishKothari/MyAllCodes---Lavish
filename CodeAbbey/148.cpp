@@ -28,15 +28,15 @@ ll inv(ll a,ll b) // extended euclidean theorem
 	while(pr!=1)
 	{
 		ll q=cr/pr;
-		
+
 		ll nr=cr-q*pr;
 		ll nx=cx-q*px;
 		ll ny=cy-q*py;
-		
+
 		cx=px;
 		cy=py;
 		cr=pr;
-		
+
 		px=nx;
 		py=ny;
 		pr=nr;
@@ -52,7 +52,7 @@ string convertToString(ll x)
 	int b=x%31;
 	x/=31;
 	int a=x%31;
-	
+
 	string s;
 	s.push_back(a+'a');
 	s.push_back(b+'a');
@@ -64,7 +64,7 @@ int main(){
 	ll t,n,p,pe,e;
 	cin>>t>>n>>p>>pe;
 	e=calculateE(n,p,pe);
-	
+
 	while(t--)
 	{
 		ll c,pk;

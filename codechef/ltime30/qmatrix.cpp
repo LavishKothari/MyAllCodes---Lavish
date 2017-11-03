@@ -22,7 +22,7 @@ int main()
 		row[i]=(r[i]-l[i]+1)%2!=0;
 	}
 	bool totalParity=(c%2==1);
-	
+
 	for(int i=0;i<n;i++)
 	{
 		int counter=0;

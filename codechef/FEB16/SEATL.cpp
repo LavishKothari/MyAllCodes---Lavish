@@ -72,8 +72,8 @@ int main()
 			//printf("\n");	
 		}
 		printf("%d\n",maxi);
-		
+
 	}
-	
+
 	return 0;
 }

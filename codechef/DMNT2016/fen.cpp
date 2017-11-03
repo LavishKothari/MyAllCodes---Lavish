@@ -17,7 +17,7 @@ int main()
 		{
 			int l,r,k;
 			scanf("%d%d%d",&l,&r,&k);
-			
+
 		}
-	return 0;
-}
+		return 0;
+	}

@@ -8,7 +8,7 @@ void fun(ll &maxValue,ll a,ll b,ll c)
 		maxValue=a+b+c;
 	if((a+b+c)%2==0 && a+b+c-1>maxValue)
 		maxValue=a+b+c-1;
-	
+
 }
 int main()
 {

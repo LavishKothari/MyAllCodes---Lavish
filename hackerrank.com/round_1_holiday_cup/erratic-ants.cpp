@@ -40,9 +40,9 @@ int main()
 			}
 		}
 		/*for(int i=0;i<path.size();i++)
-		{
-			printf("(%d,%d)\n",path[i].first,path[i].second);
-		}*/
+		  {
+		  printf("(%d,%d)\n",path[i].first,path[i].second);
+		  }*/
 		for(int i=0;i<path.size();i++)
 		{
 			for(int j=i+1;j<path.size();j++)

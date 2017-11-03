@@ -1,0 +1,281 @@
+yes you are here
+
+10
+building of the segment tree finished
+_________________________________________________________________
+index = 1   =>   4 5 8 3
+index = 2   =>   5 5 8 7
+index = 3   =>   4 5 8 3
+index = 4   =>   5 5 8 7
+index = 5   =>   2 5 7 1
+index = 6   =>   4 5 8 3
+index = 7   =>   4 5 5 4
+index = 8   =>   5 5 8 7
+index = 9   =>   5 5 6 8
+index = 10   =>   1 5 4 0
+index = 11   =>   2 5 7 1
+index = 12   =>   2 5 5 2
+index = 13   =>   4 5 8 3
+index = 14   =>   4 5 5 4
+index = 15   =>   4 5 3 5
+index = 16   =>   4 5 2 6
+index = 17   =>   5 5 8 7
+index = 18   =>   5 5 6 8
+index = 19   =>   7 5 2 9
+index = 20   =>   0 0 0 0
+index = 21   =>   0 0 0 0
+index = 22   =>   0 0 0 0
+index = 23   =>   0 0 0 0
+index = 24   =>   0 0 0 0
+index = 25   =>   0 0 0 0
+index = 26   =>   0 0 0 0
+index = 27   =>   0 0 0 0
+index = 28   =>   0 0 0 0
+index = 29   =>   0 0 0 0
+_________________________________________________________________
+day number, start, end = 1 0 1
+         This is something but important = 0
+4 
+in the range from start to end max index = 0
+
+day number, start, end = 2 0 3
+         This is something but important = 1
+4 7 5 
+in the range from start to end max index = 1
+
+day number, start, end = 3 0 3
+         This is something but important = 1
+4 7 5 
+in the range from start to end max index = 1
+
+day number, start, end = 4 0 7
+         This is something but important = 3
+4 7 5 8 5 3 2 
+in the range from start to end max index = 3
+
+day number, start, end = 5 0 9
+         This is something but important = 3
+4 7 5 8 5 3 2 8 6 
+in the range from start to end max index = 3
+
+day number, start, end = 6 0 9
+         This is something but important = 3
+4 7 5 8 5 3 2 8 6 
+in the range from start to end max index = 3
+
+day number, start, end = 7 0 10
+         This is something but important = 3
+4 7 5 8 5 3 2 8 6 2 
+in the range from start to end max index = 3
+
+day number, start, end = 8 0 10
+         This is something but important = 3
+4 7 5 8 5 3 2 8 6 2 
+in the range from start to end max index = 3
+
+day number, start, end = 9 0 10
+         This is something but important = 7
+4 7 5 0 5 3 2 8 6 2 
+in the range from start to end max index = 7
+
+day number, start, end = 10 0 10
+         This is something but important = 7
+4 7 5 0 5 3 2 8 6 2 
+in the range from start to end max index = 7
+
+day number, start, end = 11 0 10
+         This is something but important = 7
+4 7 5 0 5 3 2 8 6 2 
+in the range from start to end max index = 7
+
+day number, start, end = 12 0 10
+         This is something but important = 7
+4 7 5 0 5 3 2 8 6 2 
+in the range from start to end max index = 7
+
+day number, start, end = 13 0 10
+         This is something but important = 7
+4 7 5 0 5 3 2 8 6 2 
+in the range from start to end max index = 7
+
+day number, start, end = 14 0 10
+         This is something but important = 1
+4 7 5 0 5 3 2 0 6 2 
+in the range from start to end max index = 1
+
+day number, start, end = 15 0 10
+         This is something but important = 1
+4 7 5 0 5 3 2 0 6 2 
+in the range from start to end max index = 1
+
+day number, start, end = 16 0 10
+         This is something but important = 1
+4 7 5 0 5 3 2 0 6 2 
+in the range from start to end max index = 1
+
+day number, start, end = 17 0 10
+         This is something but important = 8
+4 0 5 0 5 3 2 0 6 2 
+in the range from start to end max index = 8
+
+day number, start, end = 18 0 10
+         This is something but important = 8
+4 0 5 0 5 3 2 0 6 2 
+in the range from start to end max index = 8
+
+day number, start, end = 19 0 10
+         This is something but important = 8
+4 0 5 0 5 3 2 0 6 2 
+in the range from start to end max index = 8
+
+day number, start, end = 20 0 10
+         This is something but important = 8
+4 0 5 0 5 3 2 0 6 2 
+in the range from start to end max index = 8
+
+day number, start, end = 21 0 10
+         This is something but important = 8
+4 0 5 0 5 3 2 0 6 2 
+in the range from start to end max index = 8
+
+day number, start, end = 22 0 10
+         This is something but important = 2
+4 0 5 0 5 3 2 0 0 2 
+in the range from start to end max index = 4
+
+day number, start, end = 23 0 10
+         This is something but important = 2
+4 0 5 0 5 3 2 0 0 2 
+in the range from start to end max index = 4
+
+day number, start, end = 24 0 10
+         This is something but important = 2
+4 0 5 0 5 3 2 0 0 2 
+in the range from start to end max index = 4
+
+day number, start, end = 25 0 10
+         This is something but important = 2
+4 0 5 0 5 3 2 0 0 2 
+in the range from start to end max index = 4
+
+day number, start, end = 26 0 10
+         This is something but important = 2
+4 0 5 0 5 3 2 0 0 2 
+in the range from start to end max index = 4
+
+day number, start, end = 27 0 10
+         This is something but important = 2
+4 0 5 0 0 3 2 0 0 2 
+in the range from start to end max index = 2
+
+day number, start, end = 28 0 10
+         This is something but important = 2
+4 0 5 0 0 3 2 0 0 2 
+in the range from start to end max index = 2
+
+day number, start, end = 29 0 10
+         This is something but important = 2
+4 0 5 0 0 3 2 0 0 2 
+in the range from start to end max index = 2
+
+day number, start, end = 30 0 10
+         This is something but important = 2
+4 0 5 0 0 3 2 0 0 2 
+in the range from start to end max index = 2
+
+day number, start, end = 31 0 10
+         This is something but important = 2
+4 0 5 0 0 3 2 0 0 2 
+in the range from start to end max index = 2
+
+day number, start, end = 32 0 10
+         This is something but important = 0
+4 0 0 0 0 3 2 0 0 2 
+in the range from start to end max index = 0
+
+day number, start, end = 33 0 10
+         This is something but important = 0
+4 0 0 0 0 3 2 0 0 2 
+in the range from start to end max index = 0
+
+day number, start, end = 34 0 10
+         This is something but important = 0
+4 0 0 0 0 3 2 0 0 2 
+in the range from start to end max index = 0
+
+day number, start, end = 35 0 10
+         This is something but important = 0
+4 0 0 0 0 3 2 0 0 2 
+in the range from start to end max index = 0
+
+day number, start, end = 36 0 10
+         This is something but important = 5
+0 0 0 0 0 3 2 0 0 2 
+in the range from start to end max index = 5
+
+day number, start, end = 37 0 10
+         This is something but important = 5
+0 0 0 0 0 3 2 0 0 2 
+in the range from start to end max index = 5
+
+day number, start, end = 38 0 10
+         This is something but important = 5
+0 0 0 0 0 3 2 0 0 2 
+in the range from start to end max index = 5
+
+day number, start, end = 39 0 10
+         This is something but important = 5
+0 0 0 0 0 3 2 0 0 2 
+in the range from start to end max index = 5
+
+day number, start, end = 40 0 10
+         This is something but important = 5
+0 0 0 0 0 3 2 0 0 2 
+in the range from start to end max index = 5
+
+day number, start, end = 41 0 10
+         This is something but important = 6
+0 0 0 0 0 0 2 0 0 2 
+in the range from start to end max index = 6
+
+day number, start, end = 42 0 10
+         This is something but important = 6
+0 0 0 0 0 0 2 0 0 2 
+in the range from start to end max index = 6
+
+day number, start, end = 43 0 10
+         This is something but important = 6
+0 0 0 0 0 0 2 0 0 2 
+in the range from start to end max index = 6
+
+day number, start, end = 44 0 10
+         This is something but important = 6
+0 0 0 0 0 0 2 0 0 2 
+in the range from start to end max index = 6
+
+day number, start, end = 45 0 10
+         This is something but important = 6
+0 0 0 0 0 0 2 0 0 2 
+in the range from start to end max index = 6
+
+day number, start, end = 46 0 10
+         This is something but important = 9
+0 0 0 0 0 0 0 0 0 2 
+in the range from start to end max index = 9
+
+day number, start, end = 47 0 10
+         This is something but important = 9
+0 0 0 0 0 0 0 0 0 2 
+in the range from start to end max index = 9
+
+day number, start, end = 48 0 10
+         This is something but important = 9
+0 0 0 0 0 0 0 0 0 2 
+in the range from start to end max index = 9
+
+day number, start, end = 49 0 10
+         This is something but important = 9
+0 0 0 0 0 0 0 0 0 2 
+in the range from start to end max index = 9
+
+answer = 2

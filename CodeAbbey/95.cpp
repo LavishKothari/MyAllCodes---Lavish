@@ -17,16 +17,16 @@ int main()
 		sumx+=x[i];
 		sumy+=y[i];
 	}
-	
+
 	sumx/=t;sumy/=t;
-	
+
 	double N=0,D=0;
 	for(int i=0;i<t;i++)
 	{
 		N+=(x[i]-sumx)*(y[i]-sumy);
 		D+=(x[i]-sumx)*(x[i]-sumx);
 	}
-	
+
 	double K=N/D;
 	double B=sumy-K*sumx;
 	//cout<<K<<" "<<B<<endl;

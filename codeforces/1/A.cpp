@@ -5,7 +5,7 @@ int main()
 	long long int m,n,a,answer,flag=0;
 	cin>>m>>n>>a;
 	answer=(m/a)*(n/a);
-	
+
 	if(m%a!=0)
 	{
 		flag++;

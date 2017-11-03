@@ -10,14 +10,14 @@ int table[1010] = {0};
 int findTable(int no) {
 
 	int max = 0, index;
-	
+
 	for(i=0; i<no; i++) {
 		if(mat[i][no] > max) {
 			max = mat[i][no];
 			index = i;
 		}
 	} 
-	
+
 	if(table[index] == 1)
 		return 2;
 	else
@@ -45,44 +45,44 @@ void findanswer() {
 
 int main()
 {
-    scanf("%d%d%d",&n,&c1,&c2);
-    mat=new int*[n];
-    for(int i=0;i<n;i++)
-    	mat[i]=new int[n];
-    
-    for(int i=0;i<n ;i++) {
-    	for(int j=0;j<n;j++)
-    	{
-    		scanf("%d",&mat[i][j]);
-    	}
+	scanf("%d%d%d",&n,&c1,&c2);
+	mat=new int*[n];
+	for(int i=0;i<n;i++)
+		mat[i]=new int[n];
+
+	for(int i=0;i<n ;i++) {
+		for(int j=0;j<n;j++)
+		{
+			scanf("%d",&mat[i][j]);
+		}
 	}
-	
+
 	table[0] = 1;
 	count1++;
-	
-	
+
+
 	findAnswer();
- 
-	
- 
- 
-	 
-    printf("%d\n",count1);
-    
-    for(i=0; i<n; i++) {
-    	if(table[i] == 1)
-    		printf("%d ",i+1;
-    }
-    printf("\n");
-    
-    }
-   
-   /* 
-    for(int i=0; i<c1; i++)
-    	printf("%d ",i+1);
-    printf("\n");
-    */
-    
-    return 0;
-}
+
+
+
+
+
+	printf("%d\n",count1);
+
+	for(i=0; i<n; i++) {
+		if(table[i] == 1)
+			printf("%d ",i+1;
+					}
+					printf("\n");
+
+					}
+
+					/* 
+					   for(int i=0; i<c1; i++)
+					   printf("%d ",i+1);
+					   printf("\n");
+					 */
+
+					return 0;
+					}
 

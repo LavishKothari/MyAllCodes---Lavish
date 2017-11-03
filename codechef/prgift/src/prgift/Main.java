@@ -9,7 +9,7 @@ public class Main {
 
 	public static void main(String[] args) throws IOException{
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-		
+
 		int t;
 		t=Integer.parseInt(br.readLine());
 		for(int i=0;i<t;i++)
@@ -18,10 +18,10 @@ public class Main {
 			StringTokenizer stz=new StringTokenizer(br.readLine());
 			n=Integer.parseInt(stz.nextToken());
 			k=Integer.parseInt(stz.nextToken());
-			
+
 			int arr[]=new int[n];
 			stz=new StringTokenizer(br.readLine());
-			
+
 			int countereven=0,counterodd=0;
 			for(int j=0;j<n;j++)
 			{

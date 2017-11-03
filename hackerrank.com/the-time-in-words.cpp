@@ -37,7 +37,7 @@ string word(int a)
 		case 29:return "twenty nine";
 		case 30:return "thirty";
 	}
-	
+
 	return "hello";
 }
 int main()

@@ -5,7 +5,7 @@ public class TreeNode
 	long frequency;
 	char character;
 	TreeNode left,right,parent;
-	
+
 	public TreeNode(long frequency,char character,TreeNode left,TreeNode right,TreeNode parent) 
 	{
 		this.frequency=frequency;
@@ -14,7 +14,7 @@ public class TreeNode
 		this.right=right;
 		this.parent=parent;
 	}
-	
+
 	public TreeNode() 
 	{
 		this.frequency=0;

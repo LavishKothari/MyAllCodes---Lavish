@@ -6,7 +6,7 @@ vector<bool>primes(MAX);
 void populateSeive()
 {
 	primes[0]=primes[1]=false;
-	
+
 	for(long long int i=2;i<MAX;i++)
 		primes[i]=true;
 	for(long long int i=2;i*i<=MAX;i++)
@@ -21,10 +21,10 @@ int main()
 	int t;
 	populateSeive();
 	/*
-	for(int i=0;i<primes.size();i++)
-		if(primes[i])
-			printf("%d\n",i);
-	*/
+	   for(int i=0;i<primes.size();i++)
+	   if(primes[i])
+	   printf("%d\n",i);
+	 */
 	scanf("%d",&t);
 	while(t--)
 	{
@@ -44,6 +44,6 @@ int main()
 			printf("%d+%d\n",a[i],b[i]);
 		printf("\n");
 	}
-	
+
 	return 0;
 }

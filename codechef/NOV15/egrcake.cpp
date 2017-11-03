@@ -37,7 +37,7 @@ long long int findAnswer(long long int n,long long int m) // this is wrong.
 {
 	if(m==0)
 		return 1;	// this is perfectly fine
-		
+
 	if((n&1) && m%4==0)
 		return n;
 	else if((n&1) && m%2==0 && m%4!=0)
@@ -68,12 +68,12 @@ int main()
 		long long int m,n;
 		scanf("%lld%lld",&n,&m);
 		/*
-		long long int answer=findAnswer(n,m);
-		if(answer==n)
-			printf("Yes ");
-		else
-			printf("No %lld ",answer);
-		*/
+		   long long int answer=findAnswer(n,m);
+		   if(answer==n)
+		   printf("Yes ");
+		   else
+		   printf("No %lld ",answer);
+		 */
 		//for(int i=0;i<n;i++)
 		{
 			long long int answer1=findAnswer1(n,m);

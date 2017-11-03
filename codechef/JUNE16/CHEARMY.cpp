@@ -48,7 +48,7 @@ void fa(ll d,ll k)
 	k=k-batch;
 	ll p;
 	if(k%batch!=0)
-	p=(k/batch+1)*2;
+		p=(k/batch+1)*2;
 	else p=(k/batch)*2;
 	printf("%lld",p);
 	fa(d-1,ck-(batch*(p/2-1)+batch)); // recursive call
@@ -62,7 +62,7 @@ int main()
 	{
 		scanf("%lld",&k);
 		int x=(int)(log2(k)/log2(5));
-		
+
 		if(power(5,x)==k)
 		{
 			ll sum=0;
@@ -71,7 +71,7 @@ int main()
 			printf("%lld\n",sum);
 			continue;
 		}
-		
+
 		fa(x+1,k);
 		printf("\n");
 	}

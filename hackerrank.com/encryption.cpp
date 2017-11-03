@@ -23,13 +23,13 @@ int main()
 				goto lavish;			
 		}
 	}
-	lavish:;
-	for(int i=0;i<b;i++)
-	{
-		for(int j=0;j<a;j++)
-			if(j!=a-1 || (j==a-1 && i<s.size()%b) || (j==a-1 && s.size()%b==0))
-				cout<<f[j][i];
-		cout<<" ";
-	}
-	return 0;
+lavish:;
+	   for(int i=0;i<b;i++)
+	   {
+		   for(int j=0;j<a;j++)
+			   if(j!=a-1 || (j==a-1 && i<s.size()%b) || (j==a-1 && s.size()%b==0))
+				   cout<<f[j][i];
+		   cout<<" ";
+	   }
+	   return 0;
 }

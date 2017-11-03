@@ -10,7 +10,7 @@ void populate_divisors()
 	for(int i=2;i<MAX;i++)
 	{
 		//if(i%100==0)
-			//cout<<i<<endl;
+		//cout<<i<<endl;
 		for(int j=i;j<MAX;j+=i)
 			divisors[j]++;
 	}
@@ -45,11 +45,11 @@ int main()
 {
 	populate_primes();
 	/*
-	cout<<"populate complete"<<endl;
-	
-	for(int i=0;i<primes.size();i++)
-		cout<<primes[i]<<" "<<endl;
-	*/
-	
+	   cout<<"populate complete"<<endl;
+
+	   for(int i=0;i<primes.size();i++)
+	   cout<<primes[i]<<" "<<endl;
+	 */
+
 	return 0;
 }

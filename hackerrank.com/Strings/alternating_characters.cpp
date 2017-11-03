@@ -43,6 +43,6 @@ int main()
 		}
 		printf("%d\n",min(alterationsa,alterationsb));
 	}
-    return 0;
+	return 0;
 }
 

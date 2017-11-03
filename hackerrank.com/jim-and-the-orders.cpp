@@ -5,17 +5,17 @@ using namespace std;
 class fan
 {
 	public:
-	int number,s,d,sum;
-	bool isDone;
-	fan(){}
-	fan(int number,int s,int d)
-	{
-		isDone=false;
-		this->number=number;
-		this->s=s;
-		this->d=d;
-		this->sum=s+d;
-	}
+		int number,s,d,sum;
+		bool isDone;
+		fan(){}
+		fan(int number,int s,int d)
+		{
+			isDone=false;
+			this->number=number;
+			this->s=s;
+			this->d=d;
+			this->sum=s+d;
+		}
 };
 bool cmp(const fan&a,const fan&b)
 {
@@ -35,6 +35,6 @@ int main()
 
 	for(int i=0;i<n;i++)
 		cout<<f[i].number<<" ";
-		
+
 	return 0;
 }

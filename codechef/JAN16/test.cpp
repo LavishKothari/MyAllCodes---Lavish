@@ -39,7 +39,7 @@ int findBlocks(vector<int>x,vector<int>y) // this function finds the number of b
 			blocks++;
 			while(true)
 			{
-				
+
 				map<int,set<int> >::iterator nextit=graph.find(*((it->second).begin()));
 				if(nextit==graph.end())
 					break;
@@ -51,14 +51,14 @@ int findBlocks(vector<int>x,vector<int>y) // this function finds the number of b
 				it=nextit;
 				printf("%d-->%d\n",it->first,(it->second).size());
 				/*
-				if((it->second).size()==0)
-				{
-					graph.erase(it);
-					break;
-				}
-				*/
+				   if((it->second).size()==0)
+				   {
+				   graph.erase(it);
+				   break;
+				   }
+				 */
 			}
-			
+
 		}
 	}
 	if(graph.size()!=0)
@@ -74,17 +74,17 @@ int main1()
 	p.push_back(1);
 	p.push_back(2);
 	p.push_back(3);
-	
+
 	q.push_back(2);
 	q.push_back(3);
 	q.push_back(4);
-	
+
 	printf("this is the number of blocks %d\n",findBlocks(p,q));
 	return 0;
 }
 int main()
 {
 	int *arr=new int[0];
-	
+
 	return 0;
 }

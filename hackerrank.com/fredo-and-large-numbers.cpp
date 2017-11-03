@@ -6,15 +6,15 @@ typedef long long int ll;
 
 class element
 {
-public:
-	int fo,freq;
-	ll e;
-	element(int fo,ll e,int freq)
-	{
-		this->fo=fo;
-		this->e=e;
-		this->freq=freq;
-	}
+	public:
+		int fo,freq;
+		ll e;
+		element(int fo,ll e,int freq)
+		{
+			this->fo=fo;
+			this->e=e;
+			this->freq=freq;
+		}
 };
 bool cmp1(const element&a,const element&b)
 {
@@ -39,9 +39,9 @@ int main()
 	vector<ll>index0(MAX,MAX);
 	map<ll,int>firstOccur;
 	/*
-	for(int i=0;i<MAX;i++)
-		index0[i]=MAX;
-	*/
+	   for(int i=0;i<MAX;i++)
+	   index0[i]=MAX;
+	 */
 	for(int i=0;i<n;i++)
 	{
 		scanf("%lld",&arr[i]);

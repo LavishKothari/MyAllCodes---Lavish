@@ -7,7 +7,7 @@ int main()
 	long long int n,k;
 	scanf("%lld%lld",&k,&n);
 	vector<long long int>radius2(k);
-	
+
 	for(long long int i=0;i<k;i++)
 	{
 		long long int r;

@@ -4,15 +4,15 @@ using namespace std;
 class vertex
 {
 	public :
-	vector<int>adjlist;
-	int number;
-	int parent;
-	int isvisited;
-	vertex(int number,int isvisited)
-	{
-		this->number=number;
-		this->isvisited=isvisited;
-	}
+		vector<int>adjlist;
+		int number;
+		int parent;
+		int isvisited;
+		vertex(int number,int isvisited)
+		{
+			this->number=number;
+			this->isvisited=isvisited;
+		}
 };
 
 int dfs(vector<vertex>graph,int start,int end)
@@ -20,11 +20,11 @@ int dfs(vector<vertex>graph,int start,int end)
 	vector<int>stack;
 	int i,answer=0;
 	stack.push_back(start);
-	
+
 	graph[start].parent=-1;
 	graph[start].isvisited=1;
 	//printf("pusing %d\n",start);
-	
+
 	while(stack.size()!=0)
 	{
 		int current=*(stack.end()-1);
@@ -43,9 +43,9 @@ int dfs(vector<vertex>graph,int start,int end)
 		}
 	}
 	/*
-	for(i=0;i<graph.size();i++)
-		printf("%d : %d\n",i,graph[i].parent);
-	*/
+	   for(i=0;i<graph.size();i++)
+	   printf("%d : %d\n",i,graph[i].parent);
+	 */
 	while(end!=start)
 	{
 		if(graph[end].parent==start)
@@ -84,7 +84,7 @@ int main()
 					end=i*m+j;
 					forest[i][j]='.';
 				}
-				
+
 			}
 		for(i=0;i<n;i++)
 		{
@@ -102,14 +102,14 @@ int main()
 			}
 		}
 		/*
-		for(i=0;i<graph.size();i++)
-		{
-			printf("%d: ",i);
-			for(j=0;j<graph[i].adjlist.size();j++)
-				printf("%d ",graph[i].adjlist[j]);
-			printf("\n");
-		}
-		*/
+		   for(i=0;i<graph.size();i++)
+		   {
+		   printf("%d: ",i);
+		   for(j=0;j<graph[i].adjlist.size();j++)
+		   printf("%d ",graph[i].adjlist[j]);
+		   printf("\n");
+		   }
+		 */
 		scanf("%d",&k);
 		if(k==dfs(graph,start,end))
 			printf("Impressed\n");

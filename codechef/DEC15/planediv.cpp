@@ -34,11 +34,11 @@ int findAnswer()
 	for(int i=0;i<a.size();i++)
 		slope[i]=-a[i]/(double)b[i];
 	sort(slope.begin(),slope.end(),cmpf);
-	
+
 	for(int i=0;i<a.size();i++)
 		printf("%lf ",slope[i]);
 	printf("\n");
-	
+
 	int start=0,end=0;
 	int maxx=1;
 	int counter=0;
@@ -75,13 +75,13 @@ int main()
 		a.erase(a.begin(),a.end());
 		b.erase(b.begin(),b.end());
 		c.erase(c.begin(),c.end());
-		
+
 		a.reserve(n);
 		b.reserve(n);
 		c.reserve(n);
-		
+
 		int withx=0,withy=0;
-		
+
 		for(int i=0;i<n;i++)
 		{
 			int x,y,z;
@@ -98,11 +98,11 @@ int main()
 			a.push_back(x/gc);
 			b.push_back(y/gc);
 			c.push_back(z/gc);
-			
+
 		}
 		printf("this is a test : %d\n",a.size());
 		printf("%d\n",maximum3(findAnswer(),withx,withy));
 	}
-	
+
 	return 0;
 }

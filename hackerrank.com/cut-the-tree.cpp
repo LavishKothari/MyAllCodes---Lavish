@@ -7,11 +7,11 @@ int sum=0,minValue=2147483647;
 class vertex
 {
 	public:
-	int parent,value;
-	bool isVisited;
-	vector<int>adj_list;
-	vertex(int,int,bool);
-	vertex();
+		int parent,value;
+		bool isVisited;
+		vector<int>adj_list;
+		vertex(int,int,bool);
+		vertex();
 };
 vertex::vertex(){}
 vertex::vertex(int value,int parent,bool isVisited)
@@ -66,12 +66,12 @@ int main()
 	//printing the graph
 	for(int i=1;i<=n;i++)
 	{
-		printf("%d -> ",i);
-		for(int j=0;j<graph[i].adj_list.size();j++)
-			printf("%d ",graph[i].adj_list[j]);
-		printf("\n");
+	printf("%d -> ",i);
+	for(int j=0;j<graph[i].adj_list.size();j++)
+	printf("%d ",graph[i].adj_list[j]);
+	printf("\n");
 	}
-	*/
+	 */
 	return 0;
 }
 

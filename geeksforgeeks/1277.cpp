@@ -42,17 +42,17 @@ int main()
 }
 
 /*
-	11
-	a
-	ab
-	abc
-	defg
-	defgh
-	defghi
-	defghijkl
-	defghij
-	defghijk
-	abcde
-	fghijklzz
-	abcdefghijklzz
-*/
+   11
+   a
+   ab
+   abc
+   defg
+   defgh
+   defghi
+   defghijkl
+   defghij
+   defghijk
+   abcde
+   fghijklzz
+   abcdefghijklzz
+ */

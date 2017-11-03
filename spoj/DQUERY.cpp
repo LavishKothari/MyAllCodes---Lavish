@@ -40,8 +40,8 @@ int main()
 		scanf("%d",&arr[i]);
 
 	int count[A]={0};
-	
-	
+
+
 	int m;
 	scanf("%d",&m);
 	struct Query*query;

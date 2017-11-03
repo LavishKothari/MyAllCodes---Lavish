@@ -7,40 +7,40 @@ int M,N; // m is number of clients // n is number of houses
 
 class Element
 {
-public:
-	int price,area;
+	public:
+		int price,area;
 };
 bool recurse(vector< vector<int> >& matrix, int start, bool isVisited[], int assign_array[])
 {
-    for (int v = 0; v < N; v++)
-    {
-        if (matrix[start][v] && !isVisited[v])
-        {
-            isVisited[v] = true; // Mark v as visited
- 			if (assign_array[v] < 0 || recurse(matrix, assign_array[v], isVisited, assign_array))
-            {
-                assign_array[v] = start;
-                return true;
-            }
-        }
-    }
-    return false;
+	for (int v = 0; v < N; v++)
+	{
+		if (matrix[start][v] && !isVisited[v])
+		{
+			isVisited[v] = true; // Mark v as visited
+			if (assign_array[v] < 0 || recurse(matrix, assign_array[v], isVisited, assign_array))
+			{
+				assign_array[v] = start;
+				return true;
+			}
+		}
+	}
+	return false;
 }
- 
+
 int findAnswer(vector< vector<int> >& matrix)
 {
-    int assign_array[N];
-    memset(assign_array, -1, sizeof(assign_array));
- 
-    int answer = 0;
-    for (int u = 0; u < M; u++)
-    {
-        bool isVisited[N];
-        memset(isVisited, 0, sizeof(isVisited));
- 	    if (recurse(matrix, u, isVisited, assign_array))
-            answer++;
-    }
-    return answer;
+	int assign_array[N];
+	memset(assign_array, -1, sizeof(assign_array));
+
+	int answer = 0;
+	for (int u = 0; u < M; u++)
+	{
+		bool isVisited[N];
+		memset(isVisited, 0, sizeof(isVisited));
+		if (recurse(matrix, u, isVisited, assign_array))
+			answer++;
+	}
+	return answer;
 }
 
 int main()
@@ -93,28 +93,28 @@ int main()
 		}
 	}
 	/*
-	for(int i=0;i<N;i++)
-	{
-		cout<<"i = "<<i<<" : ";
-		for(int j=0;j<M;j++)
-		{
-			cout<<graph[i][j];
-		}
-		cout<<endl;
-	}
-	*/
+	   for(int i=0;i<N;i++)
+	   {
+	   cout<<"i = "<<i<<" : ";
+	   for(int j=0;j<M;j++)
+	   {
+	   cout<<graph[i][j];
+	   }
+	   cout<<endl;
+	   }
+	 */
 	cout<<findAnswer(graph)<<endl;
 	return 0;
 }
 
 /*
-3
-4
-5 110
-6 200
-4 170
-10 100
-6 110 
-7 150 
-6 110
-*/
+   3
+   4
+   5 110
+   6 200
+   4 170
+   10 100
+   6 110 
+   7 150 
+   6 110
+ */

@@ -7,9 +7,9 @@ int main()
 	vector<int>arr(n);
 	for(int i=0;i<n;i++)
 		scanf("%d",&arr[i]);
-	
+
 	sort(arr.begin(),arr.end());
-	
+
 	int q;
 	scanf("%d",&q);
 	while(q--)

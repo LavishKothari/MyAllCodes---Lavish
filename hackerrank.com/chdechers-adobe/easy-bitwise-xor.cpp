@@ -19,7 +19,7 @@ ll getSum(ll n,ll a,ll d,ll m)
 	a%=m;
 	n%=m;
 	d%=m;
-	
+
 	//ll x=((n*( (2*a)%m + ((n-1)*d)%m )%m )%m*(m/2+1))%m;
 	ll x=((n*( (2*a)%m + ((n-1)*d)%m )%m )%m*(power1(2,m-2,m)))%m;
 	//ll x=((n*( (2*a)%m + ((n-1)*d)%m )%m )%m*(m/2+1))%m;
@@ -34,11 +34,11 @@ ll f(ll a,ll b,ll d,ll m)
 
 		if(a+(n-1)*d>=b)
 			n--;
-		
+
 		if(a&1)
 			a--;
 		else a++;
-		
+
 		ll s=getSum(n,a,d,m);
 
 		return s;
@@ -49,7 +49,7 @@ ll f(ll a,ll b,ll d,ll m)
 
 		if(a+(n-1)*d>=b)
 			n--;
-		
+
 		ll n1,n2;
 		if(n%2==0)
 		{
@@ -61,7 +61,7 @@ ll f(ll a,ll b,ll d,ll m)
 			n1=n/2+1;
 			n2=n/2;
 		}
-		
+
 		ll a1,a2;
 		if(a&1)
 			a1=a-1;
@@ -79,14 +79,14 @@ ll f(ll a,ll b,ll d,ll m)
 
 }
 ll f1(ll a, ll b,ll d,ll m) {
-    ll s = 0;
-    
-    while (a < b) {
-    	s = (s + (a ^ 1))%m;
-        a = a + d;
-    }
-    
-    return s % m;
+	ll s = 0;
+
+	while (a < b) {
+		s = (s + (a ^ 1))%m;
+		a = a + d;
+	}
+
+	return s % m;
 }
 
 

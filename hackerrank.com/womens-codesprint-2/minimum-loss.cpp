@@ -4,8 +4,8 @@ using namespace std;
 typedef long long int ll;
 class Element
 {
-public:
-	ll value;int index;
+	public:
+		ll value;int index;
 };
 
 bool cmp(const Element&a,const Element&b)

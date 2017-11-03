@@ -27,7 +27,7 @@ int main()
 		{
 			f[i]=f[i]-g[i];
 			h[i]=h[i]-g[i];
-			
+
 			sum+=min(f[i],h[i]);
 		}
 		printf("%dN%dJ%dS\n",counter,sum,len-counter-sum);

@@ -38,7 +38,7 @@ int main()
 	d4=(ll)maxx*maxx+(ll)miny*miny;
 	d5=(ll)minx*minx+(ll)miny*miny;
 	d6=(ll)minx*minx+(ll)maxy*maxy;
-	
+
 	printf("%lf\n",sqrt(max(max(max(max(max(d1,d2),d3),d4),d5),d6)));
 	return 0;
 }

@@ -1,6 +1,6 @@
 /*
-	problem link : http://www.practice.geeksforgeeks.org/problem-page.php?pid=1278
-*/
+   problem link : http://www.practice.geeksforgeeks.org/problem-page.php?pid=1278
+ */
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -12,7 +12,7 @@ void printall(string current,int start,vector< vector<int> >&graph,string &s)
 	else 
 		for(int i=0;i<graph[start].size();i++)
 			printall(current+s.substr(start+1,graph[start][i]-start)+" ",graph[start][i],graph,s);
-		
+
 }
 void printAllPossible(string &s,set<string>&dict)
 {
@@ -26,7 +26,7 @@ void printAllPossible(string &s,set<string>&dict)
 				if(dict.find(s.substr(i+1,j-i))!=dict.end())
 					table[j].push_back(i);
 	}
-	
+
 	if(table[s.size()-1].size()==0)
 	{
 		cout<<"Empty"<<endl;
@@ -47,7 +47,7 @@ void printAllPossible(string &s,set<string>&dict)
 	sort(result.begin(),result.end());
 	for(int i=0;i<result.size();i++)
 		cout
-		<<"("<<result[i]<<")";
+			<<"("<<result[i]<<")";
 	cout<<endl;
 }
 
@@ -118,4 +118,4 @@ Output: (in one single line)
 (qscdxmowfr qscdxmowfr qscdxmowfr mowfr qscdx mowfr)
 (qscdxmowfr qscdxmowfr qscdxmowfr mowfr qscdxmowfr)
 
-*/
+ */

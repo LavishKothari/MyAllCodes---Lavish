@@ -6,14 +6,14 @@ using namespace std;
 class Iptable
 {
 	public:
-	string start,offset,country_code;
-	Iptable(char *start,char*offset,char*country_code)
-	{
-		this->start=string(start);
-		this->offset=string(offset);
-		this->country_code=string(country_code);
-		
-	}
+		string start,offset,country_code;
+		Iptable(char *start,char*offset,char*country_code)
+		{
+			this->start=string(start);
+			this->offset=string(offset);
+			this->country_code=string(country_code);
+
+		}
 };
 vector<Iptable>v;
 long long int to10(const string&s)
@@ -58,7 +58,7 @@ int main()
 	if(fp=handlefile())
 		;//printf("");
 	else printf("File operations were not successful\n");
-	
+
 	cin>>t;
 	while(t--)
 	{

@@ -35,7 +35,7 @@ int main()
 			for(i=n-1;i>=0 && arr[i][j]!='#';i--)
 				if(!containsHash(arr,i,j) && x.find(i)==x.end() && y.find(j)==y.end())
 					favi=i;
-					flag=1;	
+			flag=1;	
 			if(flag==1)
 			{
 				x.insert(favi);

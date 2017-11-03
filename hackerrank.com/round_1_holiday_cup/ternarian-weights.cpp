@@ -14,25 +14,25 @@ long long int power(long long int a,long long int b)
 		return t*t*a;
 	else return t*t;
 }
-	
+
 void findSol(int pan,long long int x)
 {
 	//printf("finding solution for (%d,%lld)\n",pan,x);
 	if(x==0) return ;
-	
+
 	int it=lower_bound(sum.begin(),sum.end(),x)-sum.begin();
 	/*
-	if(sum[it]==x && pan==1)
-	{
-		right.push_back(power(3,it));
-		return;
-	}		
-	else if (sum[it]==x && pan==2)
-	{
-		left.push_back(power(3,it));
-		return;
-	}
-	else*/
+	   if(sum[it]==x && pan==1)
+	   {
+	   right.push_back(power(3,it));
+	   return;
+	   }		
+	   else if (sum[it]==x && pan==2)
+	   {
+	   left.push_back(power(3,it));
+	   return;
+	   }
+	   else*/
 	{
 		if(pan==1)
 		{

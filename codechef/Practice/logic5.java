@@ -11,7 +11,7 @@ class Main
 			StringTokenizer stz=new StringTokenizer(br.readLine());
 			long a=Long.parseLong((String)stz.nextElement());
 			long b=Long.parseLong((String)stz.nextElement());
-			
+
 			if(a%2==0 && b%2==0)
 				System.out.println("A");
 			else if(a%2!=0 && b%2!=0)

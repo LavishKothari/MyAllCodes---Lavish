@@ -16,22 +16,22 @@ int main()
 		f.push_back(((f[i-1]+f[i-2])%MOD+2*g[i-2])%MOD);
 		g.push_back((f[i-1]+g[i-1])%MOD);
 		if(i%100000==0)
-		printf("i = %d\n",i);
-		
+			printf("i = %d\n",i);
+
 		if(f[f.size()-1]==1)
 			flag_f=1;
 		if(g[g.size()-1]==0)
 			flag_g=1;
-		
+
 		if(flag_f && flag_g)
 			break;
 	}
 	printf("f = %d \ng = %d\n",f.size(),g.size());
 	/*
-	while(q--)
-	{
-		scanf("%d%c",&n,&c);
-	}
-	*/
+	   while(q--)
+	   {
+	   scanf("%d%c",&n,&c);
+	   }
+	 */
 	return 0;
 }

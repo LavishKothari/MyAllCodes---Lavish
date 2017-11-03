@@ -14,8 +14,8 @@ int main()
 		cin>>a>>b;
 		graph[a].insert(b);
 		graph[b].insert(a);
-		
-		
+
+
 	}
 	return 0;
 }

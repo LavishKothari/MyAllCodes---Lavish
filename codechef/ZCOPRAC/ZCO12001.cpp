@@ -32,6 +32,6 @@ int main()
 		}
 	}
 	printf("%d %d %d %d\n",max,second+1,third,fourth);
-		
+
 	return 0;
 }

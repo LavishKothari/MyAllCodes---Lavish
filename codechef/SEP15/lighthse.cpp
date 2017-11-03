@@ -5,18 +5,18 @@
 class Point
 {
 	public:
-	int number,x,y;
-	long long dist;
-	Point(int,int,int,long long int);
-	Point(){}
-	
+		int number,x,y;
+		long long dist;
+		Point(int,int,int,long long int);
+		Point(){}
+
 };
 bool operator<(const Point &p1, const Point &p2)
 {
-    if(p2.dist < p1.dist)
-        return true;
-    else
-        return false;
+	if(p2.dist < p1.dist)
+		return true;
+	else
+		return false;
 }
 Point::Point(int number,int x,int y,long long int dist)
 {
@@ -28,8 +28,8 @@ Point::Point(int number,int x,int y,long long int dist)
 class Answer
 {
 	public:
-	int number,dir;
-	Answer(int,int);
+		int number,dir;
+		Answer(int,int);
 };
 Answer::Answer(int number,int dir)
 {
@@ -177,24 +177,24 @@ int main()
 					//printf("Till here its all okay\n");
 					for(i=0;i<points.size();i++)
 						//if(points[i].isAlive==1)
-						{
-							//answerArray[answer].number=points[i].number;
-							if(points[i].x>=0 && points[i].y>=0)
-								answerArray.push_back(Answer(points[i].number,0));
-							else if(points[i].x>=0 && points[i].y<=0)
-								answerArray.push_back(Answer(points[i].number,1));
-							else if(points[i].x<=0 && points[i].y<=0)
-								answerArray.push_back(Answer(points[i].number,2));
-							else if(points[i].x<=0 && points[i].y>=0)
-								answerArray.push_back(Answer(points[i].number,3));
-							break;
-						}
+					{
+						//answerArray[answer].number=points[i].number;
+						if(points[i].x>=0 && points[i].y>=0)
+							answerArray.push_back(Answer(points[i].number,0));
+						else if(points[i].x>=0 && points[i].y<=0)
+							answerArray.push_back(Answer(points[i].number,1));
+						else if(points[i].x<=0 && points[i].y<=0)
+							answerArray.push_back(Answer(points[i].number,2));
+						else if(points[i].x<=0 && points[i].y>=0)
+							answerArray.push_back(Answer(points[i].number,3));
+						break;
+					}
 					//points[i].isAlive=0;
 					//printf("\n\nthe value of i is : %d\n",i);
 					/*
-					for(j=0;j<points.size();j++)
-						printf("point number %d %d,%d\n",points[j].number,points[j].x,points[j].y);
-					*/
+					   for(j=0;j<points.size();j++)
+					   printf("point number %d %d,%d\n",points[j].number,points[j].x,points[j].y);
+					 */
 					if(points[i].x>=0 && points[i].y>=0)
 					{
 						for(j=1;j<points.size();j++)
@@ -239,7 +239,7 @@ int main()
 					printf("finally erasing %d %d\n",points[0].x,points[0].y);
 					points.erase(points.begin());
 				}
-				
+
 			}
 			printf("%d\n",answerArray.size());
 			for(i=0;i<answerArray.size();i++)
@@ -253,7 +253,7 @@ int main()
 					printf("NE\n");
 				if(answerArray[i].dir==3)
 					printf("SE\n");
-					
+
 			}
 			//free(answerArray);
 			answerArray.clear();

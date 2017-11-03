@@ -14,7 +14,7 @@ void dijkstras(int start)
 		dist[i]=INF;
 	}	
 	dist[start]=0;
-	
+
 	int cstart=start;
 	for(int i=0;i<n-1;i++)
 	{
@@ -32,7 +32,7 @@ void dijkstras(int start)
 			}
 		start=minindex;
 	}
-	
+
 	for(int i=0;i<n;i++)
 	{
 		if(i==cstart)
@@ -54,7 +54,7 @@ int main()
 	while(t--)
 	{
 		scanf("%d%d",&n,&m);
-		
+
 		for(int i=0;i<n;i++)
 			for(int j=0;j<n;j++)
 				mat[i][j]=-1;
@@ -77,6 +77,6 @@ int main()
 		scanf("%d",&start);
 		prims(start-1);
 	}
-	
+
 	return 0;
 }

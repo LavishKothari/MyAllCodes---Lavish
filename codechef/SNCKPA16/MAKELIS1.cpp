@@ -15,35 +15,35 @@ typedef long long int ll;
 class Number
 {
 	public:
-	bool isPrime;
-	int sum,number,first,last;
-	map<int,int>factors;
-	
-	Number(bool isPrime,int sum,int number,int first)
-	{
-		this->isPrime=isPrime;
-		this->sum=sum;
-		this->number=number;
-		this->first=first;
-	}
-	Number(){}
+		bool isPrime;
+		int sum,number,first,last;
+		map<int,int>factors;
+
+		Number(bool isPrime,int sum,int number,int first)
+		{
+			this->isPrime=isPrime;
+			this->sum=sum;
+			this->number=number;
+			this->first=first;
+		}
+		Number(){}
 };
 vector<Number>numbers(MAX+1);
 void populateNumbers()
 {
 	/*
-	isPrime.reset();
-	isPrime.flip();
-	isPrime[0].flip();
-	isPrime[1].flip();
-	*/
+	   isPrime.reset();
+	   isPrime.flip();
+	   isPrime[0].flip();
+	   isPrime[1].flip();
+	 */
 	numbers[1]=Number(false,1,1,0);
-	
+
 	for(int i=2;i<MAX;i++)
 	{
 		numbers[i]=Number(true,0,0,0);
 	}
-	
+
 	for(int i=2;i<=MAX;i++)
 		if(numbers[i].isPrime)
 		{
@@ -101,7 +101,7 @@ void printNumbers()
 		{
 			printf("%d %d\n",it->first,it->second);
 		}
-		
+
 	}
 	printf("**********************printing over**********************\n\n");
 }
@@ -133,7 +133,7 @@ void printRev1(int start,int end)
 	int i;
 	for(i=end;i>=start;i--)
 	{
-		
+
 		printf("%d ",i);
 	}
 }
@@ -172,7 +172,7 @@ void goBinary(int k)
 	int arr[100],index=100;
 	int count=1;
 	len=getBit(k);
-	
+
 	while(k)
 	{
 		int toadd=len-getBit(k);
@@ -198,10 +198,10 @@ void printAnswer(int k)
 	if(n.sum<=100)
 	{
 		/*
-		printf("%d\n",n.sum);
-		printSpecial(k,0);
-		printf("\n");
-		*/
+		   printf("%d\n",n.sum);
+		   printSpecial(k,0);
+		   printf("\n");
+		 */
 	}
 	else 
 	{
@@ -215,11 +215,11 @@ void printAnswer(int k)
 			{	
 				flag=1;
 				/*
-				printf("%d\n",numbers[one].sum+numbers[two].sum);
-				printSpecial(two,numbers[one].sum);
-				printSpecial(one,0);
-				printf("\n");
-				*/
+				   printf("%d\n",numbers[one].sum+numbers[two].sum);
+				   printSpecial(two,numbers[one].sum);
+				   printSpecial(one,0);
+				   printf("\n");
+				 */
 				return;
 			}
 		}
@@ -244,34 +244,34 @@ void printAnswer(int k)
 			//goBinary(k);
 			printf("not returning\n");
 			/*
-			if(flag==0)
+			   if(flag==0)
+			   {
+			//printf("there is something terribly wrong with %d\n",k);
+			//printf("Going for 4\n");
+			for(int a=2;a<100;a++)
 			{
-				//printf("there is something terribly wrong with %d\n",k);
-				//printf("Going for 4\n");
-				for(int a=2;a<100;a++)
-				{
-					//printf("%d\n",i);
-					for(int b=a+1;b<100;b++)
-					{
-						for(int c=b+1;c<100;c++)
-						{
-							int d=k-(a+b+c);
-							if(d>=101 || d<0)
-								continue;
-							if(numbers[a].number==numbers[b].number && numbers[a].number==numbers[c].number && numbers[a].number==numbers[d].number && numbers[a].sum+numbers[b].sum+numbers[c].sum+numbers[d].sum<=100)
-							{
-								return;
-							}
-						}
-						//printf("i=%d j=%d k=%d\n",i,j,l);
-						
-					}
-				}
-				//if(flag==0) printf("this is wrong..!!!! %d \n",k);
+			//printf("%d\n",i);
+			for(int b=a+1;b<100;b++)
+			{
+			for(int c=b+1;c<100;c++)
+			{
+			int d=k-(a+b+c);
+			if(d>=101 || d<0)
+			continue;
+			if(numbers[a].number==numbers[b].number && numbers[a].number==numbers[c].number && numbers[a].number==numbers[d].number && numbers[a].sum+numbers[b].sum+numbers[c].sum+numbers[d].sum<=100)
+			{
+			return;
 			}
-			*/
+			}
+			//printf("i=%d j=%d k=%d\n",i,j,l);
+
+			}
+			}
+			//if(flag==0) printf("this is wrong..!!!! %d \n",k);
+			}
+			 */
 		}
-		
+
 	}
 	//if(flag==0)printf("c3=%d\nc4=%d\n",c3,c4);
 }
@@ -281,22 +281,22 @@ int main()
 	printf("%d\n",getBit(16));
 	/*
 
-	ll t,k,i;
-	populateNumbers();
+	   ll t,k,i;
+	   populateNumbers();
 	//printNumbers();
 	//printf("populating finished\n");
 	scanf("%lld",&t);
 	while(t--)
 	{
-		scanf("%lld",&k);
-		printAnswer(k);
+	scanf("%lld",&k);
+	printAnswer(k);
 	}
-	
+
 	for(i=2;i<100001;i++)
 	{
-		//printf("%lld ",i);
-		printAnswer(i);
+	//printf("%lld ",i);
+	printAnswer(i);
 	}
-	*/
+	 */
 	return 0;
 }

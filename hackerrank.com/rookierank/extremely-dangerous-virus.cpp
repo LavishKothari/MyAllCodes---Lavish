@@ -17,8 +17,8 @@ int main()
 {
 	long long int a,b,t;
 	cin>>a>>b>>t;
-	
+
 	cout<<power((a+b)/2,t)<<endl;
-	
+
 	return 0;
 }

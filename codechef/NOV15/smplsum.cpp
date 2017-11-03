@@ -27,7 +27,7 @@ void populatePrimeArray()
 	for(int i=0;i<=MAX;i++) primes[i]=1;
 	for(int i=0;i<=MAX;i++) spf[i]=0;
 	primes[0]=primes[1]=false;
-	
+
 	primes[2]=true;
 	for(int i=2*2;i<=MAX;i+=2)
 	{
@@ -68,16 +68,16 @@ int main()
 	scanf("%d",&t);
 	populatePrimeArray();
 	/*
-	for(vector<int>::iterator i=primeVector.begin();i!=primeVector.end();i++)
-	{
-		long long int currentPrime=*i;
-		myanswers[currentPrime]=(currentPrime*(currentPrime-1))+1;
-		for(int j=currentPrime*currentPrime,k=2;j<=MAX;j*=currentPrime,k++)
-		{
-			myanswers[j]=(power(currentPrime,(2*k+1))+1)/(currentPrime+1);
-		}
-	}
-	*/
+	   for(vector<int>::iterator i=primeVector.begin();i!=primeVector.end();i++)
+	   {
+	   long long int currentPrime=*i;
+	   myanswers[currentPrime]=(currentPrime*(currentPrime-1))+1;
+	   for(int j=currentPrime*currentPrime,k=2;j<=MAX;j*=currentPrime,k++)
+	   {
+	   myanswers[j]=(power(currentPrime,(2*k+1))+1)/(currentPrime+1);
+	   }
+	   }
+	 */
 	//populatePhiArray();
 	while(t--)
 	{
@@ -97,23 +97,23 @@ int main()
 			continue;
 		}
 		/*
-		long long int answer=0;
-		long long int i;
-		for(i=1;i*i<n;i++)
-			if(n%i==0)
-				answer=answer+i*phi[i]+(n/i)*phi[n/i];
-		if(i*i==n)
-			answer+=i*phi[i];
-		printf("%lld\n",answer);
-		*/
+		   long long int answer=0;
+		   long long int i;
+		   for(i=1;i*i<n;i++)
+		   if(n%i==0)
+		   answer=answer+i*phi[i]+(n/i)*phi[n/i];
+		   if(i*i==n)
+		   answer+=i*phi[i];
+		   printf("%lld\n",answer);
+		 */
 		long long int answer=1;
 		/*
-		vector<int>::iterator i;
-		if(n&1)
-			i=primeVector.begin();
-		else
-			i=find(primeVector.begin(),primeVector.end(),spf[n]);
-		*/
+		   vector<int>::iterator i;
+		   if(n&1)
+		   i=primeVector.begin();
+		   else
+		   i=find(primeVector.begin(),primeVector.end(),spf[n]);
+		 */
 		for(int currentPrime=spf[n];n!=1;currentPrime++)
 		{
 			bool foundnext=(myanswers.find(n)==myanswers.end());
@@ -136,7 +136,7 @@ int main()
 			}
 		}
 		printf("%lld\n",answer);
-		
+
 	}
 	free(primes);
 	return 0;

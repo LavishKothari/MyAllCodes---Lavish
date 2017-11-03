@@ -6,18 +6,18 @@ using namespace std;
 class Point
 {
 	public:
-	int number,x,y;
-	long long dist;
-	Point(int,int,int,long long int);
-	Point(){}
-	
+		int number,x,y;
+		long long dist;
+		Point(int,int,int,long long int);
+		Point(){}
+
 };
 bool operator<(const Point &p1, const Point &p2)
 {
-    if(p2.dist < p1.dist)
-        return true;
-    else
-        return false;
+	if(p2.dist < p1.dist)
+		return true;
+	else
+		return false;
 }
 Point::Point(int number,int x,int y,long long int dist)
 {
@@ -29,8 +29,8 @@ Point::Point(int number,int x,int y,long long int dist)
 class Answer
 {
 	public:
-	int number,dir;
-	Answer(int,int);
+		int number,dir;
+		Answer(int,int);
 };
 Answer::Answer(int number,int dir)
 {
@@ -43,7 +43,7 @@ std::vector<Answer>answerArray;
 bool findMinMax(vector<Point>&points)
 {
 	int maxix,maxiy,minix,miniy,maxx,maxy,minx,miny,i;
-	
+
 	for(i=0;i<points.size();i++)
 	{
 		//printf("%d = %d,%d\n",points[i].number,points[i].x,points[i].y);
@@ -65,7 +65,7 @@ bool findMinMax(vector<Point>&points)
 			if(miny>points[i].y)
 			{
 				miniy=points[i].number;
-					miny=points[i].y;
+				miny=points[i].y;
 			}
 			if(maxx<points[i].x)
 			{
@@ -111,7 +111,7 @@ int main()
 {
 	Point p;
 	int t,n,maxix,maxiy,minix,miniy,maxx,maxy,minx,miny,i,j,counter,answer,f,x,y,dir;
-	
+
 	std::vector<Point>points;
 	scanf("%d",&t);
 	while(t--)
@@ -123,7 +123,7 @@ int main()
 			scanf("%d%d",&x,&y);
 			points.push_back(Point(i+1,x,y,(long long int)x*x+(long long int )y*y));
 		}
-		
+
 		std::sort(points.begin(),points.end());
 		//printf("sorted\n");
 		while(points.size()!=0)
@@ -144,7 +144,7 @@ int main()
 						answerArray.push_back(Answer(points[i].number,3));
 					break;
 				}
-				
+
 				if(dir==0)
 				{
 					for(j=1;j<points.size();j++)
@@ -185,7 +185,7 @@ int main()
 				points.erase(points.begin());
 			}
 			else break;
-				
+
 		}
 		printf("%d\n",answerArray.size());
 		for(i=0;i<answerArray.size();i++)
@@ -199,11 +199,11 @@ int main()
 				printf("NE\n");
 			if(answerArray[i].dir==3)
 				printf("SE\n");
-					
+
 		}
 		answerArray.clear();
 		points.clear();
 	}
-	
+
 	return 0;
 }

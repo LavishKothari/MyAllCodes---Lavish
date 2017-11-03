@@ -11,12 +11,12 @@ class Main
 		{
 			BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 			int t=Integer.parseInt(br.readLine());
-			
+
 			for(int i=0;i<t;i++)
 			{
 				String str=br.readLine();
 				StringTokenizer st=new StringTokenizer(str);
-				
+
 				int a=Integer.parseInt(""+st.nextElement());
 				int b=Integer.parseInt(""+st.nextElement());
 				int c=Integer.parseInt(""+st.nextElement());
@@ -53,9 +53,9 @@ class Main
 		side1=Math.sqrt((a-c)*(a-c)+(b-d)*(b-d));
 		side2=Math.sqrt((a-e)*(a-e)+(b-f)*(b-f));
 		side3=Math.sqrt((c-e)*(c-e)+(d-f)*(d-f));
-		
+
 		double semiPerimeter=(side1+side2+side3)/2;
-		
+
 		return Math.sqrt((semiPerimeter-side1)*(semiPerimeter-side2)*(semiPerimeter-side3)*semiPerimeter);
 	}
 }

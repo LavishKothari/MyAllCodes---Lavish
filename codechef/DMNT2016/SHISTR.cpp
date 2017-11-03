@@ -6,8 +6,8 @@ typedef long long int ll;
 class O
 {
 	public :
-	int l,r,k;
-	O(int,int,int);
+		int l,r,k;
+		O(int,int,int);
 };
 O::O(int l,int r,int k)
 {
@@ -42,16 +42,16 @@ int main()
 			v.push_back(O(l-1,r-1,k));
 		}
 		/*
-		printf("hello aish\n");		
-		for(int i=0;i<v.size();i++)
-			printf("%d %d %d\n",v[i].l,v[i].r,v[i].k);
-		*/
+		   printf("hello aish\n");		
+		   for(int i=0;i<v.size();i++)
+		   printf("%d %d %d\n",v[i].l,v[i].r,v[i].k);
+		 */
 		sort(v.begin(),v.end(),cm);
 		/*
-		printf("hello aish\n");		
-		for(int i=0;i<v.size();i++)
-			printf("%d %d %d\n",v[i].l,v[i].r,v[i].k);
-		*/
+		   printf("hello aish\n");		
+		   for(int i=0;i<v.size();i++)
+		   printf("%d %d %d\n",v[i].l,v[i].r,v[i].k);
+		 */
 		for(int i=0;i<n;i++)
 		{
 			vector<O>::iterator it;

@@ -37,7 +37,7 @@ int main()
 		long long int a,b,m;
 		scanf("%lld%lld%lld",&a,&b,&m);
 		printf("%lld\n",findAnswer(a,b,m));
-		
+
 	}
 	return 0;
 }

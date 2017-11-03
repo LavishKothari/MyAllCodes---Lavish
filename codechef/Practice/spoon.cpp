@@ -12,7 +12,7 @@ bool findAnswer(char**str,int r,int c)
 	for(int i=0;i<r;i++)
 		if(isSubString(str[i]))
 			return true;
-	
+
 	char**nstr=(char **)malloc(sizeof(char*)*c);
 	for(int i=0;i<c;i++)
 		nstr[i]=(char*)malloc(sizeof(char)*(r+1));
@@ -23,7 +23,7 @@ bool findAnswer(char**str,int r,int c)
 			nstr[i][j]=str[j][i];
 		nstr[i][j]='\0';
 	}
-	
+
 	for(int i=0;i<c;i++)
 		if(isSubString(nstr[i]))
 			return true;

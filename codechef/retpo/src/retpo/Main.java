@@ -15,11 +15,11 @@ public class Main {
 			StringTokenizer stz=new StringTokenizer(br.readLine());
 			long x=Long.parseLong(stz.nextToken());
 			long y=Long.parseLong(stz.nextToken());
-			
+
 			System.out.println(findAnswer(x,y));
 		}
 	}
-	
+
 	private static long findAnswer(long x,long y)
 	{
 		if(y==0)
@@ -43,11 +43,11 @@ public class Main {
 			else
 				answer=Math.min(absx,absy)*2;
 		}
-		
+
 		if(absx!=absy)
 		{
 			answer+=(Math.abs(absx-absy)/2)*4;
-			
+
 			if(absx>absy)
 			{
 				if(Math.abs(absx-absy)%2!=0)

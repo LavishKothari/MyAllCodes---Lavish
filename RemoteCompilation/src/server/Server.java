@@ -24,33 +24,33 @@ import javax.crypto.spec.SecretKeySpec;
 class ServerThread implements Runnable {
 	Socket client;
 	String secretkey="lavishlavishlavi";
-	
+
 	PublicKey serverPublicKey,clientPublicKey;
 	PrivateKey serverPrivateKey;
 
 	DataInputStream dis;
 	DataOutputStream dos;
-	
+
 	ServerThread(Socket client) {
 		this.client=client;
 		Thread t=new Thread(this);
 		t.start();
 	}
-	
+
 	public void encryptedWrite(String s) throws Exception
 	{
 		/*********/
 		Cipher c = Cipher.getInstance("AES");
 		SecretKeySpec k =new SecretKeySpec(secretkey.getBytes(), "AES");
-		
-		
+
+
 		c.init(Cipher.ENCRYPT_MODE, k);
 		byte[] barray = c.doFinal(s.getBytes());
-		
+
 		dos.writeUTF(barray.length+"");
 		dos.write(barray);
 		System.out.println(new String(barray));
-		
+
 	}
 	public String encryptedRead() throws Exception
 	{
@@ -58,65 +58,65 @@ class ServerThread implements Runnable {
 		byte[]encryptedText=new byte[len];
 		dis.readFully(encryptedText,0,len);
 		byte[]barray;;
-		
+
 		Cipher c = Cipher.getInstance("AES");
-		
+
 		SecretKeySpec k =new SecretKeySpec(secretkey.getBytes(), "AES");
-		
-		
+
+
 		c.init(Cipher.DECRYPT_MODE, k);
 		barray = c.doFinal(encryptedText);
-		
+
 		System.out.println(new String(barray));
 		return new String(barray);
 	}
 	public byte[] encryptKey(byte[] text, PublicKey key) {
 		System.out.println("in encrypt: "+new String(text));
 		byte[] cipherText = null;
-	    try {
-	    	final Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
-	    	cipher.init(Cipher.ENCRYPT_MODE, key);
-	    	cipherText = cipher.doFinal(text);
-	    } catch (Exception e) {
-	    	e.printStackTrace();
-	    }
-	    return cipherText;
-	  }
+		try {
+			final Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
+			cipher.init(Cipher.ENCRYPT_MODE, key);
+			cipherText = cipher.doFinal(text);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return cipherText;
+	}
 	public void run() {
 		try
 		{
 			dos=new DataOutputStream(client.getOutputStream());
 			dis=new DataInputStream(client.getInputStream());		
-			
-			
+
+
 			// Key exchange starting here.
 			/************************************************************************/ // writing server's public key and reading client's public key.
 			final KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA"); // rsa key generation
-		    keyGen.initialize(1024);
-		    final KeyPair key = keyGen.generateKeyPair();
-		    /*
-		    System.out.println(key.getPrivate());
-		    System.out.println(key.getPublic());
-		    */
-		    serverPublicKey=key.getPublic();
-		    serverPrivateKey=key.getPrivate();
-		    
-		    ObjectOutputStream oos=new ObjectOutputStream(client.getOutputStream());
-		    oos.writeObject(serverPublicKey); // writing server's public key
-		    
-		    ObjectInputStream ois=new ObjectInputStream(client.getInputStream());
-		    clientPublicKey=(PublicKey)ois.readObject(); // writing client's public key
-		    /************************************************************************/
-		    /* sending secret key by encrypting with clients public key */
-		    secretkey="lavishlavishlavi"; // generating the secret key on server side and sending it to the client after encrtypting
-		    byte[]secretKeyBytes=encryptKey(secretkey.getBytes(),clientPublicKey);
-		    System.out.println("secret key on server = this is  a final test "+new String(secretKeyBytes));
-		    dos.writeUTF(""+(secretKeyBytes).length);
-		    dos.write(secretKeyBytes);
+			keyGen.initialize(1024);
+			final KeyPair key = keyGen.generateKeyPair();
+			/*
+			   System.out.println(key.getPrivate());
+			   System.out.println(key.getPublic());
+			 */
+			serverPublicKey=key.getPublic();
+			serverPrivateKey=key.getPrivate();
+
+			ObjectOutputStream oos=new ObjectOutputStream(client.getOutputStream());
+			oos.writeObject(serverPublicKey); // writing server's public key
+
+			ObjectInputStream ois=new ObjectInputStream(client.getInputStream());
+			clientPublicKey=(PublicKey)ois.readObject(); // writing client's public key
 			/************************************************************************/
-		    
-		    
-		    while(true) {
+			/* sending secret key by encrypting with clients public key */
+			secretkey="lavishlavishlavi"; // generating the secret key on server side and sending it to the client after encrtypting
+			byte[]secretKeyBytes=encryptKey(secretkey.getBytes(),clientPublicKey);
+			System.out.println("secret key on server = this is  a final test "+new String(secretKeyBytes));
+			dos.writeUTF(""+(secretKeyBytes).length);
+			dos.write(secretKeyBytes);
+			/************************************************************************/
+
+
+			while(true) {
 				String optionString=encryptedRead();
 				if(optionString.equals(new String("EXIT")))
 				{
@@ -137,10 +137,10 @@ class ServerThread implements Runnable {
 					File f=new File(inputFileName);
 					String commandString;
 					/*
-					if(f.exists())
-						commandString="cat "+getContentsOfFile(inputFileName)+" | "+encryptedRead();
-					else */
-						commandString=encryptedRead();
+					   if(f.exists())
+					   commandString="cat "+getContentsOfFile(inputFileName)+" | "+encryptedRead();
+					   else */
+					commandString=encryptedRead();
 					executeCommand("/bin/sh -c");
 					executeCommand(commandString);
 					String outputFileContents=getContentsOfFile("outputFile.txt");
@@ -162,20 +162,20 @@ class ServerThread implements Runnable {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void writeContentsToFile(String fileName,String contents) throws IOException
 	{
 		PrintWriter out=new PrintWriter(fileName);
 		out.print(contents);
 		out.close();
 	}
-	
+
 	public String getContentsOfFile(String filename) throws IOException
 	{
 		String contents="",tempString;
 		FileInputStream fis=new FileInputStream(filename);
 		BufferedReader br=new BufferedReader(new InputStreamReader(fis));
-		
+
 		while((tempString=br.readLine())!=null)
 		{
 			contents+=tempString+"\n";
@@ -192,16 +192,16 @@ class ServerThread implements Runnable {
 			File outputFile=new File("outputFile.txt");
 			File errorFile=new File("errorFile.txt");
 			java.util.List<String> commandList=new LinkedList<String>();
-			
+
 			for (String retval: commandString.split(" "))
-		        commandList.add(retval);
-		    
+				commandList.add(retval);
+
 			ProcessBuilder pb=new ProcessBuilder(commandList);
 			pb.redirectOutput(outputFile);
 			pb.redirectError(errorFile);
 			/*
-			pb.redirectErrorStream(true);
-			*/
+			   pb.redirectErrorStream(true);
+			 */
 			Process process=pb.start();
 			process.waitFor();
 		}
@@ -215,7 +215,7 @@ class ServerThread implements Runnable {
 			}
 		}
 	}
-	
+
 }
 public class Server {
 	public static int portNumber=9876;
@@ -225,9 +225,9 @@ public class Server {
 			Socket client=serverSocket.accept();
 			new ServerThread(client);
 		}
-		
+
 		//serverSocket.close();
-		
+
 	}
 
 }

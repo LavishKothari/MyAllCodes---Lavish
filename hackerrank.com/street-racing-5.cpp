@@ -120,12 +120,12 @@ class point
 {
 	public:
 		int x,y;
-	point(int x,int y)
-	{
-		this->x=x;
-		this->y=y;
-	}
-	point(){}
+		point(int x,int y)
+		{
+			this->x=x;
+			this->y=y;
+		}
+		point(){}
 };
 double dist2(int a,int b,vector<point>&v)
 {
@@ -144,10 +144,10 @@ double findAngle(point a,point b,point c)
 	y1=a.y;
 	y2=b.y;
 	y3=c.y;
-	
+
 	double ctheta=((x2-x1)*(x3-x2)+(y2-y1)*(y3-y2))/(dist(x1,y1,x2,y2)*dist(x3,y3,x2,y2));
 	//cout<<ctheta<<endl;
-	
+
 	double angle=acos(ctheta)*180.0/M_PI;	
 	//cout<<angle<<endl;
 	if(angle>180.0)
@@ -172,10 +172,10 @@ vector<double> dij(double **graph,int n,int start,int finish, int angle,vector<p
 		//cout<<"current = "<<current+1<<" "<<sd[current]<<endl;
 		//cout<<"these are sd ";
 		/*
-		for(int i=0;i<n;i++)
-			cout<<sd[i]<<" ";
-		cout<<endl;
-		*/
+		   for(int i=0;i<n;i++)
+		   cout<<sd[i]<<" ";
+		   cout<<endl;
+		 */
 		for(int i=0;i<n;i++)
 		{
 			if(i!=current && iscompleted[i]==false && graph[i][current]<INT_MAX && graph[i][current]>0 && (sd[i]==INT_MAX ||  sd[current]+graph[i][current]<sd[i]))
@@ -186,7 +186,7 @@ vector<double> dij(double **graph,int n,int start,int finish, int angle,vector<p
 			}
 		}
 		iscompleted[current]=true;
-		
+
 		// now finding minimum amongst those which are not completed
 		index=-1;
 		double mi=INT_MAX;
@@ -220,16 +220,16 @@ vector<double> dij(double **graph,int n,int start,int finish, int angle,vector<p
 		reverse(path.begin(),path.end());
 
 		/*
-		cout<<"this is the shortest path ";
-		for(int i=0;i<path.size();i++)
-			cout<<path[i]+1<<" ";
-		cout<<endl;
-		
-		cout<<"this is the parent array ";
-		for(int i=0;i<n;i++)
-			cout<<parent[i]+1<<" ";
-		cout<<endl;
-		*/
+		   cout<<"this is the shortest path ";
+		   for(int i=0;i<path.size();i++)
+		   cout<<path[i]+1<<" ";
+		   cout<<endl;
+
+		   cout<<"this is the parent array ";
+		   for(int i=0;i<n;i++)
+		   cout<<parent[i]+1<<" ";
+		   cout<<endl;
+		 */
 		//path found;
 
 		for(int i=0;i+2<path.size();i++)
@@ -249,9 +249,9 @@ vector<double> dij(double **graph,int n,int start,int finish, int angle,vector<p
 			}
 		}
 		/*
-		for(int i=0;i<n;i++)	
-			cout<<"this is sd = "<<i+1<<" "<<sd[i]<<endl;
-		*/
+		   for(int i=0;i<n;i++)	
+		   cout<<"this is sd = "<<i+1<<" "<<sd[i]<<endl;
+		 */
 		vector<double>vec(1,sd[finish]);
 		return vec;
 	}
@@ -275,7 +275,7 @@ bool isreachable(double**graph,int n,int s,int f)
 {
 	vector<int>Q;
 	vector<bool> isvisited(n,false);
-	
+
 	Q.push_back(s);
 	isvisited[s]=true;
 
@@ -308,18 +308,18 @@ double findAnswer(double **graph,int n,int s,int f,vector<point>&v,int angle)
 		return -1;
 	////////
 	/*
-	cout<<"dij returned ";
-	for(int i=0;i<vec.size();i++)
-		cout<<vec[i]+1<<" ";
-	cout<<endl;
-	*/
+	   cout<<"dij returned ";
+	   for(int i=0;i<vec.size();i++)
+	   cout<<vec[i]+1<<" ";
+	   cout<<endl;
+	 */
 	//////////
 	if(vec.size()==1)
 		return vec[0];
 	//cout<<"hello\n";
-	
+
 	double x=-1,y=-1;
-	
+
 	removeEdge(graph,n,vec[1],vec[2]);
 	if(isreachable(graph,n,s,f))
 	{
@@ -327,7 +327,7 @@ double findAnswer(double **graph,int n,int s,int f,vector<point>&v,int angle)
 		x=findAnswer(graph,n,s,f,v,angle);
 	}
 	addEdge(graph,n,vec[1],vec[2],v);
-	
+
 	//////////////////////////////////
 	removeEdge(graph,n,vec[3],vec[2]);
 	if(isreachable(graph,n,s,f))
@@ -336,7 +336,7 @@ double findAnswer(double **graph,int n,int s,int f,vector<point>&v,int angle)
 		y=findAnswer(graph,n,s,f,v,angle);
 	}
 	addEdge(graph,n,vec[3],vec[2],v);
-	
+
 	if(x<0 && y<0)
 		return -1;
 	if(x<0)
@@ -375,8 +375,8 @@ int main()
 {
 	int n,m,angle,s,f;
 	scanf("%d%d%d%d%d",&n,&m,&angle,&s,&f);
-	
-	
+
+
 	vector<point>v(n);
 	for(int i=0;i<n;i++)
 	{
@@ -385,7 +385,7 @@ int main()
 		v[i]=point(x,y);
 	}
 	double **graph;
-	
+
 	graph=new double *[n];
 	for(int i=0;i<n;i++)
 		graph[i]=new double [n];
@@ -395,7 +395,7 @@ int main()
 			if(i==j)
 				graph[i][j] = 0;
 		}
-			
+
 	for(int i=0;i<m;i++)
 	{
 		int a,b;
@@ -413,22 +413,22 @@ int main()
 	return 0;
 }
 /*
-6 7 90
-1 6
+   6 7 90
+   1 6
 
-0 0
-4 0
-6 0
-6 -2
-4 -2
-0 -2
+   0 0
+   4 0
+   6 0
+   6 -2
+   4 -2
+   0 -2
 
-1 2
-2 3
-3 4
-1 6
-4 5
-5 6
-2 5
+   1 2
+   2 3
+   3 4
+   1 6
+   4 5
+   5 6
+   2 5
 
-*/
+ */
